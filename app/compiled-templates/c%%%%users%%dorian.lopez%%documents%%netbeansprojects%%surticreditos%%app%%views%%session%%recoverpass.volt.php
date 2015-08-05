@@ -24,7 +24,7 @@
     <?php echo $this->tag->stylesheetLink('css/session-styles.css'); ?>
     <script>
         $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
+            $('[data-toggle="tooltip"]').tooltip();
         })
     </script>
 

@@ -19,6 +19,10 @@
         
         <script type="text/javascript">
             var myBaseURL = '<?php echo $this->url->get(''); ?>';
+            
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
         </script>
         
     <?php echo $this->tag->stylesheetLink('css/session-styles.css'); ?>
@@ -30,6 +34,11 @@
                 <nav>
                     <ul class="nav nav-pills pull-right">
                         <?php echo $this->partial('partials/menu_partial'); ?>
+                        <li role="presentation" class="dropdown">
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('session/logout'); ?>" data-toggle="tooltip" data-placement="right" title="Cerrar sesión">
+                                <span class="glyphicon glyphicon glyphicon-log-out"></span>
+                            </a>
+                        </li>                        
                         
                     </ul>
                 </nav>

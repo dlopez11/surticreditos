@@ -19,6 +19,10 @@
         
         <script type="text/javascript">
             var myBaseURL = '{{url('')}}';
+            
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
         </script>
         {% block header %}<!-- custom header code -->{% endblock %}
     </head>
@@ -28,9 +32,14 @@
                 <nav>
                     <ul class="nav nav-pills pull-right">
                         {{ partial("partials/menu_partial") }}
+                        <li role="presentation" class="dropdown">
+                            <a role="menuitem" tabindex="-1" href="{{url('session/logout')}}" data-toggle="tooltip" data-placement="right" title="Cerrar sesión">
+                                <span class="glyphicon glyphicon glyphicon-log-out"></span>
+                            </a>
+                        </li>                        
                         {#<li role="presentation" class="dropdown">
                             <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                {{userData.name}} {{userData.lastName}}
+                                {{userData.name}}
                                 <span class="caret"></span>
                             </a>
                             <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">

@@ -50,7 +50,7 @@ class Trace extends \Phalcon\Mvc\Model
         $logger->log("{$msg}");
         $logger->log("***************************************************************************************");
         $logger->log("***************************************************************************************");
-        $logger->log("User: {$user->idUser}/{$user->username}");
+        $logger->log("User: {$user->idUser}/{$user->name}");
         $logger->log("Result: {$status}");
         $logger->log("Operation: {$operation}");
         $logger->log("Desc: {$msg}");

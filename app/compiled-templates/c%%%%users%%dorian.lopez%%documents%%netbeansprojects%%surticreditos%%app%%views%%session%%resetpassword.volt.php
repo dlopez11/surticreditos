@@ -35,28 +35,29 @@
     <div align="center">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <form class="form-horizontal" action="<?php echo $this->url->get('session/login'); ?>" method="post">
+            <form class="form-horizontal" action="<?php echo $this->url->get('session/setnewpass'); ?>" method="post">
+                <input type="hidden" name="uniq" value="<?php echo $uniq; ?>"/>
                 <?php echo $this->flashSession->output(); ?>
                 <div class="form-group">
-                  <h1>Surticreditos</h1>
+                  <h1>Genere su nueva contraseña</h1>
                   <br>
-                  <div class="col-sm-12">
-                      <input type="number" class="form-control" name="id" id="id" placeholder="Ingrese su número de cédula">
+                  <div class="col-sm-12">                      
+                      <input type="password" class="form-control" name="pass1" placeholder="Ingrese su nueva contraseña">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <div class="col-sm-12">
-                      <input type="password" class="form-control" name="password" id="password" placeholder="Ingrese su contraseña">
+                      <input type="password" class="form-control" name="pass2" placeholder="Repita su contraseña">
                   </div>
                 </div>                        
 
                 <div class="form-group" align="right">
                   <div class="col-sm-offset-2 col-sm-10">
-                    <a href="<?php echo $this->url->get('session/recoverpass'); ?>" class="btn btn-primary"role="button" data-toggle="tooltip" data-placement="top" title="Recuperar contraseña">
-                        <span class="glyphicon glyphicon glyphicon-lock"></span>
+                    <a href="<?php echo $this->url->get('session/login'); ?>" class="btn btn-danger"role="button" data-toggle="tooltip" data-placement="top" title="Cancelar">
+                        <span class="glyphicon glyphicon glyphicon-remove"></span>
                     </a>
-                    <button type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Iniciar sesión">
+                    <button type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Generar contraseña">
                         <span class="glyphicon glyphicon glyphicon-ok"></span>
                     </button>
                   </div>

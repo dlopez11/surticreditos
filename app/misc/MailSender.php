@@ -2,7 +2,7 @@
 $path =  \Phalcon\DI\FactoryDefault::getDefault()->get('path');
 require_once "{$path->path}app/library/swiftmailer/lib/swift_required.php";
 
-namespace Sigmamovil\Misc;
+namespace Surticreditos\Misc;
 
 $path =  \Phalcon\DI\FactoryDefault::getDefault()->get('path');
 require_once "{$path->path}app/library/swiftmailer/lib/swift_required.php";

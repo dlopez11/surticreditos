@@ -3,36 +3,31 @@
 class SessionController extends ControllerBase
 {
     public function loginAction()
-    {
-        {
-            if ($this->request->isPost()) {
-                    $id = $this->request->getPost("id");
-                    $password = $this->request->getPost("password");
+    {        
+        if ($this->request->isPost()) {
+            $msg = "Contraseña incorrecta";
+            $id = $this->request->getPost("id");
+            $password = $this->request->getPost("password");
 
-                    $user = User::findFirst(array(
-                        'conditions' => 'id = ?0 AND password = ?1',
-                        'bind' => array(
-                                    0 => $id,
-                                    1 => $password
-                                )
-                    ));
+            $user = User::findFirst(array(
+                'conditions' => 'idUser = ?0',
+                'bind' => array(0 => $id)
+            ));
 
-                    if ($user && $this->hash->checkHash($password, $user->password)) {
-                        $this->session->set('idUser', $user->idUser);
-                        $this->session->set('authenticated', true);
-   
-                        $this->user = $user;
-                        $this->trace("success", "User: {$id} login");
-                        return $this->response->redirect("session/resetpassword");
-                    }
-                    else {
-                        $this->trace("fail", "Access denied user: {$user->name} - {$id}, password: [{$password}]");
-                    }
+            if ($user && $this->hash->checkHash($password, $user->password)) {
+                $this->session->set('idUser', $user->idUser);
+                $this->session->set('authenticated', true);
 
-                    $this->flashSession->error("Contraseña incorrecta");
-                    return $this->response->redirect('session/login');
+                $this->user = $user;
+                $this->trace("success", "User: {$id} login");
+                return $this->response->redirect("index");
             }
-        }
+            else {
+                $this->trace("fail", "Access denied user: {$user->name} - {$id}, password: [{$password}]");
+                $this->flashSession->error($msg);
+                return $this->response->redirect('session/login');
+            }
+        }        
     }
     
     public function logoutAction()

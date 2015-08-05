@@ -3,7 +3,7 @@
     {{ stylesheet_link('css/session-styles.css') }}
     <script>
         $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
+            $('[data-toggle="tooltip"]').tooltip();
         })
     </script>
 {% endblock %}

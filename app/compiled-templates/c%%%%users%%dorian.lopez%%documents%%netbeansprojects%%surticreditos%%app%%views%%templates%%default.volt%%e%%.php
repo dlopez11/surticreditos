@@ -1,4 +1,4 @@
-a:5:{i:0;s:1196:"<!DOCTYPE html>
+a:5:{i:0;s:1311:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -19,8 +19,12 @@ a:5:{i:0;s:1196:"<!DOCTYPE html>
         
         <script type="text/javascript">
             var myBaseURL = '<?php echo $this->url->get(''); ?>';
+            
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
         </script>
-        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:23;}}i:1;s:486:"
+        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:27;}}i:1;s:922:"
     </head>
     <body>
         <div class="container">
@@ -28,6 +32,11 @@ a:5:{i:0;s:1196:"<!DOCTYPE html>
                 <nav>
                     <ul class="nav nav-pills pull-right">
                         <?php echo $this->partial('partials/menu_partial'); ?>
+                        <li role="presentation" class="dropdown">
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('session/logout'); ?>" data-toggle="tooltip" data-placement="right" title="Cerrar sesión">
+                                <span class="glyphicon glyphicon glyphicon-log-out"></span>
+                            </a>
+                        </li>                        
                         
                     </ul>
                 </nav>
@@ -35,7 +44,7 @@ a:5:{i:0;s:1196:"<!DOCTYPE html>
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:48;}}i:2;s:284:"
+                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:57;}}i:2;s:284:"
                 </div>    
             </div>
         </div>  
