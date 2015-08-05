@@ -41,7 +41,7 @@
                   <h1>Recuperar contraseña</h1>
                   <br>
                   <div class="col-sm-12">
-                      <input type="email" class="form-control" name="email" placeholder="Ingrese su correo electronico">
+                      <input type="number" class="form-control" name="cedula" placeholder="Ingrese su número de Cédula">
                   </div>
                 </div>
                 
