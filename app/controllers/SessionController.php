@@ -65,7 +65,7 @@ class SessionController extends ControllerBase
                     return;
                 }
                 if($user->status == 0){
-                    $this->flashSession->error("Esta es la primera vez que consulta su saldo, su contraseña es su mismo número de cédula.");
+                    $this->flashSession->error("Esta es la primera vez que consulta su saldo, su contraseña es su número de cédula.");
                     $this->response->redirect('session/login');
                     return;
                 }                
