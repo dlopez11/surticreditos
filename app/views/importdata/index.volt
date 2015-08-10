@@ -96,7 +96,7 @@
                             </p>
                             <p>
                                 El archivo debe ser una tabla sin encabezado que debe tener los siguientes campos: Cédula del comprador,
-                                nombre del producto, valor de la compra, fecha de compra y saldo a la fecha. Por ejemplo:
+                                nombre del producto, ID de la compra, valor de la compra, fecha de compra y saldo a la fecha. Por ejemplo:
                             </p>
                             <p>
                                 <img src="{{url('img/import/fileTwo.png')}}">
@@ -139,10 +139,10 @@
                             </p>
                             <p>
                                 El archivo debe ser una tabla sin encabezado que debe tener los siguientes campos: Número de recibo,
-                                compra correspondiente, valor y fecha de pago. Por ejemplo:
+                                ID de la compra, valor y fecha de pago. Por ejemplo:
                             </p>
                             <p>
-                                <img src="{{url('img/import/fileTwo.png')}}">
+                                <img src="{{url('img/import/fileThree.png')}}">
                             </p>
                             <p>
                                 Al guardar el documento, seleccione tipo de archivo: <strong>(*.csv)</strong> que significa: delimitado por comas.

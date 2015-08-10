@@ -84,15 +84,14 @@
                         <strong><?php echo $user->name; ?></strong>
                     </td>
                     <td><?php echo $user->email; ?></td>
-                    <td><?php echo $user->cellphone; ?></td>
-                    <td><?php echo $user->address; ?></td>
+                    <td><?php echo $user->phone; ?></td>
+                    <td><?php echo $user->city; ?></td>                    
                 </tr>
                 
                 <tr>                    
                     <td><?php echo $user->idUser; ?></td>
-                    <td><?php echo $user->class; ?></td>
-                    <td><?php echo $user->phone; ?></td>
-                    <td><?php echo $user->city; ?></td>
+                    <td><?php echo $user->class; ?></td>                    
+                    <td><?php echo $user->address; ?></td>
                 </tr>
                 <?php } ?>
             </table>

@@ -27,15 +27,14 @@
                         <strong>{{user.name}}</strong>
                     </td>
                     <td>{{user.email}}</td>
-                    <td>{{user.cellphone}}</td>
-                    <td>{{user.address}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.city}}</td>                    
                 </tr>
                 
                 <tr>                    
                     <td>{{user.idUser}}</td>
-                    <td>{{user.class}}</td>
-                    <td>{{user.phone}}</td>
-                    <td>{{user.city}}</td>
+                    <td>{{user.class}}</td>                    
+                    <td>{{user.address}}</td>
                 </tr>
                 {% endfor %}
             </table>
