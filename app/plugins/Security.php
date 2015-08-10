@@ -101,6 +101,9 @@ class Security extends Plugin
                 'user::passedit' => array('user' => array('update')),
                 /* ImportData */                
                 'importdata::index' => array('importdata' => array('read')),
+                'importdata::importfileone' => array('importdata' => array('read','create','update')),
+                'importdata::importfiletwo' => array('importdata' => array('read','create','update')),
+                'importdata::importfilethree' => array('importdata' => array('read','create','update')),
                 /* Report */                
                 'report::create' => array('report' => array('download')),
                 'report::createfull' => array('report' => array('download')),
