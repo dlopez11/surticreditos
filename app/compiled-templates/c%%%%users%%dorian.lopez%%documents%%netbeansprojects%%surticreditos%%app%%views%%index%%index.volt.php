@@ -71,58 +71,54 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-12">
             <table class="table table-bordered">
                 <?php foreach ($users as $user) { ?>
                 <tr>
-                    <td>Nombre:</td>
-                    <td><?php echo $user->name; ?></td>
-                </tr>
-                <tr>
-                    <td>Cédula:</td>
-                    <td><?php echo $user->idUser; ?></td>
-                </tr>
-                <tr>
-                    <td>Email:</td>
+                    <td>
+                        <strong><?php echo $user->name; ?></strong>
+                    </td>
                     <td><?php echo $user->email; ?></td>
-                </tr>
-                <tr>
-                    <td>Clase:</td>
-                    <td><?php echo $user->class; ?></td>
-                </tr>
-                <tr>
-                    <td>Telefono:</td>
-                    <td><?php echo $user->phone; ?></td>
-                </tr>
-                <tr>
-                    <td>Celular:</td>
                     <td><?php echo $user->cellphone; ?></td>
-                </tr>
-                <tr>
-                    <td>Dirección:</td>
                     <td><?php echo $user->address; ?></td>
                 </tr>
-                <tr>
-                    <td>Ciudad:</td>
+                
+                <tr>                    
+                    <td><?php echo $user->idUser; ?></td>
+                    <td><?php echo $user->class; ?></td>
+                    <td><?php echo $user->phone; ?></td>
                     <td><?php echo $user->city; ?></td>
                 </tr>
                 <?php } ?>
             </table>
         </div>
+    </div>
 
-        <div class="col-md-12">
-            <div>
-                <h1>
-                    <span class="glyphicon glyphicon-credit-card"></span>
-                    Información del Credito
-                </h1>
-            </div>
-        </div>
+    <hr />
             
-        <div class="row">
-        <div class="col-md-12">
-            <table class="table table-bordered">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">            
+            <select class="form-control">
                 <?php foreach ($buys as $buy) { ?>
+                <option value="1">Seleccione su credito</option>
+                <option value="1"><?php echo $buy->name; ?></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div>
+            <h1>
+                <span class="glyphicon glyphicon-credit-card"></span>
+                Información del Credito
+            </h1>
+        </div>
+    </div>
+            
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">                
                 <tr>
                     <td>Valor total del credito:</td>
                     <td>Valor cancelado hasta la fecha:</td>

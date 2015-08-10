@@ -91,6 +91,8 @@ class Security extends Plugin
                 'session::recoverpass' => array(),
                 'session::resetpassword' => array(),
                 'session::setnewpass' => array(),
+                'session::questionpass' => array(),
+                'session::changepass' => array(),
                 
             /* Private resources */
                 /* Dashboard */
@@ -153,7 +155,9 @@ class Security extends Plugin
             'session::logout',
             'session::recoverpass',
             'session::resetpassword',
-            'session::setnewpass'
+            'session::setnewpass',
+            'session::questionpass',
+            'session::changepass'
         );
 
         if ($role == 'GUEST') {
