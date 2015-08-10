@@ -845,3 +845,111 @@
 [Mon, 10 Aug 15 10:58:04 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
 [Mon, 10 Aug 15 10:58:04 -0500][DEBUG] El recurso no se encuentra registrado
 [Mon, 10 Aug 15 10:58:04 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:14:07 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:14:07 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:14:07 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:14:07 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:16:45 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:16:45 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:16:45 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:16:45 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:17:05 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:17:05 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:17:05 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:17:05 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:17:13 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:17:14 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:17:14 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:17:14 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:17:22 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:17:22 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:17:22 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:17:22 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:18:24 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:18:24 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:18:24 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:18:24 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:18:45 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:18:46 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:18:46 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:18:46 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:18:50 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:18:50 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:18:50 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:18:50 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:19:14 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:19:14 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:19:14 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:19:14 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:19:17 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:19:17 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:19:17 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:19:17 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:19:17 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:19:18 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:19:18 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:19:18 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:19:45 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:19:45 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:19:45 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:19:45 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:20:12 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:20:13 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:20:13 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:20:13 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:20:17 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Mon, 10 Aug 15 11:20:17 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:20:17 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:20:17 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:20:18 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:20:19 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:20:19 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:20:19 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:20:21 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Mon, 10 Aug 15 11:20:21 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:20:21 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:20:21 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:20:22 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:20:22 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:20:22 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:20:22 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:20:24 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Mon, 10 Aug 15 11:20:24 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:20:24 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:20:24 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:20:25 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:20:25 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:20:25 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:20:25 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:21:00 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:21:00 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:21:00 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:21:00 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:21:17 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:21:17 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:21:17 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:21:17 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:21:25 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:21:25 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:21:25 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:21:25 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:21:59 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Mon, 10 Aug 15 11:22:00 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:22:00 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:22:00 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:22:07 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Mon, 10 Aug 15 11:22:07 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:22:07 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:22:07 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:22:46 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:22:46 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:22:46 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:22:47 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:22:47 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:22:47 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:22:47 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:22:47 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:22:47 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Mon, 10 Aug 15 11:22:48 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Mon, 10 Aug 15 11:22:48 -0500][DEBUG] El recurso no se encuentra registrado
+[Mon, 10 Aug 15 11:22:48 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]

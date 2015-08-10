@@ -2,6 +2,7 @@
 {% block header %}
     {{ stylesheet_link('css/session-styles.css') }}
     {{ stylesheet_link('library/twitter-bootstrap-wizard-master/prettify.css') }}
+
     {{ javascript_include('library/twitter-bootstrap-wizard-master/jquery.bootstrap.wizard.js') }}
     {{ javascript_include('library/twitter-bootstrap-wizard-master/prettify.js') }}
     <script>

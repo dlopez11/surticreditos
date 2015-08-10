@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <hr />
+    <div class="space"></div>
             
     <div class="row">
         <div class="col-md-4"></div>
@@ -54,6 +54,8 @@
             </select>
         </div>
     </div>
+    
+    <div class="space"></div>
 
     <div class="col-md-12">
         <div>
@@ -62,7 +64,7 @@
                 Información del Credito
             </h1>
         </div>
-    </div>
+    </div>        
             
     <div class="row">
         <div class="col-md-12">
@@ -79,6 +81,16 @@
                 </tr>               
                 {% endfor %}
             </table>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12" align="right">
+            <p>
+                <em>
+                    La información suministrada puede no estar actualizada.
+                </em>
+            </p>
         </div>
     </div>
 {% endblock %}
