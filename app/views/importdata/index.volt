@@ -26,9 +26,9 @@
                 <div class="navbar-inner">
                     <div class="container">
                         <ul>
-                            <li><a href="#tab1" data-toggle="tab">First</a></li>
-                            <li><a href="#tab2" data-toggle="tab">Second</a></li>
-                            <li><a href="#tab3" data-toggle="tab">Third</a></li>
+                            <li><a href="#tab1" data-toggle="tab">Primer Archivo</a></li>
+                            <li><a href="#tab2" data-toggle="tab">Segundo Archivo</a></li>
+                            <li><a href="#tab3" data-toggle="tab">Tercer Archivo</a></li>
                          </ul>
                     </div>
                 </div>
@@ -50,9 +50,9 @@
                 </div>
                 <ul class="pager wizard">
                     <li class="previous first" style="display:none;"><a href="#">First</a></li>
-                    <li class="previous"><a href="#">Previous</a></li>
+                    <li class="previous"><a href="#">Anterior</a></li>
                     <li class="next last" style="display:none;"><a href="#">Last</a></li>
-                    <li class="next"><a href="#">Next</a></li>
+                    <li class="next"><a href="#">Siguiente</a></li>
                 </ul>
             </div>	
         </div>
