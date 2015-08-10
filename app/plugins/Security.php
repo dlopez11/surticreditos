@@ -97,8 +97,10 @@ class Security extends Plugin
             /* Private resources */
                 /* Dashboard */
                 'index::index' => array('dashboard' => array('read')),                
-                /* Report */                
+                /* User */                
                 'user::passedit' => array('user' => array('update')),
+                /* ImportData */                
+                'importdata::index' => array('importdata' => array('read')),
                 /* Report */                
                 'report::create' => array('report' => array('download')),
                 'report::createfull' => array('report' => array('download')),

@@ -24,7 +24,7 @@ a:5:{i:0;s:1311:"<!DOCTYPE html>
                 $('[data-toggle="tooltip"]').tooltip()
             })
         </script>
-        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:27;}}i:1;s:1628:"
+        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:27;}}i:1;s:2011:"
     </head>
     <body>
         <div class="container">
@@ -32,7 +32,12 @@ a:5:{i:0;s:1311:"<!DOCTYPE html>
                 <nav>
                     <ul class="nav nav-pills pull-right">
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('importdata/updatefile'); ?>" data-toggle="tooltip" data-placement="bottom" title="Actualizar datos">
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('index'); ?>" data-toggle="tooltip" data-placement="bottom" title="Inicio">
+                                <span class="glyphicon glyphicon-dashboard"></span>
+                            </a>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('importdata/index'); ?>" data-toggle="tooltip" data-placement="bottom" title="Actualizar datos">
                                 <span class="glyphicon glyphicon glyphicon-upload"></span>
                             </a>
                         </li>
@@ -52,7 +57,7 @@ a:5:{i:0;s:1311:"<!DOCTYPE html>
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:55;}}i:2;s:284:"
+                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:60;}}i:2;s:284:"
                 </div>    
             </div>
         </div>  

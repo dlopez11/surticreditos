@@ -34,7 +34,12 @@
                 <nav>
                     <ul class="nav nav-pills pull-right">
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('importdata/updatefile'); ?>" data-toggle="tooltip" data-placement="bottom" title="Actualizar datos">
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('index'); ?>" data-toggle="tooltip" data-placement="bottom" title="Inicio">
+                                <span class="glyphicon glyphicon-dashboard"></span>
+                            </a>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('importdata/index'); ?>" data-toggle="tooltip" data-placement="bottom" title="Actualizar datos">
                                 <span class="glyphicon glyphicon glyphicon-upload"></span>
                             </a>
                         </li>
