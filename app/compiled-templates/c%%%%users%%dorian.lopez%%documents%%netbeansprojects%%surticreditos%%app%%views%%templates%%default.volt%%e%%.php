@@ -24,7 +24,7 @@ a:5:{i:0;s:1311:"<!DOCTYPE html>
                 $('[data-toggle="tooltip"]').tooltip()
             })
         </script>
-        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:27;}}i:1;s:2011:"
+        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:27;}}i:1;s:2006:"
     </head>
     <body>
         <div class="container">
@@ -33,7 +33,7 @@ a:5:{i:0;s:1311:"<!DOCTYPE html>
                     <ul class="nav nav-pills pull-right">
                         <li role="presentation" class="dropdown">
                             <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('index'); ?>" data-toggle="tooltip" data-placement="bottom" title="Inicio">
-                                <span class="glyphicon glyphicon-dashboard"></span>
+                                <span class="glyphicon glyphicon-home"></span>
                             </a>
                         </li>
                         <li role="presentation" class="dropdown">

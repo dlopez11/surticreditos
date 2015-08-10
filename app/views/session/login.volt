@@ -33,7 +33,7 @@
                         <span class="glyphicon glyphicon glyphicon-lock"></span>
                     </a>
                     <button type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Iniciar sesión">
-                        <span class="glyphicon glyphicon glyphicon-ok"></span>
+                        <span class="glyphicon glyphicon-log-in"></span>
                     </button>
                   </div>
                 </div>

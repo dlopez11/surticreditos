@@ -7,7 +7,17 @@ class ImportdataController extends ControllerBase
         
     }
     
-    public function updatefileAction()
+    public function importfileoneAction()
+    {
+        
+    }
+    
+    public function importfiletwoAction()
+    {
+        
+    }
+    
+    public function importfilethreeAction()
     {
         
     }

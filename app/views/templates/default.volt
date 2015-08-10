@@ -33,7 +33,7 @@
                     <ul class="nav nav-pills pull-right">
                         <li role="presentation" class="dropdown">
                             <a role="menuitem" tabindex="-1" href="{{url('index')}}" data-toggle="tooltip" data-placement="bottom" title="Inicio">
-                                <span class="glyphicon glyphicon-dashboard"></span>
+                                <span class="glyphicon glyphicon-home"></span>
                             </a>
                         </li>
                         <li role="presentation" class="dropdown">
