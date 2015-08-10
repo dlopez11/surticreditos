@@ -24,27 +24,35 @@ a:5:{i:0;s:1311:"<!DOCTYPE html>
                 $('[data-toggle="tooltip"]').tooltip()
             })
         </script>
-        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:27;}}i:1;s:922:"
+        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:27;}}i:1;s:1628:"
     </head>
     <body>
         <div class="container">
             <div class="header clearfix">
                 <nav>
                     <ul class="nav nav-pills pull-right">
-                        <?php echo $this->partial('partials/menu_partial'); ?>
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('session/logout'); ?>" data-toggle="tooltip" data-placement="right" title="Cerrar sesión">
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('importdata/updatefile'); ?>" data-toggle="tooltip" data-placement="bottom" title="Actualizar datos">
+                                <span class="glyphicon glyphicon glyphicon-upload"></span>
+                            </a>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('user/passedit'); ?>" data-toggle="tooltip" data-placement="bottom" title="Cambiar contraseña">
+                                <span class="glyphicon glyphicon glyphicon-lock"></span>
+                            </a>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('session/logout'); ?>" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
                                 <span class="glyphicon glyphicon glyphicon-log-out"></span>
                             </a>
-                        </li>                        
-                        
+                        </li>
                     </ul>
                 </nav>
             </div>
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:57;}}i:2;s:284:"
+                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:55;}}i:2;s:284:"
                 </div>    
             </div>
         </div>  

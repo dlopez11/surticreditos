@@ -31,23 +31,21 @@
             <div class="header clearfix">
                 <nav>
                     <ul class="nav nav-pills pull-right">
-                        {{ partial("partials/menu_partial") }}
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="{{url('session/logout')}}" data-toggle="tooltip" data-placement="right" title="Cerrar sesión">
+                            <a role="menuitem" tabindex="-1" href="{{url('importdata/updatefile')}}" data-toggle="tooltip" data-placement="bottom" title="Actualizar datos">
+                                <span class="glyphicon glyphicon glyphicon-upload"></span>
+                            </a>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a role="menuitem" tabindex="-1" href="{{url('user/passedit')}}" data-toggle="tooltip" data-placement="bottom" title="Cambiar contraseña">
+                                <span class="glyphicon glyphicon glyphicon-lock"></span>
+                            </a>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a role="menuitem" tabindex="-1" href="{{url('session/logout')}}" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
                                 <span class="glyphicon glyphicon glyphicon-log-out"></span>
                             </a>
-                        </li>                        
-                        {#<li role="presentation" class="dropdown">
-                            <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                {{userData.name}}
-                                <span class="caret"></span>
-                            </a>
-                            <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
-                                <li role="presentation">
-                                    <a role="menuitem" tabindex="-1" href="{{url('session/logout')}}">Cerrar sesión</a>
-                                </li>
-                            </ul>
-                        </li>#}
+                        </li>
                     </ul>
                 </nav>
             </div>

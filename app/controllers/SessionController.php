@@ -277,6 +277,7 @@ class SessionController extends ControllerBase
                if($userinfo){
                     $userinfo->password = $this->security->hash($pass);
                     $userinfo->status = 1;
+                    $userinfo->updated = time();
 
                     if(!$userinfo->save()){
                         $this->flashSession->error('Ha ocurrido un error, contacte con el administrador');

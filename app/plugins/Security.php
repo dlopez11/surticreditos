@@ -38,7 +38,8 @@ class Security extends Plugin
             $resources = array(
                 'dashboard' => array('read'),
                 'importdata' => array('read','create','update'),
-                'report' => array('download'),
+                'user' => array('read','create','update'),
+                'report' => array('download'),                
             );
             
             foreach ($resources as $resource => $actions) {
@@ -51,10 +52,16 @@ class Security extends Plugin
             $acl->allow("admin", "importdata", "create");
             $acl->allow("admin", "importdata", "update");
             $acl->allow("admin", "report", "download");
+            $acl->allow("admin", "user", "read");
+            $acl->allow("admin", "user", "create");
+            $acl->allow("admin", "user", "update");
             
             // user
             $acl->allow("user", "dashboard", "read");
-            $acl->allow("admin", "report", "download");            
+            $acl->allow("user", "report", "download");    
+            $acl->allow("user", "user", "read");
+            $acl->allow("user", "user", "create");
+            $acl->allow("user", "user", "update");
 
             $this->cache->save('acl-cache', $acl);
         }
@@ -80,7 +87,6 @@ class Security extends Plugin
                 'error::link' => array(),
                 /* Session */
                 'session::login' => array(),
-                'session::validate' => array(),
                 'session::logout' => array(),
                 'session::recoverpass' => array(),
                 'session::resetpassword' => array(),
@@ -89,9 +95,9 @@ class Security extends Plugin
             /* Private resources */
                 /* Dashboard */
                 'index::index' => array('dashboard' => array('read')),                
-                /* Estadisticas */
-                'statistic::index' => array('statistic' => array('read')),
-                'statistic::getdata' => array('statistic' => array('read')),
+                /* Report */                
+                'user::passedit' => array('user' => array('update')),
+                /* Report */                
                 'report::create' => array('report' => array('download')),
                 'report::createfull' => array('report' => array('download')),
                 'report::download' => array('report' => array('download')),
@@ -144,7 +150,6 @@ class Security extends Plugin
             'error::forbidden',
             /* Session */
             'session::login',
-            'session::validate',
             'session::logout',
             'session::recoverpass',
             'session::resetpassword',
@@ -158,14 +163,8 @@ class Security extends Plugin
             }
         }
         else {
-            $account = Account::findFirstByIdAccount($user->idAccount);
-
             if ($resource == 'session::login') {
                 $this->response->redirect("index");
-                return false;
-            }
-            else if ($account->status == 0 && $resource !== 'error::unauthorized') {
-                $this->response->redirect("error/unauthorized");
                 return false;
             }
             else {
@@ -191,7 +190,7 @@ class Security extends Plugin
                 }
 
                 $mapForLoginLikeAnyUser = array('session::superuser');
-//
+
                 if (in_array($resource, $mapForLoginLikeAnyUser)) {
                     $this->session->set('userEfective', $user);
                 }

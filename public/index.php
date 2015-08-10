@@ -7,9 +7,9 @@ try {
     $loader->registerDirs(array(
         '../app/controllers/',
         '../app/models/',
-        '../app/forms/',
         '../app/views/',
         '../app/plugins/',
+        '../app/misc/',
     ));
         
     $loader->registerNamespaces(array(
@@ -156,11 +156,11 @@ try {
      */
      $di->set('dispatcher', function() use ($di) {
      	$eventsManager = $di->getShared('eventsManager');
-     	//$security = new \Security($di);
+     	$security = new \Security($di);
         /**
          * We listen for events in the dispatcher using the Security plugin
          */
-        //$eventsManager->attach('dispatch', $security);
+        $eventsManager->attach('dispatch', $security);
 
         $dispatcher = new \Phalcon\Mvc\Dispatcher();
         $dispatcher->setEventsManager($eventsManager);
