@@ -43,9 +43,9 @@
                 </div>
             </div>
 
-            <div id="bar" class="progress progress-striped active">
+            {#<div id="bar" class="progress progress-striped active">
                 <div class="bar"></div>
-            </div>
+            </div>#}
 
             <div class="tab-content">
                 <div class="tab-pane" id="tab1">                    
