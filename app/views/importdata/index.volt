@@ -59,20 +59,11 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                             <p>
-                                Aquí podrá actualizar la información de sus clientes desde un archivo de Excel en formato CSV.                
+                                Aquí podrá actualizar la información de sus clientes desde un archivo en formato CSV.                
                             </p>
                             <p>
-                                El archivo debe ser una tabla sin encabezado que debe tener los siguientes campos: Cédula,
-                                nombre, dirección, telefono o celular, email y ciudad. Por ejemplo:
-                            </p>
-                            <p>
-                                <img src="{{url('img/import/fileOne.png')}}">
-                            </p>
-                            <p>
-                                Al guardar el documento, seleccione tipo de archivo: <strong>(*.csv)</strong> que significa: delimitado por comas.
-                            </p>
-                            <p>
-                                El tamaño del archivo no debe superar 1 MB.
+                                Al momento de guardar el documento de texto plano se debera agregar la extensión 
+                                <strong>(*.csv)</strong> al nombre del archivo.
                             </p>
                             <br />
                         </div>
@@ -101,24 +92,12 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                             <p>
-                                Aquí podrá actualizar la información de las compras realizadas por sus clientes desde un archivo
-                                de Excel en formato CSV.                
+                                Aquí podrá actualizar la información de las compras realizadas por sus clientes 
+                                desde un archivo en formato CSV.                
                             </p>
                             <p>
-                                El archivo debe ser una tabla sin encabezado que debe tener los siguientes campos: Cédula del comprador,
-                                nombre del producto, ID de la compra, valor de la compra, fecha de compra y saldo a la fecha. Por ejemplo:
-                            </p>
-                            <p>
-                                <img src="{{url('img/import/fileTwo.png')}}">
-                            </p>
-                            <p>
-                                La fecha debe esta en el siguiente formato: mes/día/año.
-                            </p>
-                            <p>
-                                Al guardar el documento, seleccione tipo de archivo: <strong>(*.csv)</strong> que significa: delimitado por comas.
-                            </p>
-                            <p>
-                                El tamaño del archivo no debe superar 1 MB.
+                                Al momento de guardar el documento de texto plano se debera agregar la extensión 
+                                <strong>(*.csv)</strong> al nombre del archivo.
                             </p>
                             <br />
                         </div>
@@ -141,31 +120,19 @@
                 <div class="tab-pane" id="tab3">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <h1>Actualizar recibos desde archivo .csv</h1>
+                            <h1>Actualizar recibos de pago desde archivo .csv</h1>
                             <hr />            
                         </div>                            
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                             <p>
-                                Aquí podrá actualizar la información de los recibos de pago cancelados por sus clientes desde un archivo
-                                de Excel en formato CSV.                
+                                Aquí podrá actualizar la información de los recibos de pago desde un archivo en
+                                formato CSV.                
                             </p>
                             <p>
-                                El archivo debe ser una tabla sin encabezado que debe tener los siguientes campos: Número de recibo,
-                                ID de la compra, valor y fecha de pago. Por ejemplo:
-                            </p>
-                            <p>
-                                <img src="{{url('img/import/fileThree.png')}}">
-                            </p>
-                            <p>
-                                La fecha debe esta en el siguiente formato: mes/día/año.
-                            </p>
-                            <p>
-                                Al guardar el documento, seleccione tipo de archivo: <strong>(*.csv)</strong> que significa: delimitado por comas.
-                            </p>
-                            <p>
-                                El tamaño del archivo no debe superar 1 MB.
+                                Al momento de guardar el documento de texto plano se debera agregar la extensión 
+                                <strong>(*.csv)</strong> al nombre del archivo.
                             </p>
                             <br />
                         </div>
@@ -183,13 +150,7 @@
                             </form>
                         </div>
                     </div>
-                </div>
-                <ul class="pager wizard">
-                    <li class="previous first" style="display:none;"><a href="#">First</a></li>
-                    <li class="previous"><a href="#">Anterior</a></li>
-                    <li class="next last" style="display:none;"><a href="#">Last</a></li>
-                    <li class="next"><a href="#">Siguiente</a></li>
-                </ul>
+                </div>                
             </div>	
         </div>
     </div>

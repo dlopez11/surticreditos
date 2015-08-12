@@ -93,7 +93,7 @@
                 
                 <tr>                    
                     <td><?php echo $user->email; ?></td>
-                    <td><?php echo $user->phone; ?> - <?php echo $user->cellphone; ?></td>
+                    <td><?php echo $user->phone; ?></td>
                     <td><?php echo $user->city; ?></td>
                 </tr>
                 <?php } ?>

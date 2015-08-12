@@ -1,76 +1,43 @@
-[Wed, 12 Aug 15 08:31:57 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
-[Wed, 12 Aug 15 08:31:57 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
-[Wed, 12 Aug 15 08:31:57 -0500][DEBUG] El recurso no se encuentra registrado
-[Wed, 12 Aug 15 08:31:57 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
-[Wed, 12 Aug 15 08:31:59 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
-[Wed, 12 Aug 15 08:31:59 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
-[Wed, 12 Aug 15 08:31:59 -0500][DEBUG] El recurso no se encuentra registrado
-[Wed, 12 Aug 15 08:31:59 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
-[Wed, 12 Aug 15 08:32:12 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
-[Wed, 12 Aug 15 08:32:12 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
-[Wed, 12 Aug 15 08:32:12 -0500][DEBUG] El recurso no se encuentra registrado
-[Wed, 12 Aug 15 08:32:12 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::importfileone]
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Array
+[Wed, 12 Aug 15 10:36:04 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Wed, 12 Aug 15 10:36:04 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Wed, 12 Aug 15 10:36:04 -0500][DEBUG] El recurso no se encuentra registrado
+[Wed, 12 Aug 15 10:36:04 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Wed, 12 Aug 15 10:36:09 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::importfiletwo]
+[Wed, 12 Aug 15 10:36:09 -0500][DEBUG] Array
 (
-    [0] => 00059123287 PASTUSANO BERTHA LIDIA                  CALLE 12 # 4-43               000000031371445814                                                            
-    [1] => 00014942985 ARIAS LUIS ALFONSO                      CALLE 62 B # 1 A - 980 AP 1A32444640600000000000                                                            
-    [2] => 01143839704AARON FERNANDEZ ALVARO ELIAS             CR 11F 42 53                  000000003148874564                                                            
-    [3] => 01077174339ABADIA BADILLO LINA MARCELA              CR 36 No. 39 33               000000003147767453                                                            
-    [4] => 01077174339ABADIA SANCHEZ LINA MARCELA              CL 40 # 42 B 28 3ER PISO      000000003147767453                                                            
+    [0] => 0107717433900726430001220400201508060000405400
+    [1] => 0114385308101082250001110000201508060000962000
+    [2] => 0001666144701351020001282000201508060000214000
+    [3] => 0001234567801355640001688800201508060000848600
+    [4] => 0005912328701357400001912000201508060001313000
 )
 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] ----------------------------
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Cedula: 00059123287
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Nombre: PASTUSANO BERTHA LIDIA
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Clase: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Dirección: CALLE 12 # 4-43
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Telefono: 0000000
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Celular: 1371445814
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Email: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Ciudad: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] (00059123287,2,1439386341,1439386341,0,'00059123287','PASTUSANO BERTHA LIDIA','','CALLE 12 # 4-43',0000000,1371445814,'','')
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] ----------------------------
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Cedula: 00014942985
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Nombre: ARIAS LUIS ALFONSO
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Clase: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Dirección: CALLE 62 B # 1 A - 980 AP 1A32
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Telefono: 4446406
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Celular: 0000000000
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Email: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Ciudad: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] (00059123287,2,1439386341,1439386341,0,'00059123287','PASTUSANO BERTHA LIDIA','','CALLE 12 # 4-43',0000000,1371445814,'',''), (00014942985,2,1439386341,1439386341,0,'00014942985','ARIAS LUIS ALFONSO','','CALLE 62 B # 1 A - 980 AP 1A32',4446406,0000000000,'','')
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] ----------------------------
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Cedula: 01143839704
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Nombre: AARON FERNANDEZ ALVARO ELIAS
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Clase: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Dirección: CR 11F 42 53
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Telefono: 0000000
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Celular: 3148874564
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Email: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Ciudad: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] (00059123287,2,1439386341,1439386341,0,'00059123287','PASTUSANO BERTHA LIDIA','','CALLE 12 # 4-43',0000000,1371445814,'',''), (00014942985,2,1439386341,1439386341,0,'00014942985','ARIAS LUIS ALFONSO','','CALLE 62 B # 1 A - 980 AP 1A32',4446406,0000000000,'',''), (01143839704,2,1439386341,1439386341,0,'01143839704','AARON FERNANDEZ ALVARO ELIAS','','CR 11F 42 53',0000000,3148874564,'','')
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] ----------------------------
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Cedula: 01077174339
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Nombre: ABADIA BADILLO LINA MARCELA
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Clase: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Dirección: CR 36 No. 39 33
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Telefono: 0000000
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Celular: 3147767453
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Email: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Ciudad: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] (00059123287,2,1439386341,1439386341,0,'00059123287','PASTUSANO BERTHA LIDIA','','CALLE 12 # 4-43',0000000,1371445814,'',''), (00014942985,2,1439386341,1439386341,0,'00014942985','ARIAS LUIS ALFONSO','','CALLE 62 B # 1 A - 980 AP 1A32',4446406,0000000000,'',''), (01143839704,2,1439386341,1439386341,0,'01143839704','AARON FERNANDEZ ALVARO ELIAS','','CR 11F 42 53',0000000,3148874564,'',''), (01077174339,2,1439386341,1439386341,0,'01077174339','ABADIA BADILLO LINA MARCELA','','CR 36 No. 39 33',0000000,3147767453,'','')
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] ----------------------------
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Cedula: 01077174339
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Nombre: ABADIA SANCHEZ LINA MARCELA
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Clase: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Dirección: CL 40 # 42 B 28 3ER PISO
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Telefono: 0000000
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Celular: 3147767453
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Email: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] Ciudad: 
-[Wed, 12 Aug 15 08:32:21 -0500][DEBUG] (00059123287,2,1439386341,1439386341,0,'00059123287','PASTUSANO BERTHA LIDIA','','CALLE 12 # 4-43',0000000,1371445814,'',''), (00014942985,2,1439386341,1439386341,0,'00014942985','ARIAS LUIS ALFONSO','','CALLE 62 B # 1 A - 980 AP 1A32',4446406,0000000000,'',''), (01143839704,2,1439386341,1439386341,0,'01143839704','AARON FERNANDEZ ALVARO ELIAS','','CR 11F 42 53',0000000,3148874564,'',''), (01077174339,2,1439386341,1439386341,0,'01077174339','ABADIA BADILLO LINA MARCELA','','CR 36 No. 39 33',0000000,3147767453,'',''), (01077174339,2,1439386341,1439386341,0,'01077174339','ABADIA SANCHEZ LINA MARCELA','','CL 40 # 42 B 28 3ER PISO',0000000,3147767453,'','')
-[Wed, 12 Aug 15 09:04:57 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
-[Wed, 12 Aug 15 09:04:58 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
-[Wed, 12 Aug 15 09:04:58 -0500][DEBUG] El recurso no se encuentra registrado
-[Wed, 12 Aug 15 09:04:58 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Wed, 12 Aug 15 10:36:09 -0500][DEBUG] (72643,1077174339,'2015-08-06',1220400,405400), (108225,1143853081,'2015-08-06',1110000,962000), (135102,16661447,'2015-08-06',1282000,214000), (135564,12345678,'2015-08-06',1688800,848600), (135740,59123287,'2015-08-06',1912000,1313000)
+[Wed, 12 Aug 15 10:36:41 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Wed, 12 Aug 15 10:36:42 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Wed, 12 Aug 15 10:36:42 -0500][DEBUG] El recurso no se encuentra registrado
+[Wed, 12 Aug 15 10:36:42 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Wed, 12 Aug 15 10:39:13 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Wed, 12 Aug 15 10:39:14 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Wed, 12 Aug 15 10:39:14 -0500][DEBUG] El recurso no se encuentra registrado
+[Wed, 12 Aug 15 10:39:14 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Wed, 12 Aug 15 10:40:15 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Wed, 12 Aug 15 10:40:15 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Wed, 12 Aug 15 10:40:15 -0500][DEBUG] El recurso no se encuentra registrado
+[Wed, 12 Aug 15 10:40:15 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Wed, 12 Aug 15 10:40:17 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Wed, 12 Aug 15 10:40:17 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Wed, 12 Aug 15 10:40:17 -0500][DEBUG] El recurso no se encuentra registrado
+[Wed, 12 Aug 15 10:40:17 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Wed, 12 Aug 15 10:40:57 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Wed, 12 Aug 15 10:40:58 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Wed, 12 Aug 15 10:40:58 -0500][DEBUG] El recurso no se encuentra registrado
+[Wed, 12 Aug 15 10:40:58 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Wed, 12 Aug 15 10:42:10 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Wed, 12 Aug 15 10:42:10 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Wed, 12 Aug 15 10:42:10 -0500][DEBUG] El recurso no se encuentra registrado
+[Wed, 12 Aug 15 10:42:10 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Wed, 12 Aug 15 10:42:23 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Wed, 12 Aug 15 10:42:23 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Wed, 12 Aug 15 10:42:23 -0500][DEBUG] El recurso no se encuentra registrado
+[Wed, 12 Aug 15 10:42:23 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]

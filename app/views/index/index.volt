@@ -36,7 +36,7 @@
                 
                 <tr>                    
                     <td>{{user.email}}</td>
-                    <td>{{user.phone}} - {{user.cellphone}}</td>
+                    <td>{{user.phone}}</td>
                     <td>{{user.city}}</td>
                 </tr>
                 {% endfor %}
