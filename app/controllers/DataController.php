@@ -6,7 +6,7 @@ class DataController extends ControllerBase
     {
         $user = $this->user->idUser;
         
-        $buy = Buy::find(array(
+        $buy = Buy::findFirst(array(
             'conditions' => 'idBuy = ?1 AND idUser = ?2',
             'bind' => array(1 => $id,
                             2 => $user)
@@ -17,11 +17,12 @@ class DataController extends ControllerBase
         }
         else{
             $datos = array(
-                'valor' => $buy->value,
-                'saldo' => $buy->balance
+                'code' => $buy->idBuy,
+                'value' => '$' . number_format($buy->value),
+                'dif' => '$' . number_format($buy->value - $buy->debt),
+                'debt' => '$' . number_format($buy->debt)
             );
-            
-            return $datos;
+            return $this->set_json_response($datos, 200);
         }
     }
 }
