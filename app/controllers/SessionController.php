@@ -232,7 +232,7 @@ class SessionController extends ControllerBase
             $city = $this->request->getPost('city');
             
             $infouser = User::findFirst(array(
-                'conditions' => 'cellphone = ?1 AND city = ?2',
+                'conditions' => 'phone = ?1 AND city = ?2',
                 'bind' => array(1 => $phone,
                                 2 => $city)
             ));
