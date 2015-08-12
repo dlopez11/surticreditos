@@ -26,6 +26,24 @@
         </script>
         
     <?php echo $this->tag->stylesheetLink('css/session-styles.css'); ?>
+    
+    <?php echo $this->tag->javascriptInclude('library/select2/js/select2.min.js'); ?>
+    <?php echo $this->tag->stylesheetLink('library/select2/css/select2.min.css'); ?>
+
+    <script type="text/javascript">
+        $(function () {
+            
+          $(".select2").select2();
+          
+          $(".select2").on("select2:select", function (e) { 
+              var id = $(".select2").val();
+              
+              $.getJSON("<?php echo $this->url->get('data/get'); ?>/" + id, function( data ) {
+                  
+              });
+          });
+        });
+    </script>
 
     </head>
     <body>
@@ -106,42 +124,18 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <select class="form-control">
+            <select class="form-control select2">
+                <option value="0">Seleccione su credito</option>
                 <?php foreach ($buys as $buy) { ?>
-                <option value="1">Seleccione su credito</option>
-                <option value="1"><?php echo $buy->name; ?></option>
+                    <option value="<?php echo $buy->idBuy; ?>"><?php echo $buy->idBuy; ?></option>
+                <?php } ?>
             </select>
         </div>
     </div>
     
     <div class="space"></div>
 
-    <div class="col-md-12">
-        <div>
-            <h1>
-                <span class="glyphicon glyphicon-credit-card"></span>
-                Información del Credito
-            </h1>
-        </div>
-    </div>        
-            
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-bordered">                
-                <tr>
-                    <td>Valor total del credito:</td>
-                    <td>Valor cancelado hasta la fecha:</td>
-                    <td>Valor por cancelar:</td>                    
-                </tr>
-                <tr>
-                    <td><?php echo $buy->value; ?></td>
-                    <td><?php echo $buy->balance; ?></td>
-                    <td><?php echo $buy->value - $buy->balance; ?></td>
-                </tr>               
-                <?php } ?>
-            </table>
-        </div>
-    </div>
+    
     
     <div class="row">
         <div class="col-md-12" align="right">

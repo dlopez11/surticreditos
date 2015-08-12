@@ -61,8 +61,6 @@ class ImportdataController extends ControllerBase
                                         
                 }
                 
-                $this->logger->log(print_r($text, true));
-                
                 $sql = "INSERT IGNORE INTO user (idUser, idRole, created, updated, status, password, name, class, address, phone, email, city) VALUES {$text}";
                 $result = $this->db->execute($sql); 
 
@@ -132,9 +130,7 @@ class ImportdataController extends ControllerBase
                     $txt[] = "($cuenta,$cedula,'$fecha',$valor,$saldo)";
                     $text = implode(", ", $txt);
                                         
-                }
-                 
-                $this->logger->log(print_r($text, true));                                
+                }                             
                 
                 $sql = "INSERT IGNORE INTO buy (idBuy, idUser, date, value, balance) VALUES {$text}";
                 $result = $this->db->execute($sql);
