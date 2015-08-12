@@ -47,8 +47,6 @@ class ImportdataController extends ControllerBase
                     $e = substr($value, 102, 59);                    
                     $ci = substr($value, 163, 5);
                     
-                    $this->logger->log('----------------------------');
-                    
                     $id = trim($c);
                     $name = trim($n);
                     $class = trim($cl);
@@ -58,17 +56,8 @@ class ImportdataController extends ControllerBase
                     $email = trim($e);
                     $city = trim($ci);
                     
-                    $txt[] = "($id,'$name,'$class','$address',$phone,$celphone,'$email','$city')";
+                    $txt[] = "($id,2," . time() . "," . time() . ",0,'$id','$name','$class','$address',$phone,$celphone,'$email','$city')";
                     $text = implode(", ", $txt);
-                    
-                    $this->logger->log(print_r('Cedula: ' . $id, true));
-                    $this->logger->log(print_r('Nombre: ' . $name, true));
-                    $this->logger->log(print_r('Clase: ' . $class, true));
-                    $this->logger->log(print_r('Dirección: ' . $address, true));
-                    $this->logger->log(print_r('Telefono: ' . $phone, true));
-                    $this->logger->log(print_r('Celular: ' . $celphone, true));
-                    $this->logger->log(print_r('Email: ' . $email, true));
-                    $this->logger->log(print_r('Ciudad: ' . $city, true));
                     
                     $this->logger->log(print_r($text, true));
                 }

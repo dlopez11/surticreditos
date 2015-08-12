@@ -17,7 +17,7 @@
                   <h1>Para generar su nueva contraseña por favor responda las siguientes preguntas:</h1>
                   <br>
                   <div class="col-sm-12">                      
-                      <input type="text" class="form-control" name="cellphone" placeholder="¿Cual es su número de celular?">
+                      <input type="text" class="form-control" name="phone" placeholder="¿Cual es su número de telefono?">
                   </div>
                 </div>
 

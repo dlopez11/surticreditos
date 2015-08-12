@@ -228,12 +228,12 @@ class SessionController extends ControllerBase
     public function questionpassAction()
     {
         if($this->request->isPost()){
-            $cellphone = $this->request->getPost('cellphone');
+            $phone = $this->request->getPost('phone');
             $city = $this->request->getPost('city');
             
             $infouser = User::findFirst(array(
                 'conditions' => 'cellphone = ?1 AND city = ?2',
-                'bind' => array(1 => $cellphone,
+                'bind' => array(1 => $phone,
                                 2 => $city)
             ));
             
