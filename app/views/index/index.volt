@@ -24,17 +24,20 @@
                 {% for user in users %}
                 <tr>
                     <td>
-                        <strong>{{user.name}}</strong>
-                    </td>
-                    <td>{{user.email}}</td>
-                    <td>{{user.phone}}</td>
-                    <td>{{user.city}}</td>                    
+                        <strong>
+                            {{user.name}}
+                            <br />
+                            CC: {{user.idUser}}
+                        </strong>                            
+                    </td>                    
+                    <td>{{user.class}}</td>  
+                    <td>{{user.address}}</td>                                    
                 </tr>
                 
                 <tr>                    
-                    <td>{{user.idUser}}</td>
-                    <td>{{user.class}}</td>                    
-                    <td>{{user.address}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}} - {{user.cellphone}}</td>
+                    <td>{{user.city}}</td>
                 </tr>
                 {% endfor %}
             </table>
@@ -45,7 +48,7 @@
             
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4">            
+        <div class="col-md-4">
             <select class="form-control">
                 {% for buy in buys %}
                 <option value="1">Seleccione su credito</option>

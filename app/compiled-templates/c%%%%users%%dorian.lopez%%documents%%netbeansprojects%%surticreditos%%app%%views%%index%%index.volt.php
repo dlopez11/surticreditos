@@ -81,17 +81,20 @@
                 <?php foreach ($users as $user) { ?>
                 <tr>
                     <td>
-                        <strong><?php echo $user->name; ?></strong>
-                    </td>
-                    <td><?php echo $user->email; ?></td>
-                    <td><?php echo $user->phone; ?></td>
-                    <td><?php echo $user->city; ?></td>                    
+                        <strong>
+                            <?php echo $user->name; ?>
+                            <br />
+                            CC: <?php echo $user->idUser; ?>
+                        </strong>                            
+                    </td>                    
+                    <td><?php echo $user->class; ?></td>  
+                    <td><?php echo $user->address; ?></td>                                    
                 </tr>
                 
                 <tr>                    
-                    <td><?php echo $user->idUser; ?></td>
-                    <td><?php echo $user->class; ?></td>                    
-                    <td><?php echo $user->address; ?></td>
+                    <td><?php echo $user->email; ?></td>
+                    <td><?php echo $user->phone; ?> - <?php echo $user->cellphone; ?></td>
+                    <td><?php echo $user->city; ?></td>
                 </tr>
                 <?php } ?>
             </table>
@@ -102,7 +105,7 @@
             
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4">            
+        <div class="col-md-4">
             <select class="form-control">
                 <?php foreach ($buys as $buy) { ?>
                 <option value="1">Seleccione su credito</option>
