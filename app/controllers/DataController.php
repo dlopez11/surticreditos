@@ -12,8 +12,16 @@ class DataController extends ControllerBase
                             2 => $user)
         ));
         
-        if($buy){
+        if(!$buy){
+            return $this->set_json_response(array('El credito no pertenece al usuario que esta en sesión'), 404);
+        }
+        else{
+            $datos = array(
+                'valor' => $buy->value,
+                'saldo' => $buy->balance
+            );
             
+            return $datos;
         }
     }
 }

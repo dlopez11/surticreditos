@@ -39,7 +39,7 @@
               var id = $(".select2").val();
               
               $.getJSON("<?php echo $this->url->get('data/get'); ?>/" + id, function( data ) {
-                  
+                  console.log(data)
               });
           });
         });
