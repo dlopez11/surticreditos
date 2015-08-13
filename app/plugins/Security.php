@@ -38,8 +38,7 @@ class Security extends Plugin
             $resources = array(
                 'dashboard' => array('read'),
                 'importdata' => array('read','create','update'),
-                'user' => array('read','create','update'),
-                'report' => array('download'),                
+                'user' => array('read','create','update'),              
                 'data' => array('read'),                
             );
             
@@ -52,15 +51,13 @@ class Security extends Plugin
             $acl->allow("admin", "importdata", "read");           
             $acl->allow("admin", "importdata", "create");
             $acl->allow("admin", "importdata", "update");
-            $acl->allow("admin", "report", "download");
             $acl->allow("admin", "user", "read");
             $acl->allow("admin", "user", "create");
             $acl->allow("admin", "user", "update");
             $acl->allow("admin", "data", "read");
             
             // user
-            $acl->allow("user", "dashboard", "read");
-            $acl->allow("user", "report", "download");    
+            $acl->allow("user", "dashboard", "read");   
             $acl->allow("user", "user", "read");
             $acl->allow("user", "user", "create");
             $acl->allow("user", "user", "update");
@@ -104,15 +101,13 @@ class Security extends Plugin
                 'user::passedit' => array('user' => array('update')),
                 /* Data */                
                 'data::get' => array('data' => array('read')),
+                'data::create' => array('data' => array('read','create','download')),
+                'data::download' => array('data' => array('download')),
                 /* ImportData */                
                 'importdata::index' => array('importdata' => array('read')),
                 'importdata::importfileone' => array('importdata' => array('read','create','update')),
                 'importdata::importfiletwo' => array('importdata' => array('read','create','update')),
                 'importdata::importfilethree' => array('importdata' => array('read','create','update')),
-                /* Report */                
-                'report::create' => array('report' => array('download')),
-                'report::createfull' => array('report' => array('download')),
-                'report::download' => array('report' => array('download')),
             );
             
             $this->cache->save('controllermap-cache', $map);

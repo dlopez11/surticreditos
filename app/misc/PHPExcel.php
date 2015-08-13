@@ -30,12 +30,6 @@ class PHPExcel
         $this->user = $user;
     }
     
-    public function setAccount(\Account $account) 
-    {
-        $this->account = $account;
-    }
-    
-    
     public function setData($data)
     {
         $this->data = $data;
@@ -50,7 +44,7 @@ class PHPExcel
         $this->createExcelObject();
 
         $preheader = new \stdClass();
-        $preheader->name = "Sigma Track";
+        $preheader->name = "Surticreditos";
         $preheader->desc = "Sigma Track Engine 2015";
         $preheader->logo = $this->logo;
         $preheader->x = 8;
@@ -61,52 +55,29 @@ class PHPExcel
         $this->addLogo($preheader);
         
         $firm = array(
-            array('key' => 'B2', 'name' => "Fecha: " . date('d/M/Y H:s')),
-            array('key' => 'B4', 'name' => "Cuenta: ". $this->account->name),
+            array('key' => 'B1', 'name' => "Número de compra: " . date('d/M/Y H:s')),
+            array('key' => 'B2', 'name' => "Valor total de la compra: ". $this->data[0]['value']),
+            array('key' => 'B3', 'name' => "Valor cancelado a la fecha: ". $this->data[0]['dif']),
+            array('key' => 'B4', 'name' => "Saldo pendiente a la fecha: ". $this->data[0]['debt']),
         );
         
         $this->createExcelHeader($firm);
         
-        if ($this->user != null) {
-            $firm = array(
-                array('key' => 'B3', 'name' => "Elaborado por: {$this->user->name} {$this->user->lastName}"),
-            );
-
-            $this->createExcelHeader($firm);
-        }
         
         $header = array(
-            array('key' => 'A6', 'name' => "FECHA DE INICIO"),
-            array('key' => 'B6', 'name' => "FECHA DE FIN"),
-            array('key' => 'C6', 'name' => "TIEMPO DE VISITA"),
-            array('key' => 'D6', 'name' => "NOMBRE DE USUARIO"),
-            array('key' => 'E6', 'name' => "TIPO DE VISITA"),
-            array('key' => 'F6', 'name' => "CLIENTE"),
-            array('key' => 'G6', 'name' => "ESTADO DE BATERÍA"),
-            array('key' => 'H6', 'name' => "ÚLTIMA VISITA"),
-            array('key' => 'I6', 'name' => "UBICACIÓN INICIAL"),
-            array('key' => 'J6', 'name' => "UBICACIÓN FINAL"),
-            array('key' => 'K6', 'name' => "MAPA"),
-            array('key' => 'L6', 'name' => "OBSERVACIONES")
+            array('key' => 'A6', 'name' => "NÚMERO DE RECIBO"),
+            array('key' => 'B6', 'name' => "VALOR"),
+            array('key' => 'C6', 'name' => "FECHA"),
         );
 
         $this->createExcelHeader($header);
 	
         $row = 7;
-        foreach ($this->data as $data) {
+        foreach ($this->data[1] as $data) {
             $array = array(
-                $data['start'],
-                $data['end'],
-                $data['elapsed'],
-                "{$data['name']}",
-                "{$data['visit']}",
-                "{$data['client']}",
-                "{$data['battery']}%",
-                $data['lastVisit'],
-                $data['location'],
-                $data['finalLocation'],
-                "http://maps.google.com/maps?q={$data['latitude']},{$data['longitude']}&ll={$data['latitude']},-{$data['longitude']}&z=17",
-                $data['observation'],
+                $data['id'],
+                $data['value'],
+                $data['date'],
             );
 
             $this->phpExcelObj->getActiveSheet()->fromArray($array, NULL, "A{$row}");
@@ -120,24 +91,11 @@ class PHPExcel
             array('key' => 'A', 'size' => 30),
             array('key' => 'B', 'size' => 30),
             array('key' => 'C', 'size' => 30),
-            array('key' => 'D', 'size' => 40),
-            array('key' => 'E', 'size' => 40),
-            array('key' => 'F', 'size' => 40),
-            array('key' => 'G', 'size' => 20),
-            array('key' => 'H', 'size' => 40),
-            array('key' => 'I', 'size' => 90),
-            array('key' => 'J', 'size' => 90),
-            array('key' => 'K', 'size' => 90),
-            array('key' => 'L', 'size' => 90),
         );
 
         $this->setColumnDimesion($array);
-        $this->createExcelFilter("D6:D{$row}");
-        $this->createExcelFilter("E6:E{$row}");
-        $this->createExcelFilter("F6:F{$row}");
-        $this->createExcelFilter("L6:L{$row}");
-        $this->formatPercentageNumbers("G7:G{$row}");
         
+        $this->formatUSDNumbers($fields);
         $this->createExcelFile();
     }
     
@@ -147,10 +105,10 @@ class PHPExcel
         // Set document properties
         $this->phpExcelObj->getProperties()->setCreator('Sigma Móvil Engine')
                 ->setLastModifiedBy('Sigma Móvil Engine')
-                ->setTitle("Reporte de visitas")
-                ->setSubject('Reporte de visitas')
-                ->setDescription("Reporte detallado de visitas registradas de usuarios")
-                ->setKeywords('visits sales report excel')
+                ->setTitle("Historial de pagos")
+                ->setSubject('Historial de pagos')
+                ->setDescription("Historial de pagos realizados por el cliente")
+                ->setKeywords('payment history report excel')
                 ->setCategory('Report');
     }
 
@@ -223,18 +181,18 @@ class PHPExcel
     }
 
     private function saveReport($objWriter) {
-        $folder = "{$this->path->path}{$this->path->tmpfolder}{$this->account->idAccount}/";
+        $folder = "{$this->path->path}{$this->path->tmpfolder}{$this->user->idUser}/";
 
         if (!\file_exists($folder)) {
             \mkdir($folder, 0777, true);
         }
 
-        $name = "{$this->account->idAccount}-" . date('d-M-Y-His', time()) . "-" . uniqid() . ".xlsx";
+        $name = "{$this->user->idUser}-" . date('d-M-Y-His', time()) . "-" . uniqid() . ".xlsx";
         $folder .= $name;
         $objWriter->save($folder);
 
         $this->report = new \Tmpreport();
-        $this->report->idAccount = $this->account->idAccount;
+        $this->report->idUser = $this->user->idUser;
         $this->report->name = $name;
         $this->report->created = time();
 

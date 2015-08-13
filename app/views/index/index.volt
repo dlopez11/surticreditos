@@ -60,14 +60,21 @@
     <div class="space"></div>
             
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <select class="form-control select2">
-                <option value="0">Seleccione su credito</option>
-                {% for buy in buys %}
-                    <option value="{{buy.idBuy}}">{{buy.idBuy}}</option>
-                {% endfor %}
-            </select>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="col-md-10">
+                <select class="form-control select2">
+                    <option value="0">Seleccione su credito</option>
+                    {% for buy in buys %}
+                        <option value="{{buy.idBuy}}">{{buy.idBuy}}</option>
+                    {% endfor %}
+                </select>
+            </div>                                       
+            <div class="col-md-2">
+                <a id="up" class="btn btn-info btn-sm" role="button" data-toggle="tooltip" data-placement="right" title="Descargar historial de pagos">
+                    <span class="glyphicon glyphicon glyphicon-download-alt"></span>
+                </a> 
+            </div>
         </div>
     </div>
     
@@ -76,16 +83,6 @@
     <div class="row" id="container">
         <div class="col-md-12">
             
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-12" align="right">
-            <p>
-                <em>
-                    La información suministrada puede no estar actualizada.
-                </em>
-            </p>
         </div>
     </div>
 {% endblock %}

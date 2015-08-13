@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="{{url('importdata/index')}}" data-toggle="tooltip" data-placement="bottom" title="Actualizar datos">
+                            <a role="menuitem" tabindex="-1" href="{{url('importdata/index')}}" data-toggle="tooltip" data-placement="bottom" title="Importar archivos">
                                 <span class="glyphicon glyphicon glyphicon-upload"></span>
                             </a>
                         </li>

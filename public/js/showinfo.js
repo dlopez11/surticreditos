@@ -57,7 +57,11 @@ $(function () {
                                     ' + td + '\n\
                                 </table>\n\
                             </div>\n\
-                        </div>');
+                        </div>\n\
+                        <div class="row>\n\
+                            <div class="col-md-12" align="right">\n\
+                            <p><em>La información suministrada puede no estar actualizada.</em></p></div>\n\
+                        </div>"');
 
             $('#container').append(tab);
         });
