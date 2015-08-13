@@ -19,7 +19,7 @@ class DataController extends ControllerBase
             $rec = array();
             
             $payment = Payment::find(array(
-                'conditions' => 'idBuy = ?1',
+                'conditions' => 'idBuy = ?1 ORDER BY date',
                 'bind' => array(1 => $id)
             ));
             
