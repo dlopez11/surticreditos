@@ -10,6 +10,24 @@
         $(function () {            
             $(".select2").select2();                    
         });
+        
+        function download () {
+            var id = $(".select2").val();
+
+            $.ajax({
+                url: "{{url('data/create')}}",
+                type: "POST",
+                data: {
+                    id: id
+                },
+                error: function(error){
+                    console.log(error);
+                },
+                success: function(data){
+                    window.location = '{{url('data/download')}}/' + data[0];
+                }
+            });       
+        }
     </script>
     
     {{ javascript_include('js/showinfo.js') }}
@@ -71,7 +89,7 @@
                 </select>
             </div>                                       
             <div class="col-md-2">
-                <a id="up" class="btn btn-info btn-sm" role="button" data-toggle="tooltip" data-placement="right" title="Descargar historial de pagos">
+                <a id="download" onClick="download();" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="right" title="Descargar historial de pagos">
                     <span class="glyphicon glyphicon glyphicon-download-alt"></span>
                 </a> 
             </div>

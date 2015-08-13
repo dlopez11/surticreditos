@@ -128,7 +128,7 @@
                 </select>
             </div>                                       
             <div class="col-md-2">
-                <a id="up" class="btn btn-info btn-sm" role="button" data-toggle="tooltip" data-placement="right" title="Descargar historial de pagos">
+                <a id="download" onClick="download();" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="right" title="Descargar historial de pagos">
                     <span class="glyphicon glyphicon glyphicon-download-alt"></span>
                 </a> 
             </div>
