@@ -29,9 +29,7 @@
 
                 <div class="form-group" align="right">
                   <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Generar contraseña">
-                        <span class="glyphicon glyphicon glyphicon-ok"></span>
-                    </button>
+                    <button type="submit" class="btn btn-success">Generar contraseña</button>
                   </div>
                 </div>
             </form>

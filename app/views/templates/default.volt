@@ -18,10 +18,6 @@
         
         <script type="text/javascript">
             var myBaseURL = '{{url('')}}';
-            
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
-            })
         </script>
         {% block header %}<!-- custom header code -->{% endblock %}
     </head>
@@ -31,24 +27,16 @@
                 <nav>
                     <ul class="nav nav-pills pull-right">
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="{{url('index')}}" data-toggle="tooltip" data-placement="bottom" title="Inicio">
-                                <span class="glyphicon glyphicon-home"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="{{url('index')}}">Inicio</a>
                         </li>
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="{{url('importdata/index')}}" data-toggle="tooltip" data-placement="bottom" title="Importar archivos">
-                                <span class="glyphicon glyphicon glyphicon-upload"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="{{url('importdata/index')}}">Importar archivos</a>
                         </li>
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="{{url('user/passedit')}}" data-toggle="tooltip" data-placement="bottom" title="Cambiar contraseña">
-                                <span class="glyphicon glyphicon glyphicon-lock"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="{{url('user/passedit')}}">Cambiar contraseña</a>
                         </li>
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="{{url('session/logout')}}" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
-                                <span class="glyphicon glyphicon glyphicon-log-out"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="{{url('session/logout')}}">Cerrar sesión</a>
                         </li>
                     </ul>
                 </nav>

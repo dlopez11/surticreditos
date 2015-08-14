@@ -1,4 +1,4 @@
-a:5:{i:0;s:1189:"<!DOCTYPE html>
+a:5:{i:0;s:1074:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -18,12 +18,8 @@ a:5:{i:0;s:1189:"<!DOCTYPE html>
         
         <script type="text/javascript">
             var myBaseURL = '<?php echo $this->url->get(''); ?>';
-            
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
-            })
         </script>
-        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:26;}}i:1;s:2224:"
+        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:22;}}i:1;s:1529:"
     </head>
     <body>
         <div class="container">
@@ -31,24 +27,16 @@ a:5:{i:0;s:1189:"<!DOCTYPE html>
                 <nav>
                     <ul class="nav nav-pills pull-right">
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('index'); ?>" data-toggle="tooltip" data-placement="bottom" title="Inicio">
-                                <span class="glyphicon glyphicon-home"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('index'); ?>">Inicio</a>
                         </li>
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('importdata/index'); ?>" data-toggle="tooltip" data-placement="bottom" title="Importar archivos">
-                                <span class="glyphicon glyphicon glyphicon-upload"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('importdata/index'); ?>">Importar archivos</a>
                         </li>
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('user/passedit'); ?>" data-toggle="tooltip" data-placement="bottom" title="Cambiar contraseña">
-                                <span class="glyphicon glyphicon glyphicon-lock"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('user/passedit'); ?>">Cambiar contraseña</a>
                         </li>
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('session/logout'); ?>" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
-                                <span class="glyphicon glyphicon glyphicon-log-out"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('session/logout'); ?>">Cerrar sesión</a>
                         </li>
                     </ul>
                 </nav>
@@ -60,7 +48,7 @@ a:5:{i:0;s:1189:"<!DOCTYPE html>
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:63;}}i:2;s:284:"
+                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:51;}}i:2;s:284:"
                 </div>    
             </div>
         </div>  

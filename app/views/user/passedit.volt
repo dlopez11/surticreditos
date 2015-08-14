@@ -1,4 +1,4 @@
-{% extends "templates/clean.volt" %}
+{% extends "templates/default.volt" %}
 {% block header %}
     {{ stylesheet_link('css/session-styles.css') }}
     <script>

@@ -53,12 +53,8 @@
 
                 <div class="form-group" align="right">
                   <div class="col-sm-offset-2 col-sm-10">
-                    <a href="<?php echo $this->url->get('session/recoverpass'); ?>" class="btn btn-primary"role="button" data-toggle="tooltip" data-placement="top" title="Recuperar contraseña">
-                        <span class="glyphicon glyphicon glyphicon-lock"></span>
-                    </a>
-                    <button type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Iniciar sesión">
-                        <span class="glyphicon glyphicon-log-in"></span>
-                    </button>
+                    <a href="<?php echo $this->url->get('session/recoverpass'); ?>" class="btn btn-primary">Recuperar contraseña</a>
+                    <button type="submit" class="btn btn-success">Iniciar sesión</button>
                   </div>
                 </div>
             </form>

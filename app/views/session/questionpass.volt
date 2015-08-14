@@ -29,12 +29,8 @@
 
                 <div class="form-group" align="right">
                   <div class="col-sm-offset-2 col-sm-10">
-                    <a href="{{url('session/login')}}" class="btn btn-danger"role="button" data-toggle="tooltip" data-placement="top" title="Cancelar">
-                        <span class="glyphicon glyphicon glyphicon-remove"></span>
-                    </a>
-                    <button type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Continuar">
-                        <span class="glyphicon glyphicon glyphicon-ok"></span>
-                    </button>
+                    <a href="{{url('session/login')}}" class="btn btn-danger">Cancelar</a>
+                    <button type="submit" class="btn btn-success">Continuar</button>
                   </div>
                 </div>
             </form>

@@ -18,10 +18,6 @@
         
         <script type="text/javascript">
             var myBaseURL = '<?php echo $this->url->get(''); ?>';
-            
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
-            })
         </script>
         
     <?php echo $this->tag->stylesheetLink('css/session-styles.css'); ?>
@@ -66,24 +62,16 @@
                 <nav>
                     <ul class="nav nav-pills pull-right">
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('index'); ?>" data-toggle="tooltip" data-placement="bottom" title="Inicio">
-                                <span class="glyphicon glyphicon-home"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('index'); ?>">Inicio</a>
                         </li>
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('importdata/index'); ?>" data-toggle="tooltip" data-placement="bottom" title="Importar archivos">
-                                <span class="glyphicon glyphicon glyphicon-upload"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('importdata/index'); ?>">Importar archivos</a>
                         </li>
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('user/passedit'); ?>" data-toggle="tooltip" data-placement="bottom" title="Cambiar contraseña">
-                                <span class="glyphicon glyphicon glyphicon-lock"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('user/passedit'); ?>">Cambiar contraseña</a>
                         </li>
                         <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('session/logout'); ?>" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
-                                <span class="glyphicon glyphicon glyphicon-log-out"></span>
-                            </a>
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('session/logout'); ?>">Cerrar sesión</a>
                         </li>
                     </ul>
                 </nav>
