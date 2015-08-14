@@ -9,18 +9,31 @@ class DataController extends ControllerBase
     }
     
     public function createAction()
-    {                
-        try{
-            $PHPExcel = new \Surticreditos\Misc\PHPExcel();
-            $PHPExcel->setLogoDir("{$this->path->path}public/img/excel/surticreditos.png");
-            $PHPExcel->setUser($this->user);
-            $PHPExcel->setData($this->getData($id));
-            $PHPExcel->create();
-            $this->report = $PHPExcel->getReportData(); 
-        }
-        catch (Exception $ex){
-            $this->logger->log($ex->getMessage());
-            return $this->set_json_response('ha ocurrido un error, por favor contacte al administrador', 500); 
+    {     
+        if ($this->request->isPost()) {
+            try{
+                $id = $this->request->getPost('id');
+                
+                if (empty($id)) {
+                    throw new Exception("No ha enviado datos");
+                }
+                
+                $d = $this->getData($id);
+                
+                $PHPExcel = new \Surticreditos\Misc\PHPExcel();
+                $PHPExcel->setLogoDir("{$this->path->path}public/img/excel/surticreditos.png");
+                $PHPExcel->setUser($this->user);
+                $PHPExcel->setData($d->data);
+                $PHPExcel->create();
+                $report = $PHPExcel->getReportData(); 
+                
+                return $this->set_json_response(array($report->idTmpreport), 200);
+            }
+            catch (Exception $ex){
+                $this->logger->log($ex->getMessage());
+//                $this->logger->log(print_r($ex, true));
+                return $this->set_json_response('ha ocurrido un error, por favor contacte al administrador', 500); 
+            }
         }
     }
     
@@ -29,7 +42,7 @@ class DataController extends ControllerBase
         $tmpreport = Tmpreport::findFirst(array(
             'conditions' => 'idTmpreport = ?1 AND idUser = ?2',
             'bind' => array(1 => $idReport,
-                2 => $this->user->idUser)
+                            2 => $this->user->idUser)
         ));
 
         if (!$tmpreport) {

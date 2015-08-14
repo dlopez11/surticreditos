@@ -4,7 +4,7 @@
  *
  * @author Will
  */
-namespace Sigmamovil\Misc;
+namespace Surticreditos\Misc;
 
 $path = \Phalcon\DI\FactoryDefault::getDefault()->get('path');
 require_once "{$path->path}app/library/phpexcel/PHPExcel.php";
@@ -45,20 +45,20 @@ class PHPExcel
 
         $preheader = new \stdClass();
         $preheader->name = "Surticreditos";
-        $preheader->desc = "Sigma Track Engine 2015";
+        $preheader->desc = "Surticreditos 2015";
         $preheader->logo = $this->logo;
-        $preheader->x = 8;
-        $preheader->y = 5;
+        $preheader->x = 10;
+        $preheader->y = 20;
         $preheader->coordinates = "A1";
-        $preheader->height = 75;
+        $preheader->height = 50;
         
         $this->addLogo($preheader);
         
         $firm = array(
-            array('key' => 'B1', 'name' => "Número de compra: " . date('d/M/Y H:s')),
-            array('key' => 'B2', 'name' => "Valor total de la compra: ". $this->data[0]['value']),
-            array('key' => 'B3', 'name' => "Valor cancelado a la fecha: ". $this->data[0]['dif']),
-            array('key' => 'B4', 'name' => "Saldo pendiente a la fecha: ". $this->data[0]['debt']),
+            array('key' => 'C1', 'name' => "Número de compra: " . $this->data[0]['code']),
+            array('key' => 'C2', 'name' => "Valor total de la compra: ". $this->data[0]['value']),
+            array('key' => 'C3', 'name' => "Valor cancelado a la fecha: ". $this->data[0]['dif']),
+            array('key' => 'C4', 'name' => "Saldo pendiente a la fecha: ". $this->data[0]['debt']),
         );
         
         $this->createExcelHeader($firm);
@@ -85,17 +85,17 @@ class PHPExcel
             $row++;
         }
 
-        $this->styleExcelHeader('A6:L6');
+        $this->styleExcelHeader('A6:C6');
 
         $array = array(
-            array('key' => 'A', 'size' => 30),
-            array('key' => 'B', 'size' => 30),
-            array('key' => 'C', 'size' => 30),
+            array('key' => 'A', 'size' => 20),
+            array('key' => 'B', 'size' => 20),
+            array('key' => 'C', 'size' => 35),
         );
 
         $this->setColumnDimesion($array);
         
-        $this->formatUSDNumbers($fields);
+        $this->formatUSDNumbers("B7:B{$row}");
         $this->createExcelFile();
     }
     

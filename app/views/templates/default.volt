@@ -3,8 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=1">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-        <link rel="shortcut icon" type="image/x-icon" href="{{url('')}}images/favicons/favicon48x48.ico">
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>        
         <title>Surticreditos</title>
         
         <!-- Always force latest IE rendering engine or request Chrome Frame -->
@@ -53,6 +52,10 @@
                         </li>
                     </ul>
                 </nav>
+                    
+                <a href="http://www.google.com/" target="_blank">
+                    <img src="{{url('')}}img/Surticreditos-01.png" height="60" />
+                </a>
             </div>
 
             <div class="row">

@@ -1,10 +1,9 @@
-a:5:{i:0;s:1311:"<!DOCTYPE html>
+a:5:{i:0;s:1189:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=1">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get(''); ?>images/favicons/favicon48x48.ico">
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>        
         <title>Surticreditos</title>
         
         <!-- Always force latest IE rendering engine or request Chrome Frame -->
@@ -24,7 +23,7 @@ a:5:{i:0;s:1311:"<!DOCTYPE html>
                 $('[data-toggle="tooltip"]').tooltip()
             })
         </script>
-        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:27;}}i:1;s:2007:"
+        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:26;}}i:1;s:2224:"
     </head>
     <body>
         <div class="container">
@@ -53,11 +52,15 @@ a:5:{i:0;s:1311:"<!DOCTYPE html>
                         </li>
                     </ul>
                 </nav>
+                    
+                <a href="http://www.google.com/" target="_blank">
+                    <img src="<?php echo $this->url->get(''); ?>img/Surticreditos-01.png" height="60" />
+                </a>
             </div>
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:60;}}i:2;s:284:"
+                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:63;}}i:2;s:284:"
                 </div>    
             </div>
         </div>  

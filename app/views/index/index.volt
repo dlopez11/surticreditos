@@ -13,20 +13,22 @@
         
         function download () {
             var id = $(".select2").val();
-
-            $.ajax({
-                url: "{{url('data/create')}}",
-                type: "POST",
-                data: {
-                    id: id
-                },
-                error: function(error){
-                    console.log(error);
-                },
-                success: function(data){
-                    window.location = '{{url('data/download')}}/' + data[0];
-                }
-            });       
+            
+            if (id > 0) {
+                $.ajax({
+                    url: "{{url('data/create')}}",
+                    type: "POST",
+                    data: {
+                        id: id
+                    },
+                    error: function(error){
+                        console.log(error);
+                    },
+                    success: function(data){
+                        window.location = '{{url('data/download')}}/' + data[0];
+                    }
+                });  
+            }  
         }
     </script>
     
@@ -89,9 +91,9 @@
                 </select>
             </div>                                       
             <div class="col-md-2">
-                <a id="download" onClick="download();" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="right" title="Descargar historial de pagos">
+                <button id="download" onClick="download();" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="right" title="Descargar historial de pagos">
                     <span class="glyphicon glyphicon glyphicon-download-alt"></span>
-                </a> 
+                </button>
             </div>
         </div>
     </div>

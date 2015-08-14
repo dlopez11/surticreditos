@@ -3,8 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=1">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get(''); ?>images/favicons/favicon48x48.ico">
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>        
         <title>Surticreditos</title>
         
         <!-- Always force latest IE rendering engine or request Chrome Frame -->
@@ -35,6 +34,26 @@
         $(function () {            
             $(".select2").select2();                    
         });
+        
+        function download () {
+            var id = $(".select2").val();
+            
+            if (id > 0) {
+                $.ajax({
+                    url: "<?php echo $this->url->get('data/create'); ?>",
+                    type: "POST",
+                    data: {
+                        id: id
+                    },
+                    error: function(error){
+                        console.log(error);
+                    },
+                    success: function(data){
+                        window.location = '<?php echo $this->url->get('data/download'); ?>/' + data[0];
+                    }
+                });  
+            }  
+        }
     </script>
     
     <?php echo $this->tag->javascriptInclude('js/showinfo.js'); ?>
@@ -68,6 +87,10 @@
                         </li>
                     </ul>
                 </nav>
+                    
+                <a href="http://www.google.com/" target="_blank">
+                    <img src="<?php echo $this->url->get(''); ?>img/Surticreditos-01.png" height="60" />
+                </a>
             </div>
 
             <div class="row">
@@ -128,9 +151,9 @@
                 </select>
             </div>                                       
             <div class="col-md-2">
-                <a id="download" onClick="download();" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="right" title="Descargar historial de pagos">
+                <button id="download" onClick="download();" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="right" title="Descargar historial de pagos">
                     <span class="glyphicon glyphicon glyphicon-download-alt"></span>
-                </a> 
+                </button>
             </div>
         </div>
     </div>
