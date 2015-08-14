@@ -10,7 +10,7 @@
                 <h3>No tiene los permisos necesarios para cargar el recurso solicitado</h3>
                 <h1>
                     <a href="{{url('')}}">
-                        Regresar al dashboard
+                        Regresar al inicio
                     </a>    
                 </h1>
             </div>

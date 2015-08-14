@@ -10,7 +10,7 @@
                 <h3>El recurso que intenta cargar no se encuentra en este servidor</h3>
                 <h1>
                     <a href="{{url('')}}">
-                        Regresar al dashboard
+                        Regresar al inicio
                     </a>    
                 </h1>
             </div>
