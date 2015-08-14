@@ -91,9 +91,7 @@
                 </select>
             </div>                                       
             <div class="col-md-2">
-                <button id="download" onClick="download();" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="right" title="Descargar historial de pagos">
-                    <span class="glyphicon glyphicon glyphicon-download-alt"></span>
-                </button>
+                <button id="download" onClick="download();" class="btn btn-info btn-sm">Descargar pagos</button>
             </div>
         </div>
     </div>

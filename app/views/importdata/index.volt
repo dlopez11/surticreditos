@@ -73,9 +73,7 @@
                             <form id="subida">
                                 <input type="file" id="csv" name="csv" />
                                 <br />                                
-                                <a id="up" class="btn btn-success"role="button" data-toggle="tooltip" data-placement="right" title="Importar">
-                                    <span class="glyphicon glyphicon glyphicon-ok"></span>
-                                </a>                                
+                                <a id="up" class="btn btn-success" role="button">Importar</a>                                
                                 <div id="respuesta"></div>
                             </form>
                         </div>
@@ -108,9 +106,7 @@
                             <form id="subidados">
                                 <input type="file" id="csvtwo" name="csvtwo" />
                                 <br />                                
-                                <a id="uptwo" class="btn btn-success"role="button" data-toggle="tooltip" data-placement="right" title="Importar">
-                                    <span class="glyphicon glyphicon glyphicon-ok"></span>
-                                </a>                                
+                                <a id="uptwo" class="btn btn-success" role="button">Importar</a>                                
                                 <div id="respuestados"></div>
                             </form>
                         </div>
@@ -143,9 +139,7 @@
                             <form id="subidatres">
                                 <input type="file" id="csvthree" name="csvthree" />
                                 <br />                                
-                                <a id="upthree" class="btn btn-success"role="button" data-toggle="tooltip" data-placement="right" title="Importar">
-                                    <span class="glyphicon glyphicon glyphicon-ok"></span>
-                                </a>                                
+                                <a id="upthree" class="btn btn-success" role="button">Importar</a>                                
                                 <div id="respuestatres"></div>
                             </form>
                         </div>
