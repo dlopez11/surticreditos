@@ -1,7 +1,7 @@
 $(function(){
-    $('#up').click(function(){
+    $('#upone').click(function(){
 
-        var comprobar = $('#csv').val().length;
+        var comprobar = $('#csvone').val().length;
 
         if(comprobar > 0){
             var formulario = $('#subida');

@@ -71,9 +71,9 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">            
                             <form id="subida">
-                                <input type="file" id="csv" name="csv" />
+                                <input type="file" id="csvone" name="csvone" />
                                 <br />                                
-                                <a id="up" class="btn btn-success" role="button">Importar</a>                                
+                                <a id="upone" class="btn btn-success" role="button">Importar</a>                                
                                 <div id="respuesta"></div>
                             </form>
                         </div>

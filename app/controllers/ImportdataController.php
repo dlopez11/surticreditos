@@ -10,20 +10,20 @@ class ImportdataController extends ControllerBase
     public function importfileoneAction()
     {
         try {            
-            if ($_FILES['csv']['size'] > 1048576){
-                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 1 MB de peso'), 403);
+            if ($_FILES['csvone']['size'] > 7340032){
+                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 7 MB de peso'), 403);
             }
             
-            if ($_FILES['csv']['size'] > 0) {
+            if ($_FILES['csvone']['size'] > 0) {
 
-                $fileinfo = pathinfo($_FILES['csv']['name']);
+                $fileinfo = pathinfo($_FILES['csvone']['name']);
                 
                 if(strtolower(trim($fileinfo["extension"])) != "csv")
                 {
                     return $this->set_json_response(array('Por favor seleccione un archivo de tipo CSV'), 403);
                 }
                    
-                $csv = $_FILES['csv']['tmp_name'];
+                $csv = $_FILES['csvone']['tmp_name'];
                 $handle = fopen($csv,'r');
                 
                 $values = array();
