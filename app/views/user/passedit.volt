@@ -29,7 +29,7 @@
 
                 <div class="form-group" align="right">
                   <div class="col-sm-offset-2 col-sm-10">
-                    <a href="{{url('index')}}" class="btn btn-danger">Cancelar</a>
+                    {#<a href="{{url('index')}}" class="btn btn-danger">Cancelar</a>#}
                     <button type="submit" class="btn btn-success">Cambiar</button>
                   </div>
                 </div>
