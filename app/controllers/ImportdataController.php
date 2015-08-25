@@ -11,7 +11,7 @@ class ImportdataController extends ControllerBase
     {
         try {   
             
-            $update = 0;
+            $update = 1;
 //            if($this->request->isPost()){                
 //                $check = $this->request->getPost('update');
 //                $r = $this->request->getPost('archivos');
@@ -67,8 +67,7 @@ class ImportdataController extends ControllerBase
                     $city = trim($ci);
                     
                     $txt[] = "($id,2," . time() . "," . time() . ",0,'$id','$name','$class','$address','$phone - $celphone','$email','$city')";
-                    $text = implode(", ", $txt);
-                                        
+                    $text = implode(", ", $txt);                                        
                 }
                 
                 if($update == 0){
