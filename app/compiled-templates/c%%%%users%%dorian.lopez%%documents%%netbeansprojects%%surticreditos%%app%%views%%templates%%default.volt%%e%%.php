@@ -42,7 +42,7 @@ a:5:{i:0;s:1074:"<!DOCTYPE html>
                 </nav>
                     
                 <a href="http://www.google.com/" target="_blank">
-                    <img src="<?php echo $this->url->get(''); ?>img/Surticreditos-01.png" height="60" />
+                    <img src="<?php echo $this->url->get(''); ?>img/Surticreditos-01.jpg" height="70" />
                 </a>
             </div>
 

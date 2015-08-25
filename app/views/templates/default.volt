@@ -42,7 +42,7 @@
                 </nav>
                     
                 <a href="http://www.google.com/" target="_blank">
-                    <img src="{{url('')}}img/Surticreditos-01.jpeg" height="60" />
+                    <img src="{{url('')}}img/Surticreditos-01.jpg" height="70" />
                 </a>
             </div>
 
