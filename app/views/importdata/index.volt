@@ -69,8 +69,21 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">            
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                             <form id="subida">
+                                <input type="checkbox" name="update" id="update" />
+                                <strong>
+                                    Actualizar los datos de los usuarios que ya se encuentren en la base de datos.
+                                </strong>
+                                <br />
+                                <p>
+                                    <em>
+                                        Si habilita esta opción se reemplazara la información de los contactos que ya se 
+                                        encuentran en la base de datos por la información que esté en el archivo, este proceso
+                                        podría tardar más de lo habitual.
+                                    </em>
+                                </p>
+                                <br />
                                 <input type="file" id="csvone" name="csvone" />
                                 <br />                                
                                 <a id="upone" class="btn btn-success" role="button">Importar</a>                                

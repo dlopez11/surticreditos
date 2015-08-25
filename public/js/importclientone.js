@@ -1,6 +1,10 @@
 $(function(){
     $('#upone').click(function(){
-
+        var update = 0;
+        if($("#update").is(':checked')) {  
+            update = 1;
+        }
+        
         var comprobar = $('#csvone').val().length;
 
         if(comprobar > 0){
@@ -11,10 +15,15 @@ $(function(){
             for (var i = 0; i < (formulario.find('input[type=file]').length); i++) { 
                 archivos.append((formulario.find('input[type="file"]:eq('+i+')').attr("name")),((formulario.find('input[type="file"]:eq('+i+')')[0]).files[0]));
             }
+            
             $.ajax({                
                 url: url,
                 type: 'POST',
                 contentType: false, 
+//                data: {
+//                    update: update,
+//                    archivos: archivos
+//                },
                 data: archivos,
                 processData:false,
                 beforeSend : function (){

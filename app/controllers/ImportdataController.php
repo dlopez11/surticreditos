@@ -9,9 +9,19 @@ class ImportdataController extends ControllerBase
     
     public function importfileoneAction()
     {
-        try {            
-            if ($_FILES['csvone']['size'] > 7340032){
-                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 7 MB de peso'), 403);
+        try {   
+            
+            $update = 0;
+//            if($this->request->isPost()){                
+//                $check = $this->request->getPost('update');
+//                $r = $this->request->getPost('archivos');
+//                $this->logger->log('Check: ' . $check);
+//                $this->logger->log('Check: ' . print_r($r, true));
+//            }            
+            
+            
+            if ($_FILES['csvone']['size'] > 3145728){
+                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 3 MB de peso'), 403);
             }
             
             if ($_FILES['csvone']['size'] > 0) {
@@ -61,9 +71,15 @@ class ImportdataController extends ControllerBase
                                         
                 }
                 
-                $sql = "INSERT IGNORE INTO user (idUser, idRole, created, updated, status, password, name, class, address, phone, email, city) VALUES {$text}";
-                $result = $this->db->execute($sql); 
-
+                if($update == 0){
+                    $sql = "INSERT IGNORE INTO user (idUser, idRole, created, updated, status, password, name, class, address, phone, email, city) VALUES {$text}";
+                    $result = $this->db->execute($sql); 
+                }  
+                else {
+                    $sql2 = "INSERT IGNORE INTO user (idUser, idRole, created, updated, status, password, name, class, address, phone, email, city) VALUES {$text} ON DUPLICATE KEY UPDATE updated = VALUES(updated), name = VALUES(name), class = VALUES(class), address = VALUES(address), phone = VALUES(phone), email = VALUES(email), city = VALUES(city)";
+                    $result2 = $this->db->execute($sql2); 
+                } 
+                
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
             }
         }
