@@ -1,6 +1,8 @@
 $(function(){
     $('#upone').click(function(){
+        
         var update = 0;
+        
         if($("#update").is(':checked')) {  
             update = 1;
         }

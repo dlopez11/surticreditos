@@ -52,7 +52,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <h1>Actualizar usuarios desde archivo .csv</h1>
-                            <hr />            
+                            <hr />
                         </div>        
                     </div>
 
@@ -60,8 +60,6 @@
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                             <p>
                                 Aquí podrá actualizar la información de sus clientes desde un archivo en formato CSV.                
-                            </p>
-                            <p>
                                 Al momento de guardar el documento de texto plano se debera agregar la extensión 
                                 <strong>(*.csv)</strong> al nombre del archivo.
                             </p>
@@ -71,10 +69,12 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                             <form id="subida">
-                                <input type="checkbox" name="update" id="update" />
-                                <strong>
+                                <label>
+                                    <input type="checkbox" name="update" id="update" />                                
+                                    <strong>
                                     Actualizar los datos de los usuarios que ya se encuentren en la base de datos.
-                                </strong>
+                                    </strong>
+                                </label>
                                 <br />
                                 <p>
                                     <em>
