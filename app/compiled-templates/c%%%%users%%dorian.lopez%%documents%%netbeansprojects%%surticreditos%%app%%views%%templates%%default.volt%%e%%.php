@@ -1,9 +1,10 @@
-a:5:{i:0;s:1074:"<!DOCTYPE html>
+a:5:{i:0;s:1193:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=1">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>        
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get(''); ?>img/favicons/favicon48x48.ico">
         <title>Surticreditos</title>
         
         <!-- Always force latest IE rendering engine or request Chrome Frame -->
@@ -19,7 +20,7 @@ a:5:{i:0;s:1074:"<!DOCTYPE html>
         <script type="text/javascript">
             var myBaseURL = '<?php echo $this->url->get(''); ?>';
         </script>
-        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:22;}}i:1;s:1529:"
+        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:23;}}i:1;s:1637:"
     </head>
     <body>
         <div class="container">
@@ -29,9 +30,11 @@ a:5:{i:0;s:1074:"<!DOCTYPE html>
                         <li role="presentation" class="dropdown">
                             <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('index'); ?>">Inicio</a>
                         </li>
+                    <?php if ($this->userData->role->name == 'admin') { ?>
                         <li role="presentation" class="dropdown">
                             <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('importdata/index'); ?>">Importar archivos</a>
                         </li>
+                    <?php } ?>
                         <li role="presentation" class="dropdown">
                             <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('user/passedit'); ?>">Cambiar contraseña</a>
                         </li>
@@ -42,13 +45,13 @@ a:5:{i:0;s:1074:"<!DOCTYPE html>
                 </nav>
                     
                 <a href="http://www.google.com/" target="_blank">
-                    <img src="<?php echo $this->url->get(''); ?>img/Surticreditos-01.jpg" height="70" />
+                    <img src="<?php echo $this->url->get(''); ?>img/Surticreditos-01.png" height="70" />
                 </a>
             </div>
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:51;}}i:2;s:284:"
+                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:54;}}i:2;s:284:"
                 </div>    
             </div>
         </div>  

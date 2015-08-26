@@ -9,82 +9,78 @@ class ImportdataController extends ControllerBase
     
     public function importfileoneAction()
     {
-        try {   
-            
-            $update = 1;
-//            if($this->request->isPost()){                
-//                $check = $this->request->getPost('update');
-//                $r = $this->request->getPost('archivos');
-//                $this->logger->log('Check: ' . $check);
-//                $this->logger->log('Check: ' . print_r($r, true));
-//            }            
-            
-            
-            if ($_FILES['csvone']['size'] > 3145728){
-                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 3 MB de peso'), 403);
-            }
-            
-            if ($_FILES['csvone']['size'] > 0) {
+        if($this->request->isPost()){  
+            try {  
+                $update = $this->request->getPost("update");
+                $update = ($update == 'on' ? 1 : 0);     
+                
+                if ($_FILES['csvone']['size'] > 3145728){
+                    return $this->set_json_response(array('El archivo CSV no puede ser mayor a 3 MB de peso'), 403);
+                }
 
-                $fileinfo = pathinfo($_FILES['csvone']['name']);
-                
-                if(strtolower(trim($fileinfo["extension"])) != "csv")
-                {
-                    return $this->set_json_response(array('Por favor seleccione un archivo de tipo CSV'), 403);
-                }
-                   
-                $csv = $_FILES['csvone']['tmp_name'];
-                $handle = fopen($csv,'r');
-                
-                $values = array();
-                $txt = array();
-                
-                while($data = fgetcsv($handle,1000,";","'")){
-                    if($data[0]){
-                        $values[] = "$data[0]";
+                if ($_FILES['csvone']['size'] > 0) {
+
+                    $fileinfo = pathinfo($_FILES['csvone']['name']);
+
+                    if(strtolower(trim($fileinfo["extension"])) != "csv")
+                    {
+                        return $this->set_json_response(array('Por favor seleccione un archivo de tipo CSV'), 403);
                     }
-                }                                
-                
-                foreach ($values as $key => $value) {
-                    $c = substr($value, 0, 11);
-                    $n = substr($value, 11, 40);
-                    $cl = substr($value, 51, 1);
-                    $d = substr($value, 52, 30);
-                    $t = substr($value, 82, 7);
-                    $cel = substr($value, 90, 11);
-                    $e = substr($value, 102, 59);                    
-                    $ci = substr($value, 163, 5);
-                    
-                    $ce = ltrim($c,'0');
-                    
-                    $id = trim($ce);
-                    $name = trim($n);
-                    $class = trim($cl);
-                    $address = trim($d);
-                    $phone = trim($t);
-                    $celphone = trim($cel);
-                    $email = trim($e);
-                    $city = trim($ci);
-                    
-                    $txt[] = "($id,2," . time() . "," . time() . ",0,'$id','$name','$class','$address','$phone - $celphone','$email','$city')";
-                    $text = implode(", ", $txt);                                        
-                }
-                
-                if($update == 0){
-                    $sql = "INSERT IGNORE INTO user (idUser, idRole, created, updated, status, password, name, class, address, phone, email, city) VALUES {$text}";
+
+                    $csv = $_FILES['csvone']['tmp_name'];
+                    $handle = fopen($csv,'r');
+
+                    $values = array();
+                    $txt = array();
+
+                    while($data = fgetcsv($handle,1000,";","'")){
+                        if($data[0]){
+                            $values[] = "$data[0]";
+                        }
+                    }                                
+
+                    foreach ($values as $key => $value) {
+                        $c = substr($value, 0, 11);
+                        $n = substr($value, 11, 40);
+                        $cl = substr($value, 51, 1);
+                        $d = substr($value, 52, 30);
+                        $t = substr($value, 82, 7);
+                        $cel = substr($value, 90, 11);
+                        $e = substr($value, 102, 59);                    
+                        $ci = substr($value, 163, 5);
+
+                        $ce = ltrim($c,'0');
+
+                        $id = trim($ce);
+                        $name = trim($n);
+                        $class = trim($cl);
+                        $address = trim($d);
+                        $phone = trim($t);
+                        $celphone = trim($cel);
+                        $email = trim($e);
+                        $city = trim($ci);
+
+                        if(!empty($ce)){
+                            $txt[] = "($id,2," . time() . "," . time() . ",0,'$id','$name','$class','$address','$phone - $celphone','$email','$city')";
+                            $text = implode(", ", $txt);
+                        }                    
+                    }
+
+                    if(!$update){
+                        $sql = "INSERT IGNORE INTO user (idUser, idRole, created, updated, status, password, name, class, address, phone, email, city) VALUES {$text}";                    
+                    }  
+                    else {
+                        $sql = "INSERT IGNORE INTO user (idUser, idRole, created, updated, status, password, name, class, address, phone, email, city) VALUES {$text} ON DUPLICATE KEY UPDATE updated = VALUES(updated), name = VALUES(name), class = VALUES(class), address = VALUES(address), phone = VALUES(phone), email = VALUES(email), city = VALUES(city)";                   
+                    } 
+
                     $result = $this->db->execute($sql); 
-                }  
-                else {
-                    $sql2 = "INSERT IGNORE INTO user (idUser, idRole, created, updated, status, password, name, class, address, phone, email, city) VALUES {$text} ON DUPLICATE KEY UPDATE updated = VALUES(updated), name = VALUES(name), class = VALUES(class), address = VALUES(address), phone = VALUES(phone), email = VALUES(email), city = VALUES(city)";
-                    $result2 = $this->db->execute($sql2); 
-                } 
-                
-                return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
+                    return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
+                }
             }
-        }
-        catch(Exception $e) {
-            $this->logger->log("Exception while inserting users: {$e->getMessage()}");
-            return $this->set_json_response(array("Ha ocurrido un error, por favor contacte al administrador"), 403);            
+            catch(Exception $e) {
+                $this->logger->log("Exception while inserting users: {$e->getMessage()}");
+                return $this->set_json_response(array("Ha ocurrido un error, por favor contacte al administrador"), 403);            
+            }
         }
     }
     

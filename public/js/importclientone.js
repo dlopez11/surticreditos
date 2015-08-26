@@ -11,21 +11,17 @@ $(function(){
 
         if(comprobar > 0){
             var formulario = $('#subida');
-            var archivos = new FormData();
-            var url = csvone;
+            var archivos = new FormData(formulario[0]);
 
-            for (var i = 0; i < (formulario.find('input[type=file]').length); i++) { 
-                archivos.append((formulario.find('input[type="file"]:eq('+i+')').attr("name")),((formulario.find('input[type="file"]:eq('+i+')')[0]).files[0]));
-            }
+//            for (var i = 0; i < (formulario.find('input[type=file]').length); i++) { 
+//                console.log(i);
+//                archivos.append((formulario.find('input[type="file"]:eq('+i+')').attr("name")),((formulario.find('input[type="file"]:eq('+i+')')[0]).files[0]));
+//            }
             
             $.ajax({                
-                url: url,
+                url: csvone,
                 type: 'POST',
                 contentType: false, 
-//                data: {
-//                    update: update,
-//                    archivos: archivos
-//                },
                 data: archivos,
                 processData:false,
                 beforeSend : function (){
@@ -45,9 +41,9 @@ $(function(){
                 }
     });    
         }
-        else         
-        {            
-            alert('Selecciona un archivo CSV para importar.');
+        else {          
+            $('#respuesta').html('<label style="padding-top:10px; color:red;">Selecciona un archivo CSV para importar.</label>');
+//            alert('Selecciona un archivo CSV para importar.');
             return false;
         }
     });

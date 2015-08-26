@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=1">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>        
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" type="image/x-icon" href="{{url('')}}img/favicons/favicon48x48.ico">
         <title>Surticreditos</title>
         
         <!-- Always force latest IE rendering engine or request Chrome Frame -->
@@ -29,9 +30,11 @@
                         <li role="presentation" class="dropdown">
                             <a role="menuitem" tabindex="-1" href="{{url('index')}}">Inicio</a>
                         </li>
+                    {% if userData.role.name == 'admin' %}
                         <li role="presentation" class="dropdown">
                             <a role="menuitem" tabindex="-1" href="{{url('importdata/index')}}">Importar archivos</a>
                         </li>
+                    {% endif %}
                         <li role="presentation" class="dropdown">
                             <a role="menuitem" tabindex="-1" href="{{url('user/passedit')}}">Cambiar contraseña</a>
                         </li>
@@ -42,7 +45,7 @@
                 </nav>
                     
                 <a href="http://www.google.com/" target="_blank">
-                    <img src="{{url('')}}img/Surticreditos-01.jpg" height="70" />
+                    <img src="{{url('')}}img/Surticreditos-01.png" height="70" />
                 </a>
             </div>
 
