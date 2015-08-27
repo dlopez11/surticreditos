@@ -38,17 +38,17 @@
             <form class="form-horizontal" action="<?php echo $this->url->get('session/login'); ?>" method="post">
                 <?php echo $this->flashSession->output(); ?>
                 <div class="form-group">
-                  <h1>Surticreditos</h1>
-                  <br>
-                  <div class="col-sm-12">
-                      <input type="number" class="form-control" name="id" id="id" placeholder="Ingrese su número de cédula">
-                  </div>
+                    <img src="<?php echo $this->url->get(''); ?>img/Surticreditos-01.png" height="90" />
+                    <br>
+                    <div class="col-sm-12">
+                        <input type="number" class="form-control" name="id" id="id" placeholder="Ingrese su número de cédula">
+                    </div>
                 </div>
 
                 <div class="form-group">
-                  <div class="col-sm-12">
-                      <input type="password" class="form-control" name="password" id="password" placeholder="Ingrese su contraseña">
-                  </div>
+                    <div class="col-sm-12">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Ingrese su contraseña">
+                    </div>
                 </div>                        
 
                 <div class="form-group" align="right">
