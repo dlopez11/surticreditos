@@ -20,6 +20,8 @@
                     
                 <div class="form-group">
                     <div class="col-md-offset-1 col-md-10">
+                        <h3>Iniciar sesión</h3>
+                        <br />
                         <input type="number" class="form-control" name="id" id="id" placeholder="Ingrese su número de cédula">
                         <br>
                         <input type="password" class="form-control" name="password" id="password" placeholder="Ingrese su contraseña">

@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-sm-12">
+                    <div class="col-md-offset-1 col-md-10">
                         <h3>Genere su nueva contraseña</h3>
                         <br />
                         <input type="password" class="form-control" name="password" placeholder="Ingrese su nueva contraseña">
@@ -29,7 +29,7 @@
                   </div>                        
 
                 <div class="form-group" align="right">
-                    <div class="col-sm-offset-2 col-sm-10">
+                    <div class="col-md-offset-1 col-md-10">
                         <button type="submit" class="btn btn-sm btn-success">Generar contraseña</button>
                     </div>
                 </div>
