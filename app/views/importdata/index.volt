@@ -1,6 +1,5 @@
 {% extends "templates/default.volt" %}
 {% block header %}
-    {{ stylesheet_link('css/session-styles.css') }}
     {{ stylesheet_link('library/twitter-bootstrap-wizard-master/prettify.css') }}
 
     {{ javascript_include('library/twitter-bootstrap-wizard-master/jquery.bootstrap.wizard.js') }}
@@ -78,7 +77,7 @@
                                 <br />
                                 <p>
                                     <em>
-                                        Si habilita esta opción se reemplazara la información de los contactos que ya se 
+                                        Si habilita esta opción se reemplazara la información de los usuarios que ya se 
                                         encuentran en la base de datos por la información que esté en el archivo, este proceso
                                         podría tardar más de lo habitual.
                                     </em>

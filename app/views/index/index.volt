@@ -1,6 +1,5 @@
 {% extends "templates/default.volt" %}
 {% block header %}
-    {{ stylesheet_link('css/session-styles.css') }}
     {# Select 2 #}
     {{ javascript_include('library/select2/js/select2.min.js') }}
     {{ stylesheet_link('library/select2/css/select2.min.css') }}   
@@ -37,48 +36,32 @@
 {% endblock %}
 {% block content %}
     <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Consulte su Estado de Crédito</h2>
+            <p></p>
+        </div>
+    </div>
+    
+    <div class="row">
         <div class="col-md-12">
                {{flashSession.output()}}
         </div>
     </div>
     
-    <div class="col-md-12">
-        <div>
-            <h1>
-                <span class="glyphicon glyphicon glyphicon-user"></span>
-                Información personal
-            </h1>
-        </div>
-    </div>
-
-    <div class="row">
+    <div class="row block">
         <div class="col-md-12">
-            <table class="table table-bordered">
-                {% for user in users %}
-                <tr>
-                    <td>
-                        <strong>
-                            {{user.name}}
-                            <br />
-                            CC: {{user.idUser}}
-                        </strong>                            
-                    </td>                    
-                    <td>{{user.class}}</td>  
-                    <td>{{user.address}}</td>                                    
-                </tr>
-                
-                <tr>                    
-                    <td>{{user.email}}</td>
-                    <td>{{user.phone}}</td>
-                    <td>{{user.city}}</td>
-                </tr>
-                {% endfor %}
-            </table>
+            <h3>
+                {{user.name}}
+            </h3>
+            <div class="xs-text">CC: {{user.idUser}}</div>
+            <div class="xs-text">{{user.email}}</div>     
+            <div class="xs-text">{{user.address}} - {{user.city}}</div>
+            <div class="xs-text">{{user.phone}}</div>   
         </div>
     </div>
-
+    
     <div class="space"></div>
-            
+    <br>   
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -95,7 +78,7 @@
             </div>
         </div>
     </div>
-    
+    <br>
     <div class="space"></div>
     
     <div class="row" id="container">
@@ -103,4 +86,6 @@
             
         </div>
     </div>
+    
+    
 {% endblock %}

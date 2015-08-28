@@ -16,49 +16,27 @@ $(function () {
                 td += '</tr>';
             }
             
-            var tab = $('<div class="col-md-12">\n\
-                            <h1>\n\
-                                <span class="glyphicon glyphicon-credit-card"></span>\n\
-                                Información del Credito\n\
-                            </h1>\n\
-                        </div>\n\
-                        <div class="row">\n\
+            var tab = $('<div class="row">\n\
                             <div class="col-md-12">\n\
                                 <table class="table table-bordered">\n\
-                                    <tr>\n\
-                                        <td>Número del credito:</td>\n\
-                                        <td>Valor total del credito</td>\n\
-                                        <td>Valor cancelado hasta la fecha:</td>\n\
-                                        <td>Saldo por cancelar:</td>\n\
+                                    <tr style="border-bottom: 2px solid transparent;">\n\
+                                        <td colspan="3" style="font-size: 1.3em; font-weight: bold">Crédito No. '+ data[0].code +'</td>\n\
                                     </tr>\n\
                                     <tr>\n\
-                                        <td>'+ data[0].code +'</td>\n\
-                                        <td>'+ data[0].value +'</td>\n\
-                                        <td>'+ data[0].dif +'</td>\n\
-                                        <td>'+ data[0].debt +'</td>\n\
+                                        <td style="border-right: 2px solid transparent;">Total: <span style="color: #337ab7; font-size: 1.2em;">'+ data[0].value +'</span></td>\n\
+                                        <td style="border-right: 2px solid transparent;">Valor Cancelado: <span style="color: #449d44; font-size: 1.2em;">'+ data[0].dif +'</span></td>\n\
+                                        <td>Saldo: <span style="color: #848484; font-size: 1.2em;">'+ data[0].debt +'</span></td>\n\
                                     </tr>\n\
-                                </table>\n\
-                            </div>\n\
-                        </div>\n\
-                        <div class="col-md-12">\n\
-                            <h1>\n\
-                                <span class="glyphicon glyphicon-list-alt"></span>\n\
-                                Historial de pagos\n\
-                            </h1>\n\
-                        </div>\n\
-                        <div class="row">\n\
-                            <div class="col-md-12">\n\
-                                <table class="table table-bordered">\n\
                                     <tr>\n\
                                         <td>Número del recibo:</td>\n\
                                         <td>Fecha de pago:</td>\n\
                                         <td>Valor cancelado:</td>\n\
                                     </tr>\n\
-                                    ' + td + '\n\
+                                        ' + td + '\n\
                                 </table>\n\
                             </div>\n\
                         </div>\n\
-                        <div class="row>\n\
+                        <div class="row">\n\
                             <div class="col-md-12" align="right">\n\
                             <p><em>La información suministrada puede no estar actualizada.</em></p></div>\n\
                         </div>"');

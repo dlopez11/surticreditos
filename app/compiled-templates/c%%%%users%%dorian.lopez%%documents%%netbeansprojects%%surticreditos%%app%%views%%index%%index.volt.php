@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=1">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get(''); ?>img/favicons/favicon48x48.ico">
         <title>Surticreditos</title>
         
@@ -12,16 +12,15 @@
         <?php echo $this->tag->getTitle(); ?>
         
         <?php echo $this->tag->javascriptInclude('library/jquery/jquery-1.11.3.min.js'); ?>
-        <?php echo $this->tag->stylesheetLink('css/styles.css'); ?>
         
         <?php echo $this->tag->stylesheetLink('library/bootstrap-3.3.4/css/bootstrap.css'); ?>
         <?php echo $this->tag->javascriptInclude('library/bootstrap-3.3.4/js/bootstrap.min.js'); ?>
+        <?php echo $this->tag->stylesheetLink('css/styles.css'); ?>
         
         <script type="text/javascript">
             var myBaseURL = '<?php echo $this->url->get(''); ?>';
         </script>
         
-    <?php echo $this->tag->stylesheetLink('css/session-styles.css'); ?>
     
     <?php echo $this->tag->javascriptInclude('library/select2/js/select2.min.js'); ?>
     <?php echo $this->tag->stylesheetLink('library/select2/css/select2.min.css'); ?>   
@@ -58,78 +57,68 @@
 
     </head>
     <body>
-        <div class="container">
-            <div class="header clearfix">
+        <div class="header clearfix">
+            <div class="container">
                 <nav>
                     <ul class="nav nav-pills pull-right">
-                        <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('index'); ?>">Inicio</a>
+                        <li role="presentation" class="txt">
+                            <a role="menuitem" class="txt" tabindex="-1" href="<?php echo $this->url->get('index'); ?>">INICIO</a>
                         </li>
                     <?php if ($this->userData->role->name == 'admin') { ?>
-                        <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('importdata/index'); ?>">Importar archivos</a>
+                        <li role="presentation" class="">
+                            <a role="menuitem" class="txt" tabindex="-1" href="<?php echo $this->url->get('importdata/index'); ?>">IMPORTAR ARCHIVOS</a>
                         </li>
                     <?php } ?>
-                        <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('user/passedit'); ?>">Cambiar contraseña</a>
+                        <li role="presentation" class="custom">
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('user/passedit'); ?>">
+                                <i class="glyphicon glyphicon-lock"></i>
+                            </a>
                         </li>
-                        <li role="presentation" class="dropdown">
-                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('session/logout'); ?>">Cerrar sesión</a>
+                        <li role="presentation" class="custom">
+                            <a role="menuitem" tabindex="-1" href="<?php echo $this->url->get('session/logout'); ?>">
+                                <i class="glyphicon glyphicon-log-out"></i>
+                            </a>
                         </li>
                     </ul>
                 </nav>
-                    
+
                 <a href="http://www.google.com/" target="_blank">
                     <img src="<?php echo $this->url->get(''); ?>img/Surticreditos-01.png" height="70" />
                 </a>
             </div>
-
+        </div>
+            
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Consulte su Estado de Crédito</h2>
+            <p></p>
+        </div>
+    </div>
+    
     <div class="row">
         <div class="col-md-12">
                <?php echo $this->flashSession->output(); ?>
         </div>
     </div>
     
-    <div class="col-md-12">
-        <div>
-            <h1>
-                <span class="glyphicon glyphicon glyphicon-user"></span>
-                Información personal
-            </h1>
-        </div>
-    </div>
-
-    <div class="row">
+    <div class="row block">
         <div class="col-md-12">
-            <table class="table table-bordered">
-                <?php foreach ($users as $user) { ?>
-                <tr>
-                    <td>
-                        <strong>
-                            <?php echo $user->name; ?>
-                            <br />
-                            CC: <?php echo $user->idUser; ?>
-                        </strong>                            
-                    </td>                    
-                    <td><?php echo $user->class; ?></td>  
-                    <td><?php echo $user->address; ?></td>                                    
-                </tr>
-                
-                <tr>                    
-                    <td><?php echo $user->email; ?></td>
-                    <td><?php echo $user->phone; ?></td>
-                    <td><?php echo $user->city; ?></td>
-                </tr>
-                <?php } ?>
-            </table>
+            <h3>
+                <?php echo $user->name; ?>
+            </h3>
+            <div class="xs-text">CC: <?php echo $user->idUser; ?></div>
+            <div class="xs-text"><?php echo $user->email; ?></div>     
+            <div class="xs-text"><?php echo $user->address; ?> - <?php echo $user->city; ?></div>
+            <div class="xs-text"><?php echo $user->phone; ?></div>   
         </div>
     </div>
-
+    
     <div class="space"></div>
-            
+    <br>   
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -146,7 +135,7 @@
             </div>
         </div>
     </div>
-    
+    <br>
     <div class="space"></div>
     
     <div class="row" id="container">
@@ -154,6 +143,8 @@
             
         </div>
     </div>
+    
+    
 
                 </div>    
             </div>

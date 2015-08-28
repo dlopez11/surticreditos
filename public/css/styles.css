@@ -92,3 +92,26 @@ body {
     margin: 10px 0 80px 0px;
     padding: 10px;
 }
+
+.nav-pills > li.custom {
+    background-color: #eae9e9 !important;
+    border-radius: 4px;
+    color: #ff5722 !important;
+}
+
+.nav-pills > li > a.txt {
+    color: #333 !important;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.block {
+    border: 1px solid #ddd;
+    padding-bottom: 15px;
+    padding-left: 20px;
+}
+/*
+
+.nav > ul>li:hover {
+    background-color: yellow !important;
+}*/
