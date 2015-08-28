@@ -21,7 +21,6 @@
             var myBaseURL = '<?php echo $this->url->get(''); ?>';
         </script>
         
-    <?php echo $this->tag->stylesheetLink('css/session-styles.css'); ?>
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
@@ -36,20 +35,23 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <form class="form-horizontal" action="<?php echo $this->url->get('session/recoverpass'); ?>" method="post">
-                <?php echo $this->flashSession->output(); ?>
                 <div class="form-group">
-                  <h1>Recuperar contraseña</h1>
-                  <br>
-                  <div class="col-sm-12">
-                      <input type="number" class="form-control" name="cedula" placeholder="Ingrese su número de Cédula">
-                  </div>
+                    <img src="<?php echo $this->url->get(''); ?>img/Surticreditos-01.png" height="90" />
                 </div>
-                
-                <div class="form-group" align="right">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <a href="<?php echo $this->url->get('session/login'); ?>" class="btn btn-danger">Cancelar</a>
-                    <button type="submit" class="btn btn-success">Recuperar</button>
+                    
+                <div class="form-group">
+                    <h3>Recuperar contraseña</h3>
+                    <br>
+                    <div class="col-sm-12">
+                        <input type="number" class="form-control" name="cedula" placeholder="Ingrese su número de Cédula">
+                    </div>
                   </div>
+
+                  <div class="form-group" align="right">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <a href="<?php echo $this->url->get('session/login'); ?>" class="btn btn-sm btn-danger">Cancelar</a>
+                      <button type="submit" class="btn btn-sm btn-success">Recuperar</button>
+                    </div>
                 </div>
             </form>
         </div>                    
