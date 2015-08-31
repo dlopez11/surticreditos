@@ -23,16 +23,19 @@ class MailSender
     public function setData($data)
     {
         $this->data = $data;
+        $this->logger->log("Data");
     }
     
     public function setHtml($html)
     {
         $this->html = $html;
+        $this->logger->log("Html correo");
     }
     
     public function setPlainText($plainText)
     {
         $this->plainText = $plainText;
+        $this->logger->log("Texto plano correo");
     }
     
     public function sendBasicMail()
@@ -53,9 +56,10 @@ class MailSender
     
     public function sendMessage()
     {
-        $transport = Swift_SmtpTransport::newInstance($this->mta->address, $this->mta->port);
-        $swift = Swift_Mailer::newInstance($transport);
-
+        $transport = \Swift_SmtpTransport::newInstance($this->mta->address, $this->mta->port);
+        $swift = \Swift_Mailer::newInstance($transport);
+        
+        $message = new \Swift_Message();
         
         $headers = $message->getHeaders();
         $headers->addTextHeader('X-GreenArrow-MailClass', 'SIGMA_NEWEMKTG_DEVEL');
@@ -64,6 +68,8 @@ class MailSender
         $message->setFrom(array($this->data->fromEmail => $this->data->fromName));
         $message->setBody($this->html, 'text/html');
         $message->addPart($this->plainText, 'text/plain');
+        
+        $this->logger->log("Crea contenido del correo para enviar");
         
         foreach ($this->data->target as $to) {
             $message->setTo($to);
