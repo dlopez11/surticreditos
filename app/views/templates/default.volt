@@ -48,7 +48,7 @@
                     </ul>
                 </nav>
 
-                <a href="http://www.google.com/" target="_blank">
+                <a href="http://surticreditos.com/" target="_blank">
                     <img src="{{url('')}}img/Surticreditos-01.png" height="70" />
                 </a>
             </div>
