@@ -48,7 +48,7 @@
             <table class="table table-bordered">                
                 <tr style="border-bottom: 2px solid transparent;">
                     <td colspan="3" style="font-size: 1.3em; font-weight: bold">
-                        <a href="{{url('article/index')}}/{{buy.idBuy}}">{{buy.idBuy}}</a>
+                        <a href="{{url('payment/index')}}/{{buy.idBuy}}">{{buy.idBuy}}</a>
                         {% for article in articles %}
                             {% if buy.idBuy == article.idBuy %}
                                 {{article.name}}

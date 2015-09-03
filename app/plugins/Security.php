@@ -40,7 +40,7 @@ class Security extends Plugin
                 'importdata' => array('read','create','update'),
                 'user' => array('read','create','update'),              
                 'data' => array('read', 'download'),                
-                'article' => array('read',),
+                'payment' => array('read',),
             );
             
             foreach ($resources as $resource => $actions) {
@@ -57,7 +57,7 @@ class Security extends Plugin
             $acl->allow("admin", "user", "update");
             $acl->allow("admin", "data", "read");
             $acl->allow("admin", "data", "download");
-            $acl->allow("admin", "article", "read");
+            $acl->allow("admin", "payment", "read");
             
             // user
             $acl->allow("user", "dashboard", "read");   
@@ -66,7 +66,7 @@ class Security extends Plugin
             $acl->allow("user", "user", "update");
             $acl->allow("user", "data", "read");
             $acl->allow("user", "data", "download");
-            $acl->allow("user", "article", "read");
+            $acl->allow("user", "payment", "read");
 
             $this->cache->save('acl-cache', $acl);
         }
@@ -102,8 +102,8 @@ class Security extends Plugin
             /* Private resources */
                 /* Dashboard */
                 'index::index' => array('dashboard' => array('read')),
-                /* Article */
-                'article::index' => array('article' => array('read')), 
+                /* Payment */
+                'payment::index' => array('payment' => array('read')), 
                 /* User */                
                 'user::passedit' => array('user' => array('update')),
                 /* Data */                
