@@ -102,10 +102,15 @@
     <?php foreach ($buys as $buy) { ?>
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-bordered">
+            <table class="table table-bordered">                
                 <tr style="border-bottom: 2px solid transparent;">
                     <td colspan="3" style="font-size: 1.3em; font-weight: bold">
-                        <a><?php echo $buy->idBuy; ?></a>
+                        <a href="<?php echo $this->url->get('article/index'); ?>/<?php echo $buy->idBuy; ?>"><?php echo $buy->idBuy; ?></a>
+                        <?php foreach ($articles as $article) { ?>
+                            <?php if ($buy->idBuy == $article->idBuy) { ?>
+                                <?php echo $article->name; ?>
+                            <?php } ?>                            
+                        <?php } ?>
                     </td>
                 </tr>
                 <tr>

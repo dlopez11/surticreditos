@@ -40,7 +40,7 @@ class Security extends Plugin
                 'importdata' => array('read','create','update'),
                 'user' => array('read','create','update'),              
                 'data' => array('read', 'download'),                
-                'article' => array('read', 'download'),
+                'article' => array('read',),
             );
             
             foreach ($resources as $resource => $actions) {
@@ -103,7 +103,7 @@ class Security extends Plugin
                 /* Dashboard */
                 'index::index' => array('dashboard' => array('read')),
                 /* Article */
-                'index::index' => array('article' => array('read')), 
+                'article::index' => array('article' => array('read')), 
                 /* User */                
                 'user::passedit' => array('user' => array('update')),
                 /* Data */                
