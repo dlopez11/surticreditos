@@ -1,7 +1,7 @@
 {% extends "templates/default.volt" %}
 {% block header %}
     <script type="text/javascript">
-        function download () {
+        $(function download () {
             $.ajax({
                     url: "{{url('data/create')}}",
                     type: "POST",
@@ -15,7 +15,7 @@
                             window.location = '{{url('data/download')}}/' + data[0];
                     }
         });
-}
+});
     </script>
 {% endblock %}
 {% block content %}
