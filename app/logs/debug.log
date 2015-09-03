@@ -22,3 +22,10 @@
 [Thu, 03 Sep 15 16:03:48 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
 [Thu, 03 Sep 15 16:03:59 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
 [Thu, 03 Sep 15 16:04:11 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Thu, 03 Sep 15 16:14:50 -0500][DEBUG] Validando el usuario con rol [admin] en [article::index]
+[Thu, 03 Sep 15 16:14:50 -0500][DEBUG] El recurso no se encuentra registrado
+[Thu, 03 Sep 15 16:14:50 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Thu, 03 Sep 15 16:14:50 -0500][DEBUG] Validando el usuario con rol [admin] en [images::favicons]
+[Thu, 03 Sep 15 16:14:50 -0500][DEBUG] El recurso no se encuentra registrado
+[Thu, 03 Sep 15 16:14:50 -0500][DEBUG] Validando el usuario con rol [admin] en [error::index]
+[Thu, 03 Sep 15 16:14:52 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]

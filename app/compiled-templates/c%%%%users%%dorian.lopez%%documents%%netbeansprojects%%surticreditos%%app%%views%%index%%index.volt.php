@@ -26,10 +26,7 @@
     <?php echo $this->tag->stylesheetLink('library/select2/css/select2.min.css'); ?>   
 
     <script type="text/javascript">
-        var url = "<?php echo $this->url->get('data/get'); ?>/";
-        $(function () {            
-            $(".select2").select2();                    
-        });                
+        var url = "<?php echo $this->url->get('data/get'); ?>/";                    
     </script>
     
 

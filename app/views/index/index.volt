@@ -5,10 +5,7 @@
     {{ stylesheet_link('library/select2/css/select2.min.css') }}   
 
     <script type="text/javascript">
-        var url = "{{url('data/get')}}/";
-        $(function () {            
-            $(".select2").select2();                    
-        });                
+        var url = "{{url('data/get')}}/";                    
     </script>
     
 {% endblock %}
