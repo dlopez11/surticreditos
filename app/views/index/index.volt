@@ -8,30 +8,8 @@
         var url = "{{url('data/get')}}/";
         $(function () {            
             $(".select2").select2();                    
-        });
-        
-        function download () {
-            var id = $(".select2").val();
-            
-            if (id > 0) {
-                $.ajax({
-                    url: "{{url('data/create')}}",
-                    type: "POST",
-                    data: {
-                        id: id
-                    },
-                    error: function(error){
-                        console.log(error);
-                    },
-                    success: function(data){
-                        window.location = '{{url('data/download')}}/' + data[0];
-                    }
-                });  
-            }  
-        }
+        });                
     </script>
-    
-    {{ javascript_include('js/showinfo.js') }}
     
 {% endblock %}
 {% block content %}
@@ -58,34 +36,39 @@
             <div class="xs-text">{{user.address}} - {{user.city}}</div>
             <div class="xs-text">{{user.phone}}</div>   
         </div>
-    </div>
+    </div>   
     
-    <div class="space"></div>
-    <br>   
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <div class="col-md-10">
-                <select class="form-control select2">
-                    <option value="0">Seleccione su credito</option>
-                    {% for buy in buys %}
-                        <option value="{{buy.idBuy}}">{{buy.idBuy}}</option>
-                    {% endfor %}
-                </select>
-            </div>                                       
-            <div class="col-md-2">
-                <button id="download" onClick="download();" class="btn btn-info btn-sm">Descargar pagos</button>
-            </div>
+        <div class="col-md-12 text-center">
+            <h2>Créditos</h2>
+            <p></p>
         </div>
     </div>
-    <br>
-    <div class="space"></div>
     
-    <div class="row" id="container">
+    {% for buy in buys %}
+    <div class="row">
         <div class="col-md-12">
-            
+            <table class="table table-bordered">
+                <tr style="border-bottom: 2px solid transparent;">
+                    <td colspan="3" style="font-size: 1.3em; font-weight: bold">
+                        <a>{{buy.idBuy}}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-right: 2px solid transparent;">Total: <span style="color: #337ab7; font-size: 1.2em;">${{buy.value}}</span></td>
+                    <td style="border-right: 2px solid transparent;">Valor Cancelado: <span style="color: #449d44; font-size: 1.2em;">${{buy.value - buy.debt}}</span></td>
+                    <td>Saldo: <span style="color: #848484; font-size: 1.2em;">${{buy.debt}}</span></td>
+                </tr>
+            </table>
         </div>
     </div>
+    {% endfor %}
     
-    
+    <div class="row">
+        <div class="col-md-12" align="right">
+            <p>
+                <em>La información suministrada puede no estar actualizada.</em>
+            </p>
+        </div>
+    </div>    
 {% endblock %}

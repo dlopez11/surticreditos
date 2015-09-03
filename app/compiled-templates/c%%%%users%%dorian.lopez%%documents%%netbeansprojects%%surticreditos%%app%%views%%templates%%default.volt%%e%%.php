@@ -20,7 +20,7 @@ a:5:{i:0;s:1184:"<!DOCTYPE html>
         <script type="text/javascript">
             var myBaseURL = '<?php echo $this->url->get(''); ?>';
         </script>
-        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:23;}}i:1;s:1863:"
+        ";s:6:"header";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:27:"<!-- custom header code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:23;}}i:1;s:1866:"
     </head>
     <body>
         <div class="header clearfix">
@@ -48,7 +48,7 @@ a:5:{i:0;s:1184:"<!DOCTYPE html>
                     </ul>
                 </nav>
 
-                <a href="http://www.google.com/" target="_blank">
+                <a href="http://surticreditos.com/" target="_blank">
                     <img src="<?php echo $this->url->get(''); ?>img/Surticreditos-01.png" height="70" />
                 </a>
             </div>

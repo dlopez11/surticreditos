@@ -29,30 +29,8 @@
         var url = "<?php echo $this->url->get('data/get'); ?>/";
         $(function () {            
             $(".select2").select2();                    
-        });
-        
-        function download () {
-            var id = $(".select2").val();
-            
-            if (id > 0) {
-                $.ajax({
-                    url: "<?php echo $this->url->get('data/create'); ?>",
-                    type: "POST",
-                    data: {
-                        id: id
-                    },
-                    error: function(error){
-                        console.log(error);
-                    },
-                    success: function(data){
-                        window.location = '<?php echo $this->url->get('data/download'); ?>/' + data[0];
-                    }
-                });  
-            }  
-        }
+        });                
     </script>
-    
-    <?php echo $this->tag->javascriptInclude('js/showinfo.js'); ?>
     
 
     </head>
@@ -82,7 +60,7 @@
                     </ul>
                 </nav>
 
-                <a href="http://www.google.com/" target="_blank">
+                <a href="http://surticreditos.com/" target="_blank">
                     <img src="<?php echo $this->url->get(''); ?>img/Surticreditos-01.png" height="70" />
                 </a>
             </div>
@@ -115,36 +93,41 @@
             <div class="xs-text"><?php echo $user->address; ?> - <?php echo $user->city; ?></div>
             <div class="xs-text"><?php echo $user->phone; ?></div>   
         </div>
-    </div>
+    </div>   
     
-    <div class="space"></div>
-    <br>   
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <div class="col-md-10">
-                <select class="form-control select2">
-                    <option value="0">Seleccione su credito</option>
-                    <?php foreach ($buys as $buy) { ?>
-                        <option value="<?php echo $buy->idBuy; ?>"><?php echo $buy->idBuy; ?></option>
-                    <?php } ?>
-                </select>
-            </div>                                       
-            <div class="col-md-2">
-                <button id="download" onClick="download();" class="btn btn-info btn-sm">Descargar pagos</button>
-            </div>
+        <div class="col-md-12 text-center">
+            <h2>Créditos</h2>
+            <p></p>
         </div>
     </div>
-    <br>
-    <div class="space"></div>
     
-    <div class="row" id="container">
+    <?php foreach ($buys as $buy) { ?>
+    <div class="row">
         <div class="col-md-12">
-            
+            <table class="table table-bordered">
+                <tr style="border-bottom: 2px solid transparent;">
+                    <td colspan="3" style="font-size: 1.3em; font-weight: bold">
+                        <a><?php echo $buy->idBuy; ?></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-right: 2px solid transparent;">Total: <span style="color: #337ab7; font-size: 1.2em;">$<?php echo $buy->value; ?></span></td>
+                    <td style="border-right: 2px solid transparent;">Valor Cancelado: <span style="color: #449d44; font-size: 1.2em;">$<?php echo $buy->value - $buy->debt; ?></span></td>
+                    <td>Saldo: <span style="color: #848484; font-size: 1.2em;">$<?php echo $buy->debt; ?></span></td>
+                </tr>
+            </table>
         </div>
     </div>
+    <?php } ?>
     
-    
+    <div class="row">
+        <div class="col-md-12" align="right">
+            <p>
+                <em>La información suministrada puede no estar actualizada.</em>
+            </p>
+        </div>
+    </div>    
 
                 </div>    
             </div>
