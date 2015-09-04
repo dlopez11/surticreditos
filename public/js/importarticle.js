@@ -1,12 +1,12 @@
 $(function(){
-    $('#uptwo').click(function(){
+    $('#upfour').click(function(){
 
-        var comprobar = $('#csvtwo').val().length;
+        var comprobar = $('#csvfour').val().length;
 
         if(comprobar > 0){
-            var formulario = $('#subidados');
+            var formulario = $('#subidacuatro');
             var archivos = new FormData();
-            var url = csvtwo;
+            var url = csvfour;
 
             for (var i = 0; i < (formulario.find('input[type=file]').length); i++) { 
                 archivos.append((formulario.find('input[type="file"]:eq('+i+')').attr("name")),((formulario.find('input[type="file"]:eq('+i+')')[0]).files[0]));
@@ -18,25 +18,25 @@ $(function(){
                 data: archivos,
                 processData:false,
                 beforeSend : function (){
-                    $('#respuestados').html('<label style="padding-top:10px; color:blue;">Cargando...</label>');
+                    $('#respuestacuatro').html('<label style="padding-top:10px; color:blue;">Cargando...</label>');
                 },
                 success: function(data){                   
                     if(data.length > 0){
-                        $('#respuestados').html('<label style="padding-top:10px; color:green;">'+ data +'</label>');	
-                        $('#subidados')[0].reset();
+                        $('#respuestacuatro').html('<label style="padding-top:10px; color:green;">'+ data +'</label>');	
+                        $('#subidacuatro')[0].reset();
                         return false;
                     }
                 },
                 error: function (data) {                    
                     var status = JSON.parse(data.responseText);
-                    $('#respuestados').html('<label style="padding-top:10px; color:red;">'+ status +'</label>');
+                    $('#respuestacuatro').html('<label style="padding-top:10px; color:red;">'+ status +'</label>');
                     return false;
                 }
     });    
         }
         else         
         {            
-            alert('Selecciona un archivo CSV para importar.');
+            $('#respuestacuatro').html('<label style="padding-top:10px; color:red;">Selecciona un archivo CSV para importar.</label>');
             return false;
         }
     });

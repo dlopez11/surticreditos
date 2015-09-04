@@ -87,8 +87,8 @@ class ImportdataController extends ControllerBase
     public function importfiletwoAction()
     {
         try {
-            if ($_FILES['csvtwo']['size'] > 1048576){
-                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 1 MB de peso'), 403);
+            if ($_FILES['csvtwo']['size'] > 3145728){
+                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 3 MB de peso'), 403);
             }
             
             if ($_FILES['csvtwo']['size'] > 0) {
@@ -158,8 +158,8 @@ class ImportdataController extends ControllerBase
     public function importfilethreeAction()
     {
          try {
-            if ($_FILES['csvthree']['size'] > 1048576){
-                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 1 MB de peso'), 403);
+            if ($_FILES['csvthree']['size'] > 3145728){
+                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 3 MB de peso'), 403);
             }
             
             if ($_FILES['csvthree']['size'] > 0) {
@@ -221,6 +221,71 @@ class ImportdataController extends ControllerBase
                 
                 $sql = "INSERT IGNORE INTO payment (idPayment, idBuy, receiptValue, date) VALUES {$text}";
                 $result = $this->db->execute($sql);
+
+                return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
+            }
+        }
+        catch(Exception $e) {
+            $this->logger->log("Exception while inserting buys: {$e->getMessage()}");
+            return $this->set_json_response(array("Ha ocurrido un error, por favor contacte al administrador"), 403);
+        }
+    }
+    
+    public function importfilefourAction()
+    {
+         try {
+            if ($_FILES['csvfour']['size'] > 3145728){
+                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 3 MB de peso'), 403);
+            }
+            
+            if ($_FILES['csvfour']['size'] > 0) {
+
+                $fileinfo = pathinfo($_FILES['csvfour']['name']);
+                
+                if(strtolower(trim($fileinfo["extension"])) != "csv")
+                {
+                    return $this->set_json_response(array('Por favor seleccione un archivo de tipo CSV'), 403);
+                }
+                   
+                $csv = $_FILES['csvfour']['tmp_name'];
+                $handle = fopen($csv,'r');
+                
+                $values = array();
+                $text = array();
+                
+                while($data = fgetcsv($handle,1000,";","'")){
+                    if($data[0]){
+                        $values[] = "$data[0]";
+                    }
+                }
+                
+                $this->logger->log(print_r($values, true));
+                
+                foreach ($values as $key => $value) {
+                    $cu = substr($value, 0, 7);
+                    $re = substr($value, 7, 14);
+                    $no = substr($value, 21, 20);
+                    $ca = substr($value, 41, 5);                   
+                    
+                    $cue = ltrim($cu,'0');
+                    $ref = ltrim($re,'0');
+                    $nom = ltrim($no,'0');
+                    $can = ltrim($ca,'0');
+                                        
+                    $cuenta = trim($cue);                    
+                    $referencia = trim($ref);
+                    $nombre = trim($nom);
+                    $cantidad = trim($can);
+                    
+                    $txt[] = "(null,$cuenta,$referencia,$nombre,'$cantidad')";
+                    $text = implode(", ", $txt);
+                                        
+                }
+                
+                $this->logger->log(print_r($text, true));
+                
+//                $sql = "INSERT IGNORE INTO article (idArticle, idBuy, reference, name, quantity) VALUES {$text}";
+//                $result = $this->db->execute($sql);
 
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
             }

@@ -36,7 +36,7 @@ $(function(){
         }
         else         
         {            
-            alert('Selecciona un archivo CSV para importar.');
+            $('#respuestatres').html('<label style="padding-top:10px; color:red;">Selecciona un archivo CSV para importar.</label>');
             return false;
         }
     });

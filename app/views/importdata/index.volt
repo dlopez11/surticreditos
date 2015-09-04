@@ -9,11 +9,13 @@
         var csvone = "{{url('importdata/importfileone')}}";
         var csvtwo = "{{url('importdata/importfiletwo')}}";
         var csvthree = "{{url('importdata/importfilethree')}}";
+        var csvfour = "{{url('importdata/importfilefour')}}";
     </script>
     
-    {{ javascript_include('js/importclientone.js') }}
-    {{ javascript_include('js/importclienttwo.js') }}
-    {{ javascript_include('js/importclientthree.js') }}
+    {{ javascript_include('js/importuser.js') }}
+    {{ javascript_include('js/importbuy.js') }}
+    {{ javascript_include('js/importpayment.js') }}
+    {{ javascript_include('js/importarticle.js') }}
     
     <script>
         $(document).ready(function() {
@@ -37,15 +39,12 @@
                             <li><a href="#tab1" data-toggle="tab">Actualizar Usuarios</a></li>
                             <li><a href="#tab2" data-toggle="tab">Actualizar Compras</a></li>
                             <li><a href="#tab3" data-toggle="tab">Actualizar Recibos</a></li>
+                            <li><a href="#tab4" data-toggle="tab">Actualizar Articulos</a></li>
                          </ul>
                     </div>
                 </div>
             </div>
-
-            {#<div id="bar" class="progress progress-striped active">
-                <div class="bar"></div>
-            </div>#}
-
+                
             <div class="tab-content">
                 <div class="tab-pane" id="tab1">                    
                     <div class="row">
@@ -156,7 +155,40 @@
                             </form>
                         </div>
                     </div>
-                </div>                
+                </div>
+                    
+                <div class="tab-pane" id="tab4">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <h1>Actualizar articulos desde archivo .csv</h1>
+                            <hr />            
+                        </div>                            
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                            <p>
+                                Aquí podrá actualizar la información de los articulos desde un archivo en
+                                formato CSV.                
+                            </p>
+                            <p>
+                                Al momento de guardar el documento de texto plano se debera agregar la extensión 
+                                <strong>(*.csv)</strong> al nombre del archivo.
+                            </p>
+                            <br />
+                        </div>
+                    </div>
+                        
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">            
+                            <form id="subidacuatro">
+                                <input type="file" id="csvfour" name="csvfour" />
+                                <br />                                
+                                <a id="upfour" class="btn btn-success" role="button">Importar</a>                                
+                                <div id="respuestacuatro"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>	
         </div>
     </div>

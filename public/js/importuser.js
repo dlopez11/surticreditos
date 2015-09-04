@@ -43,7 +43,6 @@ $(function(){
         }
         else {          
             $('#respuesta').html('<label style="padding-top:10px; color:red;">Selecciona un archivo CSV para importar.</label>');
-//            alert('Selecciona un archivo CSV para importar.');
             return false;
         }
     });

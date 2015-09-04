@@ -115,6 +115,7 @@ class Security extends Plugin
                 'importdata::importfileone' => array('importdata' => array('read','create','update')),
                 'importdata::importfiletwo' => array('importdata' => array('read','create','update')),
                 'importdata::importfilethree' => array('importdata' => array('read','create','update')),
+                'importdata::importfilefour' => array('importdata' => array('read','create','update')),
             );
             
             $this->cache->save('controllermap-cache', $map);
