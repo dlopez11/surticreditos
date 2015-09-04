@@ -29,3 +29,27 @@
 [Fri, 04 Sep 15 17:36:54 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
 [Fri, 04 Sep 15 17:36:54 -0500][DEBUG] x: 1110000
 [Fri, 04 Sep 15 17:36:54 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:37:28 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:37:28 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:37:28 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:47:55 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:47:59 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Fri, 04 Sep 15 17:48:02 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:49:10 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:49:12 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Fri, 04 Sep 15 17:49:15 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:49:16 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Fri, 04 Sep 15 17:49:24 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:49:52 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:49:53 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Fri, 04 Sep 15 17:50:02 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:50:17 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:50:18 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Fri, 04 Sep 15 17:50:22 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:50:40 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:50:41 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Fri, 04 Sep 15 17:51:14 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Fri, 04 Sep 15 17:51:17 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:51:27 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:51:28 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Fri, 04 Sep 15 17:51:29 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
