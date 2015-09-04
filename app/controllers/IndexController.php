@@ -3,19 +3,15 @@
 class IndexController extends ControllerBase
 {
     public function indexAction()
-    {
-        $buy = Buy::find(array(
-            'conditions' => 'idUser = ?1',
-            'bind' => array(1 => $this->user->idUser)
-        ));
+    {               
+        $query = $this->modelsManager->createQuery("SELECT Buy.*, Article.* FROM Buy JOIN Article WHERE Buy.idUser = {$this->user->idUser}");
+        $buys = $query->execute();
         
-        $article = Article::find(array(
-            'conditions' => 'idBuy = ?1',
-            'bind' => array(1 => $buy->idBuy)
-        ));
+        foreach ($buys as $b) {
+            $this->logger->log("x: {$b->buy->value}");
+        }
         
         $this->view->setVar("user", $this->user);
-        $this->view->setVar("buys", $buy);
-        $this->view->setVar("articles", $article);
+        $this->view->setVar("buys", $buys);
     }
 }

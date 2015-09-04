@@ -112,8 +112,6 @@ class ImportdataController extends ControllerBase
                     }
                 }
                 
-                $this->logger->log(print_r($values, true));
-                
                 foreach ($values as $key => $value) {
                     $c = substr($value, 0, 11);
                     $cu = substr($value, 11, 7);
@@ -217,8 +215,6 @@ class ImportdataController extends ControllerBase
                                         
                 }
                 
-                $this->logger->log(print_r($text, true));
-                
                 $sql = "INSERT IGNORE INTO payment (idPayment, idBuy, receiptValue, date) VALUES {$text}";
                 $result = $this->db->execute($sql);
 
@@ -259,8 +255,6 @@ class ImportdataController extends ControllerBase
                     }
                 }
                 
-                $this->logger->log(print_r($values, true));
-                
                 foreach ($values as $key => $value) {
                     $cu = substr($value, 0, 7);
                     $re = substr($value, 7, 14);
@@ -277,15 +271,13 @@ class ImportdataController extends ControllerBase
                     $nombre = trim($nom);
                     $cantidad = trim($can);
                     
-                    $txt[] = "(null,$cuenta,$referencia,$nombre,'$cantidad')";
+                    $txt[] = "(null,$cuenta,'$referencia','$nombre','$cantidad')";
                     $text = implode(", ", $txt);
                                         
                 }
                 
-                $this->logger->log(print_r($text, true));
-                
-//                $sql = "INSERT IGNORE INTO article (idArticle, idBuy, reference, name, quantity) VALUES {$text}";
-//                $result = $this->db->execute($sql);
+                $sql = "INSERT IGNORE INTO article (idArticle, idBuy, reference, name, quantity) VALUES {$text}";
+                $result = $this->db->execute($sql);
 
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
             }

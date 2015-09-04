@@ -1,2 +1,31 @@
-[Fri, 04 Sep 15 11:08:54 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
-[Fri, 04 Sep 15 11:09:01 -0500][DEBUG] Validando el usuario con rol [admin] en [importdata::index]
+[Fri, 04 Sep 15 17:31:44 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:31:44 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:31:44 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:31:44 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:31:44 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:33:03 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:33:03 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:33:03 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:33:03 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:33:03 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:33:19 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:33:19 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:33:19 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:33:19 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:33:19 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:33:24 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:33:24 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:33:24 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:33:24 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:33:24 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:34:09 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:34:09 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:34:09 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:35:39 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Fri, 04 Sep 15 17:35:45 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:35:45 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:35:45 -0500][DEBUG] x: 2500000
+[Fri, 04 Sep 15 17:36:51 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Fri, 04 Sep 15 17:36:54 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Fri, 04 Sep 15 17:36:54 -0500][DEBUG] x: 1110000
+[Fri, 04 Sep 15 17:36:54 -0500][DEBUG] x: 2500000

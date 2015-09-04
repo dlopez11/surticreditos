@@ -99,22 +99,19 @@
         </div>
     </div>
     
-    <?php foreach ($buys as $buy) { ?>
+    <?php foreach ($buys as $b) { ?>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12">            
             <table class="table table-bordered">                
                 <tr style="border-bottom: 2px solid transparent;">
                     <td colspan="3" style="font-size: 1.3em; font-weight: bold">
-                        <a href="<?php echo $this->url->get('payment/index'); ?>/<?php echo $buy->idBuy; ?>"><?php echo $buy->idBuy; ?></a>
-                        <?php foreach ($articles as $article) { ?>                            
-                            <?php echo $article->name; ?>                            
-                        <?php } ?>
+                        <a href="<?php echo $this->url->get('payment/index'); ?>/<?php echo $b->buy->idBuy; ?>"><?php echo $b->article->name; ?> (<?php echo $b->buy->idBuy; ?>)</a>
                     </td>
                 </tr>
                 <tr>
-                    <td style="border-right: 2px solid transparent;">Total: <span style="color: #337ab7; font-size: 1.2em;">$<?php echo $buy->value; ?></span></td>
-                    <td style="border-right: 2px solid transparent;">Valor Cancelado: <span style="color: #449d44; font-size: 1.2em;">$<?php echo $buy->value - $buy->debt; ?></span></td>
-                    <td>Saldo: <span style="color: #848484; font-size: 1.2em;">$<?php echo $buy->debt; ?></span></td>
+                    <td style="border-right: 2px solid transparent;">Total: <span style="color: #337ab7; font-size: 1.2em;">$<?php echo $b->buy->value; ?></span></td>
+                    <td style="border-right: 2px solid transparent;">Valor Cancelado: <span style="color: #449d44; font-size: 1.2em;">$<?php echo $b->buy->value - $b->buy->debt; ?></span></td>
+                    <td>Saldo: <span style="color: #848484; font-size: 1.2em;">$<?php echo $b->buy->debt; ?></span></td>
                 </tr>
             </table>
         </div>
