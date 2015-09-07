@@ -37,6 +37,9 @@
                         <strong>Item:</strong>
                     </td>
                     <td>
+                        <strong>Cantidad:</strong>
+                    </td>
+                    <td>
                         <strong>Valor total:</strong>
                     </td>
                     <td>
@@ -46,13 +49,14 @@
                         <strong>Saldo:</strong>
                     </td>
                 </tr>
-                {% for buy in buys %}
+                {% for b in buys %}
                 <tr>
-                    <td>{{buy.idBuy}}</td>
-                    <td></td>
-                    <td>${{buy.value}}</td>
-                    <td>${{buy.value - buy.debt}}</td>
-                    <td>${{buy.debt}}</td>
+                    <td>{{b.buy.idBuy}}</td>
+                    <td>{{b.article.name}}</td>
+                    <td>{{b.article.quantity}}</td>
+                    <td>${{b.buy.value}}</td>
+                    <td>${{b.buy.value - b.buy.debt}}</td>
+                    <td>${{b.buy.debt}}</td>
                 </tr>
                 {% endfor %}
             </table>
