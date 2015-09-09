@@ -132,3 +132,8 @@
 [Wed, 09 Sep 15 11:32:08 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
 [Wed, 09 Sep 15 11:32:17 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
 [Wed, 09 Sep 15 11:56:15 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Wed, 09 Sep 15 11:59:41 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Wed, 09 Sep 15 11:59:43 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Wed, 09 Sep 15 12:02:11 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Wed, 09 Sep 15 12:02:18 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Wed, 09 Sep 15 12:02:33 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]

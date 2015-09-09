@@ -109,8 +109,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="border-right: 2px solid transparent;">Referencia: <span style="color: #337ab7; font-size: 1.2em;"><?php echo $b->article->reference; ?></span></td>                    
-                    <td>Fecha: <span style="color: #848484; font-size: 1.2em;"><?php echo $b->buy->date; ?></span></td>
+                    <td style="border-right: 2px solid transparent;">Referencia: <span style="color: #337ab7; font-size: 1.2em;"><?php echo $b->article->reference; ?></span></td>
+                    <td>Fecha de compra: <span style="color: #848484; font-size: 1.2em;"><?php echo $b->buy->date; ?></span></td>
                 </tr>
             </table>
         </div>
