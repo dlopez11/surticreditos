@@ -31,10 +31,13 @@
             <table class="table table-bordered">        
                 <tr>
                     <td>
-                        <strong>ID de la Compra:</strong>
+                        <strong>Número de Factura:</strong>
                     </td>
                     <td>
-                        <strong>Item:</strong>
+                        <strong>Referencia:</strong>
+                    </td>
+                    <td>
+                        <strong>Nombre del producto:</strong>
                     </td>
                     <td>
                         <strong>Cantidad:</strong>
@@ -52,6 +55,7 @@
                 {% for b in buys %}
                 <tr>
                     <td>{{b.buy.idBuy}}</td>
+                    <td>{{b.article.reference}}</td>
                     <td>{{b.article.name}}</td>
                     <td>{{b.article.quantity}}</td>
                     <td>${{b.buy.value}}</td>
@@ -87,6 +91,14 @@
             </table>
         </div>
     </div>
+    
+    <div class="row">
+        <div class="col-md-12" align="right">
+            <p>
+                <em>Información sujeta a verificación.</em>
+            </p>
+        </div>
+    </div> 
 
     <div class="col-md-12" align="center">
 	<button id="download" onClick="download();" class="btn btn-info btn-sm">Descargar pagos</button>
