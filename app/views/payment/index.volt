@@ -25,8 +25,13 @@
             <p></p>
         </div>
     </div>
+    
+    <div class="col-md-12" align="right">
+	<button id="download" onClick="download();" class="btn btn-info btn-sm">Descargar pagos</button>
+        <p></p>
+    </div>
 
-<div class="row">
+    <div class="row">
         <div class="col-md-12">
             <table class="table table-bordered">        
                 <tr>
@@ -37,10 +42,13 @@
                         <strong>Referencia:</strong>
                     </td>
                     <td>
-                        <strong>Nombre del producto:</strong>
+                        <strong>Nombre del articulo:</strong>
                     </td>
                     <td>
                         <strong>Cantidad:</strong>
+                    </td>
+                    <td>
+                        <strong>Fecha de factura:</strong>
                     </td>
                     <td>
                         <strong>Valor total:</strong>
@@ -58,6 +66,7 @@
                     <td>{{b.article.reference}}</td>
                     <td>{{b.article.name}}</td>
                     <td>{{b.article.quantity}}</td>
+                    <td>{{b.buy.date}}</td>
                     <td>${{b.buy.value}}</td>
                     <td>${{b.buy.value - b.buy.debt}}</td>
                     <td>${{b.buy.debt}}</td>
@@ -98,9 +107,5 @@
                 <em>Información sujeta a verificación.</em>
             </p>
         </div>
-    </div> 
-
-    <div class="col-md-12" align="center">
-	<button id="download" onClick="download();" class="btn btn-info btn-sm">Descargar pagos</button>
     </div>
 {% endblock %}
