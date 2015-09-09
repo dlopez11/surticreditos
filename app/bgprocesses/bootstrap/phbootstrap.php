@@ -6,7 +6,7 @@ try {
     $loader->registerDirs(array())->register();
 
     $loader->registerNamespaces(array(
-        'Sigmamovil\Misc' => '../app/misc/'
+        'Surticreditos\Misc' => '../app/misc/'
     ), true);
 
     //Create a DI
