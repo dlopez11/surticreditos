@@ -27,7 +27,7 @@
     </div>
     
     <div class="col-md-12" align="right">
-	<a href="{{url(payment/downloadpdf)}}" id="download" onClick="download();" class="btn btn-info btn-sm">Descargar pagos</a>
+	<a href="{{url('payment/downloadpdf')}}" id="download" class="btn btn-info btn-sm">Descargar pagos</a>
         <p></p>
     </div>
 

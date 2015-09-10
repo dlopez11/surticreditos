@@ -18,7 +18,8 @@ class PaymentController extends ControllerBase
     
     public function downloadpdfAction()
     {
-        require_once 'library/pdf/dompdf_config.inc.php';
+        $path = \Phalcon\DI\FactoryDefault::getDefault()->get('path');
+        require_once "{$path->path}app/library/pdf/dompdf_config.inc.php";
         
         $content = '
             <html>
