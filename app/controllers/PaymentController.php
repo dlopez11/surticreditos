@@ -24,21 +24,33 @@ class PaymentController extends ControllerBase
         $content = '
             <html>
                 <head>
-                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                    <meta http-equiv="Content-Type" charset="UTF-8" />
                     <title>Ejemplo de Documento en PDF.</title>
                 </head>
                 <body>
-                    <h2>Ingredientes para la realización de Postres.</h2>
-                    <p>Ingredientes:</p>
-                    <dl>
-                        <dt>Chocolate</dt>
-                        <dd>Cacao</dd>
-                        <dd>Azucar</dd>
-                        <dd>Leche</dd>
-                        <dt>Caramelo</dt>
-                        <dd>Azucar</dd>
-                        <dd>Colorantes</dd>
-                    </dl>
+                    <a href="http://surticreditos.com/" target="_blank">
+                        <img src="../public/img/Surticreditos-01.png" height="70" align="center" />
+                    </a>
+                    <br />
+                    <br />
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Numero de factura:</td>
+                            <td>85236</td>
+                        </tr>
+                        <tr>
+                            <td>Valor total:</td>
+                            <td>$500.000</td>
+                        </tr>
+                        <tr>
+                            <td>Valor cancelado:</td>
+                            <td>$300.000</td>
+                        </tr>
+                        <tr>
+                            <td>Saldo:</td>
+                            <td>$200.000</td>
+                        </tr>
+                    </table>
                 </body>
             </html>';
         
