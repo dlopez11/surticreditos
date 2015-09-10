@@ -107,6 +107,7 @@ class Security extends Plugin
                 /* Payment */
                 'payment::index' => array('payment' => array('read')),
                 'payment::downloadpdf' => array('payment' => array('download')),
+                'payment::get' => array('data' => array('read')),
                 /* User */                
                 'user::passedit' => array('user' => array('update')),
                 /* Data */                

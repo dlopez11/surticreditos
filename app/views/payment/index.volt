@@ -26,8 +26,10 @@
         </div>
     </div>
     
+    <h4 class="text-center">Crédito No. <em>{{idBuy}}</em></h4><br>
+    
     <div class="col-md-12" align="right">
-	<a href="{{url('payment/downloadpdf')}}" id="download" class="btn btn-info btn-sm">Descargar pagos</a>
+	<a href="{{url('payment/downloadpdf')}}/{{idBuy}}" id="download" class="btn btn-info btn-sm">Descargar pagos</a>
         <p></p>
     </div>
 
@@ -35,9 +37,6 @@
         <div class="col-md-12">
             <table class="table table-bordered">        
                 <tr>
-                    <td>
-                        <strong>Número de Factura:</strong>
-                    </td>
                     <td>
                         <strong>Referencia:</strong>
                     </td>
@@ -62,7 +61,6 @@
                 </tr>
                 {% for b in buys %}
                 <tr>
-                    <td>{{b.buy.idBuy}}</td>
                     <td>{{b.article.reference}}</td>
                     <td>{{b.article.name}}</td>
                     <td>{{b.article.quantity}}</td>
@@ -99,6 +97,11 @@
                 {% endfor %}
             </table>
         </div>
+    </div>
+    
+    <div class="col-md-12" align="right">
+	<a href="{{url('payment/downloadpdf')}}/{{idBuy}}" id="download" class="btn btn-info btn-sm">Descargar pagos</a>
+        <p></p>
     </div>
     
     <div class="row">

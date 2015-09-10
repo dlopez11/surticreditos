@@ -44,16 +44,16 @@
     
     {% for b in buys %}
     <div class="row">
-        <div class="col-md-12">            
+        <div class="col-md-12"> 
             <table class="table table-bordered">                
                 <tr style="border-bottom: 2px solid transparent;">
-                    <td colspan="3" style="font-size: 1.3em; font-weight: bold">
-                        <a href="{{url('payment/index')}}/{{b.buy.idBuy}}">({{b.buy.idBuy}}) {{b.article.name}}</a>
+                    <td colspan="3" style="font-size: 1.1em; font-weight: bold">
+                        <a href="{{url('payment/index')}}/{{b.idBuy}}" target="_blank">({{b.idBuy}}) {{b.name}}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td style="border-right: 2px solid transparent;">Referencia: <span style="color: #337ab7; font-size: 1.2em;">{{b.article.reference}}</span></td>
-                    <td>Fecha de compra: <span style="color: #848484; font-size: 1.2em;">{{b.buy.date}}</span></td>
+                    <td style="border-right: 2px solid transparent;">Referencia: <span style="color: #337ab7; font-size: 0.8em;">{{b.reference}}</span></td>
+                    <td>Fecha de compra: <span style="color: #848484; font-size: 0.8em;">{{b.date}}</span></td>
                 </tr>
             </table>
         </div>

@@ -101,16 +101,16 @@
     
     <?php foreach ($buys as $b) { ?>
     <div class="row">
-        <div class="col-md-12">            
+        <div class="col-md-12"> 
             <table class="table table-bordered">                
                 <tr style="border-bottom: 2px solid transparent;">
-                    <td colspan="3" style="font-size: 1.3em; font-weight: bold">
-                        <a href="<?php echo $this->url->get('payment/index'); ?>/<?php echo $b->buy->idBuy; ?>">(<?php echo $b->buy->idBuy; ?>) <?php echo $b->article->name; ?></a>
+                    <td colspan="3" style="font-size: 1.1em; font-weight: bold">
+                        <a href="<?php echo $this->url->get('payment/index'); ?>/<?php echo $b->idBuy; ?>" target="_blank">(<?php echo $b->idBuy; ?>) <?php echo $b->name; ?></a>
                     </td>
                 </tr>
                 <tr>
-                    <td style="border-right: 2px solid transparent;">Referencia: <span style="color: #337ab7; font-size: 1.2em;"><?php echo $b->article->reference; ?></span></td>
-                    <td>Fecha de compra: <span style="color: #848484; font-size: 1.2em;"><?php echo $b->buy->date; ?></span></td>
+                    <td style="border-right: 2px solid transparent;">Referencia: <span style="color: #337ab7; font-size: 0.8em;"><?php echo $b->reference; ?></span></td>
+                    <td>Fecha de compra: <span style="color: #848484; font-size: 0.8em;"><?php echo $b->date; ?></span></td>
                 </tr>
             </table>
         </div>
