@@ -1,7 +1,7 @@
 {% extends "templates/default.volt" %}
 {% block header %}
     <script type="text/javascript">
-        $(function download () {
+        {#$(function download () {
             $.ajax({
                     url: "{{url('data/create')}}",
                     type: "POST",
@@ -14,8 +14,8 @@
                     success: function(data){
                             window.location = '{{url('data/download')}}/' + data[0];
                     }
-        });
-});
+            });
+        });#}
     </script>
 {% endblock %}
 {% block content %}
@@ -27,7 +27,7 @@
     </div>
     
     <div class="col-md-12" align="right">
-	<button id="download" onClick="download();" class="btn btn-info btn-sm">Descargar pagos</button>
+	<a href="{{url(payment/downloadpdf)}}" id="download" onClick="download();" class="btn btn-info btn-sm">Descargar pagos</a>
         <p></p>
     </div>
 
