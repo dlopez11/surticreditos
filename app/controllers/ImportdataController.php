@@ -179,9 +179,7 @@ class ImportdataController extends ControllerBase
                     if($data[0]){
                         $values[] = "$data[0]";
                     }
-                }
-                
-                $this->logger->log(print_r($values, true));
+                }                
                 
                 foreach ($values as $key => $value) {
                     $ce = substr($value, 0, 11);

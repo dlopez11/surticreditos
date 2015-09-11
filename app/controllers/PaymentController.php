@@ -107,7 +107,7 @@ class PaymentController extends ControllerBase
         $pdf->set_paper("A4", "portrait");
         $pdf->load_html(utf8_decode($content));
         $pdf ->render();
-        $pdf ->stream('Ejemplo.pdf');
+        $pdf ->stream('Historial de pago crédito '. $idBuy . '.pdf');
     }
     
     
