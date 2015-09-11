@@ -83,7 +83,7 @@ class PaymentController extends ControllerBase
                     </div>
                     <table style="width:100%">
                         <tr>
-                            <td><strong>Numero de factura:</strong></td>
+                            <td><strong>No. de factura:</strong></td>
                             <td>'. $idBuy .'</td>
                         </tr>
                         <tr>
