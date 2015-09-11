@@ -141,7 +141,7 @@ class ImportdataController extends ControllerBase
                                         
                 }                             
                 
-                $sql = "INSERT IGNORE INTO buy (idBuy, idUser, date, value, balance) VALUES {$text}";
+                $sql = "INSERT IGNORE INTO buy (idBuy, idUser, date, value, debt) VALUES {$text}";
                 $result = $this->db->execute($sql);
 
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
