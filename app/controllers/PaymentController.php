@@ -31,6 +31,16 @@ class PaymentController extends ControllerBase
         $valorc = $d->data[0]['dif'];
         $saldo = $d->data[0]['debt'];
         
+        $user = $this->user->idUser;
+        
+        $username = User::findFirst(array(
+            'conditions' => 'idUser = ?1',
+            'bind' => array(1 => $user)
+        ));
+        
+        $name = $username->name;
+        $date = date('d-m-Y h:i:s A' , time());
+        
         require_once "{$this->path->path}app/library/pdf/dompdf_config.inc.php";
         
         $table = "<table style='width:100%'>
@@ -53,8 +63,8 @@ class PaymentController extends ControllerBase
         $content = '
             <html>
                 <head>
-                    <meta http-equiv="Content-Type" charset="UTF-8" />
-                    <title>Ejemplo de Documento en PDF.</title>
+                    <meta http-equiv="Content-Type" content="charset=utf-8" />
+                    <title>Documento en PDF.</title>
                     <style>
                         table, th, td {
                             border: 1px solid black;
@@ -69,6 +79,16 @@ class PaymentController extends ControllerBase
                             text-align: center;
                             font-family: Arial, Helvetica, sans-serif;
                             color: Black;                            
+                        }
+                        footer {
+                            position: fixed;
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 13px;
+                            bottom: 0;
+                            left: 0;
+                            height: 70px;
+                            background-color: white;
+                            width: 100%;
                         }
                     </style>
                 </head>
@@ -100,11 +120,14 @@ class PaymentController extends ControllerBase
                         </tr>
                     </table><br>
                     ' . $table . '
+                    <footer>
+                        <p><em>Elaborado por: '. $name .' el d&iacute;a '. $date .'</em></p>
+                    </footer>
                 </body>
             </html>';
         
         $pdf = new DOMPDF();
-        $pdf->set_paper("A4", "portrait");
+        $pdf->set_paper("letter", "portrait");
         $pdf->load_html(utf8_decode($content));
         $pdf ->render();
         $pdf ->stream('Historial de pago crédito '. $idBuy . '.pdf');
