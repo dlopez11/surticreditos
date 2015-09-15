@@ -70,7 +70,12 @@ class SessionController extends ControllerBase
                     $this->flashSession->error("Esta es la primera vez que consulta su saldo, su contraseña es su número de cédula.");
                     $this->response->redirect('session/login');
                     return;
-                }                
+                }
+                if(empty($user->email)){
+                    $this->flashSession->error("Usted no tiene un correo electrónico registrado en la base de datos, por favor acérquese a la oficina de Surticréditos.");
+                    $this->response->redirect('session/login');
+                    return;
+                }
                 if($user){
                     $cod = uniqid();
                     $urlManager = $urlManager = Phalcon\DI::getDefault()->get('urlManager');
