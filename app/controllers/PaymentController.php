@@ -60,7 +60,7 @@ class PaymentController extends ControllerBase
                     <thead>
                         <tr>
                             <th>Referencia:</th>
-                            <th>Nombre del articulo:</th>		
+                            <th>Nombre del art&iacute;culo:</th>		
                             <th>Cantidad:</th>
                         </tr>
                     </thead>                        

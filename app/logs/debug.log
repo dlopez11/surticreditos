@@ -29,3 +29,5 @@
 [Tue, 15 Sep 15 09:34:34 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
 [Tue, 15 Sep 15 09:34:43 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
 [Tue, 15 Sep 15 09:34:51 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]
+[Tue, 15 Sep 15 09:45:55 -0500][DEBUG] Validando el usuario con rol [admin] en [index::index]
+[Tue, 15 Sep 15 09:46:15 -0500][DEBUG] Validando el usuario con rol [admin] en [payment::index]

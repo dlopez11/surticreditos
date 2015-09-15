@@ -160,14 +160,14 @@
                 <div class="tab-pane" id="tab4">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <h1>Actualizar articulos desde archivo .csv</h1>
+                            <h1>Actualizar artículos desde archivo .csv</h1>
                             <hr />            
                         </div>                            
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                             <p>
-                                Aquí podrá actualizar la información de los articulos desde un archivo en
+                                Aquí podrá actualizar la información de los artículos desde un archivo en
                                 formato CSV.                
                             </p>
                             <p>

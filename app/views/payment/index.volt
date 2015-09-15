@@ -20,7 +20,7 @@
                             <strong>Referencia:</strong>
                         </td>
                         <td>
-                            <strong>Nombre del articulo:</strong>
+                            <strong>Nombre del artículo:</strong>
                         </td>
                         <td>
                             <strong>Cantidad:</strong>
