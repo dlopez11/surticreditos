@@ -48,12 +48,13 @@
             <table class="table table-bordered">                
                 <tr style="border-bottom: 2px solid transparent;">
                     <td colspan="3" style="font-size: 1.1em; font-weight: bold">
-                        <a href="{{url('payment/index')}}/{{b.idBuy}}" target="_blank">({{b.idBuy}}) {{b.name}}</a>
+                        ({{b.idBuy}})
+                        <a href="{{url('payment/index')}}/{{b.idBuy}}" target="_blank">{{b.name}}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td style="border-right: 2px solid transparent;">Referencia: <span style="color: #337ab7; font-size: 0.8em;">{{b.reference}}</span></td>
-                    <td>Fecha de compra: <span style="color: #848484; font-size: 0.8em;">{{b.date}}</span></td>
+                    <td style="border-right: 2px solid transparent;">Fecha de compra: <span style="color: #337ab7; font-size: 0.8em;">{{b.date}}</span></td>
+                    <td> <span style="color: #848484; font-size: 0.8em;"></span></td>
                 </tr>
             </table>
         </div>

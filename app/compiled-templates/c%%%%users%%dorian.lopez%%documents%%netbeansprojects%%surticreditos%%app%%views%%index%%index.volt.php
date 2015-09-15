@@ -105,12 +105,13 @@
             <table class="table table-bordered">                
                 <tr style="border-bottom: 2px solid transparent;">
                     <td colspan="3" style="font-size: 1.1em; font-weight: bold">
-                        <a href="<?php echo $this->url->get('payment/index'); ?>/<?php echo $b->idBuy; ?>" target="_blank">(<?php echo $b->idBuy; ?>) <?php echo $b->name; ?></a>
+                        (<?php echo $b->idBuy; ?>)
+                        <a href="<?php echo $this->url->get('payment/index'); ?>/<?php echo $b->idBuy; ?>" target="_blank"><?php echo $b->name; ?></a>
                     </td>
                 </tr>
                 <tr>
-                    <td style="border-right: 2px solid transparent;">Referencia: <span style="color: #337ab7; font-size: 0.8em;"><?php echo $b->reference; ?></span></td>
-                    <td>Fecha de compra: <span style="color: #848484; font-size: 0.8em;"><?php echo $b->date; ?></span></td>
+                    <td style="border-right: 2px solid transparent;">Fecha de compra: <span style="color: #337ab7; font-size: 0.8em;"><?php echo $b->date; ?></span></td>
+                    <td> <span style="color: #848484; font-size: 0.8em;"></span></td>
                 </tr>
             </table>
         </div>

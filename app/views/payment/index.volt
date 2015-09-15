@@ -1,22 +1,5 @@
 {% extends "templates/default.volt" %}
-{% block header %}
-    <script type="text/javascript">
-        {#$(function download () {
-            $.ajax({
-                    url: "{{url('data/create')}}",
-                    type: "POST",
-                    data: {
-                            id: {{buy.idBuy}}
-                    },
-                    error: function(error){
-                            console.log(error);
-                    },
-                    success: function(data){
-                            window.location = '{{url('data/download')}}/' + data[0];
-                    }
-            });
-        });#}
-    </script>
+{% block header %}    
 {% endblock %}
 {% block content %}
     <div class="row">
@@ -26,52 +9,67 @@
         </div>
     </div>
     
-    <h4 class="text-center">Crédito No. <em>{{idBuy}}</em></h4><br>
+    <h4 class="text-center">Crédito No. <em>{{idBuy}}</em></h4><br>        
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">                
+                <table class="table table-bordered">
+                    <tr>
+                        <td>
+                            <strong>Referencia:</strong>
+                        </td>
+                        <td>
+                            <strong>Nombre del articulo:</strong>
+                        </td>
+                        <td>
+                            <strong>Cantidad:</strong>
+                        </td>
+                    </tr>
+                    {% for b in buys %}
+                    <tr>                        
+                        <td>{{b.article.reference}}</td>
+                        <td>{{b.article.name}}</td>
+                        <td>{{b.article.quantity}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>                
+            </div>
+            <div class="col-md-6">                
+                <table class="table table-bordered">
+                    <tr>
+                        <td>
+                            <strong>Fecha de factura:</strong>
+                        </td>
+                        <td>
+                            <strong>Valor total:</strong>
+                        </td>
+                        <td>
+                            <strong>Valor cancelado:</strong>
+                        </td>
+                        <td>
+                            <strong>Saldo:</strong>
+                        </td>
+                    </tr>
+                    {% for b in buys %}
+                    <tr>                    
+                        <td>{{b.buy.date}}</td>
+                        <td>${{b.buy.value}}</td>
+                        <td>${{b.buy.value - b.buy.debt}}</td>
+                        <td>${{b.buy.debt}}</td>
+                    </tr>
+                        {% break %}
+                    {% endfor %}
+                </table>
+            </div>            
+        </div>
+    </div>
+    
+    <hr />
     
     <div class="col-md-12" align="right">
 	<a href="{{url('payment/downloadpdf')}}/{{idBuy}}" id="download" class="btn btn-info btn-sm">Descargar pagos</a>
         <p></p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-bordered">        
-                <tr>
-                    <td>
-                        <strong>Referencia:</strong>
-                    </td>
-                    <td>
-                        <strong>Nombre del articulo:</strong>
-                    </td>
-                    <td>
-                        <strong>Cantidad:</strong>
-                    </td>
-                    <td>
-                        <strong>Fecha de factura:</strong>
-                    </td>
-                    <td>
-                        <strong>Valor total:</strong>
-                    </td>
-                    <td>
-                        <strong>Valor cancelado:</strong>
-                    </td>
-                    <td>
-                        <strong>Saldo:</strong>
-                    </td>
-                </tr>
-                {% for b in buys %}
-                <tr>
-                    <td>{{b.article.reference}}</td>
-                    <td>{{b.article.name}}</td>
-                    <td>{{b.article.quantity}}</td>
-                    <td>{{b.buy.date}}</td>
-                    <td>${{b.buy.value}}</td>
-                    <td>${{b.buy.value - b.buy.debt}}</td>
-                    <td>${{b.buy.debt}}</td>
-                </tr>
-                {% endfor %}
-            </table>
-        </div>
     </div>
     
     <div class="row">

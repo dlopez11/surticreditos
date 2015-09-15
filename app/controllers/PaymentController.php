@@ -25,21 +25,17 @@ class PaymentController extends ControllerBase
     public function downloadpdfAction($id)
     {
         $d = $this->getData($id);
-        
-        $idBuy = $d->data[0]['code'];
-        $valort = $d->data[0]['value'];
-        $valorc = $d->data[0]['dif'];
-        $saldo = $d->data[0]['debt'];
-        
-        $user = $this->user->idUser;
+        $date = date('d-m-Y h:i:s A' , time());
         
         $username = User::findFirst(array(
             'conditions' => 'idUser = ?1',
-            'bind' => array(1 => $user)
+            'bind' => array(1 => $this->user->idUser)
         ));
         
-        $name = $username->name;
-        $date = date('d-m-Y h:i:s A' , time());
+        $article = Article::find(array(
+            'conditions' => 'idBuy = ?1',
+            'bind' => array(1 => $id)
+        ));
         
         require_once "{$this->path->path}app/library/pdf/dompdf_config.inc.php";
         
@@ -59,6 +55,23 @@ class PaymentController extends ControllerBase
         }                
         
         $table .= "</tbody></table>";
+        
+        $table2 = "<table style='width:100%'>
+                    <thead>
+                        <tr>
+                            <th>Referencia:</th>
+                            <th>Nombre del articulo:</th>		
+                            <th>Cantidad:</th>
+                        </tr>
+                    </thead>                        
+                    <tbody>";
+        
+        foreach ($article as $a) {
+            $tr = "<tr><td>{$a->reference}</td><td>{$a->name}</td><td>{$a->quantity}</td></tr>";
+            $table2 .= $tr;
+        }                
+        
+        $table2 .= "</tbody></table>";
         
         $content = '
             <html>
@@ -104,24 +117,26 @@ class PaymentController extends ControllerBase
                     <table style="width:100%">
                         <tr>
                             <td><strong>No. de factura:</strong></td>
-                            <td>'. $idBuy .'</td>
+                            <td>'. $d->data[0]['code'] .'</td>
                         </tr>
                         <tr>
                             <td><strong>Valor total:</strong></td>
-                            <td>'. $valort .'</td>
+                            <td>'. $d->data[0]['value'] .'</td>
                         </tr>
                         <tr>
                             <td><strong>Valor cancelado:</strong></td>
-                            <td>'. $valorc .'</td>
+                            <td>'. $d->data[0]['dif'] .'</td>
                         </tr>
                         <tr>
                             <td><strong>Saldo:</td>
-                            <td>'. $saldo .'</td>
+                            <td>'. $d->data[0]['debt'] .'</td>
                         </tr>
                     </table><br>
-                    ' . $table . '
+                    ' . $table2 . '
+                    <br>
+                    ' . $table . '                                        
                     <footer>
-                        <p><em>Elaborado por: '. $name .' el d&iacute;a '. $date .'</em></p>
+                        <p><em>Elaborado por: '. $username->name .' el d&iacute;a '. $date .'</em></p>
                     </footer>
                 </body>
             </html>';
@@ -130,7 +145,7 @@ class PaymentController extends ControllerBase
         $pdf->set_paper("letter", "portrait");
         $pdf->load_html(utf8_decode($content));
         $pdf ->render();
-        $pdf ->stream('Historial de pago crédito '. $idBuy . '.pdf');
+        $pdf ->stream('Historial de pago crédito '. $d->data[0]['code'] . '.pdf');
     }
     
     
