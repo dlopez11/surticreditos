@@ -134,7 +134,14 @@ class PaymentController extends ControllerBase
                     </table><br>
                     ' . $table2 . '
                     <br>
-                    ' . $table . '                                        
+                    ' . $table . '
+                    <div class="row">
+                        <div class="col-md-12" align="right">
+                            <p>
+                                <em>Informaci&oacute;n sujeta a verificaci&oacute;n.</em>
+                            </p>
+                        </div>
+                    </div>
                     <footer>
                         <p><em>Elaborado por: '. $username->name .' el d&iacute;a '. $date .'</em></p>
                     </footer>

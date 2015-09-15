@@ -21,7 +21,7 @@ class SessionController extends ControllerBase
             else{
                 if($user->status == 0 && $id == $password){
                 $this->session->set('idUser', $user->idUser);
-                $this->response->redirect('session/questionpass');
+                $this->response->redirect('session/changepass');
                 }
                 else{
                     if ($user && $this->hash->checkHash($password, $user->password)) {
@@ -240,28 +240,28 @@ class SessionController extends ControllerBase
         }
     }
     
-    public function questionpassAction()
-    {
-        if($this->request->isPost()){
-            $phone = $this->request->getPost('phone');
-            $city = $this->request->getPost('city');
-            
-            $infouser = User::findFirst(array(
-                'conditions' => 'phone = ?1 AND city = ?2',
-                'bind' => array(1 => $phone,
-                                2 => $city)
-            ));
-            
-            if($infouser){
-                $this->trace("success", "User: {$infouser->idUser} answered correctly");
-                return $this->response->redirect("session/changepass");
-            }
-            else{
-                $this->flashSession->error("Sus respuestas no coinciden con la información que registra en nuestra Base de Datos, por favor validar");
-                return $this->response->redirect('session/questionpass');
-            }
-        }
-    }
+//    public function questionpassAction()
+//    {
+//        if($this->request->isPost()){
+//            $phone = $this->request->getPost('phone');
+//            $city = $this->request->getPost('city');
+//            
+//            $infouser = User::findFirst(array(
+//                'conditions' => 'phone = ?1 AND city = ?2',
+//                'bind' => array(1 => $phone,
+//                                2 => $city)
+//            ));
+//            
+//            if($infouser){
+//                $this->trace("success", "User: {$infouser->idUser} answered correctly");
+//                return $this->response->redirect("session/changepass");
+//            }
+//            else{
+//                $this->flashSession->error("Sus respuestas no coinciden con la información que registra en nuestra Base de Datos, por favor validar");
+//                return $this->response->redirect('session/questionpass');
+//            }
+//        }
+//    }
     
     public function changepassAction()
     {
