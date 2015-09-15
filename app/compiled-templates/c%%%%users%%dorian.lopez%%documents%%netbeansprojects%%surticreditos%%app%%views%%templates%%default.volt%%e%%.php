@@ -57,13 +57,19 @@ a:5:{i:0;s:1184:"<!DOCTYPE html>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:60;}}i:2;s:284:"
+                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:33:"<!-- custom content body code -->";s:4:"file";s:35:"../app/views/templates/default.volt";s:4:"line";i:60;}}i:2;s:497:"
                 </div>    
             </div>
         </div>  
                 
         <footer class="footer">
-            <p style="float: left;">&copy; Sigma Engine 2015, Todos los derechos reservados</p>                  
+            <p style="float: left;">&copy; Sigma Engine 2015, Todos los derechos reservados</p>
+            <div style="float: right;">
+                <p>
+                    ERP by:
+                    <img src="<?php echo $this->url->get(''); ?>img/DATANEXT.jpg" height="30" />
+                </p>
+            </div>
         </footer>           
     </body>
 </html>";}

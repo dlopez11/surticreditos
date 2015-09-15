@@ -63,7 +63,13 @@
         </div>  
                 
         <footer class="footer">
-            <p style="float: left;">&copy; Sigma Engine 2015, Todos los derechos reservados</p>                  
+            <p style="float: left;">&copy; Sigma Engine 2015, Todos los derechos reservados</p>
+            <div style="float: right;">
+                <p>
+                    ERP by:
+                    <img src="{{url('')}}img/DATANEXT.jpg" height="30" />
+                </p>
+            </div>
         </footer>           
     </body>
 </html>
