@@ -22,7 +22,7 @@ class Security extends Plugin
         /*
          * Buscar ACL en cache
          */
-        $acl = $this->cache->get('acl-cache');
+//        $acl = $this->cache->get('acl-cache');
 
         if (!$acl) {
                 // No existe, crear objeto ACL
@@ -70,7 +70,7 @@ class Security extends Plugin
             $acl->allow("user", "payment", "read");
             $acl->allow("user", "payment", "download");
 
-            $this->cache->save('acl-cache', $acl);
+            //$this->cache->save('acl-cache', $acl);
         }
 
         // Retornar ACL
@@ -81,7 +81,7 @@ class Security extends Plugin
 
     protected function getControllerMap()
     {
-        $map = $this->cache->get('controllermap-cache');
+//        $map = $this->cache->get('controllermap-cache');
         
         if (!$map) {
             $map = array(
@@ -122,7 +122,7 @@ class Security extends Plugin
                 'importdata::importfilefour' => array('importdata' => array('read','create','update')),
             );
             
-            $this->cache->save('controllermap-cache', $map);
+            //$this->cache->save('controllermap-cache', $map);
         }
         
         return $map;
