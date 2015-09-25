@@ -34,6 +34,14 @@
                     <button type="submit" class="btn btn-sm btn-success">Iniciar sesión</button>
                   </div>
                 </div>
+                    
+                <div class="row">
+                    <div class="col-md-12" align="center">
+                        <p style="font-size: 11px;">
+                            <em>Si es la primera vez que ingresa a la plataforma, su contraseña es su mismo número de cédula.</em>
+                        </p>
+                    </div>
+                </div>
             </form>
         </div>                    
     </div>

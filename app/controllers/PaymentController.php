@@ -143,7 +143,7 @@ class PaymentController extends ControllerBase
                         </div>
                     </div>
                     <footer>
-                        <p><em>Elaborado por: '. $username->name .' el d&iacute;a '. $date .'</em></p>
+                        <p><em>Elaborado por: D@TA NEXT LTDA el d&iacute;a '. $date .'</em></p>
                     </footer>
                 </body>
             </html>';
