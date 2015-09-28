@@ -88,16 +88,6 @@ class PaymentController extends ControllerBase
                             font-family: Arial, Helvetica, sans-serif;
                             color: Black;                            
                         }
-                        footer {
-                            position: fixed;
-                            font-family: Arial, Helvetica, sans-serif;
-                            font-size: 13px;
-                            bottom: 0;
-                            left: 0;
-                            height: 70px;
-                            background-color: white;
-                            width: 100%;
-                        }
                     </style>
                 </head>
                 <body>
@@ -137,9 +127,6 @@ class PaymentController extends ControllerBase
                             </p>
                         </div>
                     </div>
-                    <footer>
-                        <p><em>Elaborado por: DATA NEXT LTDA el d&iacute;a '. $date .'</em></p>
-                    </footer>
                 </body>
             </html>';
         
