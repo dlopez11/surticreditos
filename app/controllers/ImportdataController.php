@@ -262,14 +262,20 @@ class ImportdataController extends ControllerBase
                     $cue = ltrim($cu,'0');
                     $ref = ltrim($re,'0');
                     $nom = ltrim($no,'0');
-                    $can = ltrim($ca,'0');
+                    $can = ltrim($ca,'0');                                        
                                         
                     $cuenta = trim($cue);                    
                     $referencia = trim($ref);
                     $nombre = trim($nom);
                     $cantidad = trim($can);
                     
-                    $txt[] = "(null,$cuenta,'$referencia','$nombre','$cantidad')";
+                    $caracteres = array('"',"'");
+                    $replace = array("p","p");
+                    
+                    $name = str_replace($caracteres, $replace, $nombre);
+                    $reference = str_replace($caracteres, $replace, $referencia);
+                    
+                    $txt[] = "(null,$cuenta,'$reference','$name',$cantidad)";
                     $text = implode(", ", $txt);
                                         
                 }
