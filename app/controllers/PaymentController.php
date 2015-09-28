@@ -27,11 +27,6 @@ class PaymentController extends ControllerBase
         $d = $this->getData($id);
         $date = date('d-m-Y h:i:s A' , time());
         
-        $username = User::findFirst(array(
-            'conditions' => 'idUser = ?1',
-            'bind' => array(1 => $this->user->idUser)
-        ));
-        
         $article = Article::find(array(
             'conditions' => 'idBuy = ?1',
             'bind' => array(1 => $id)
