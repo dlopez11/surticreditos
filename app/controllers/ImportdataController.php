@@ -141,7 +141,7 @@ class ImportdataController extends ControllerBase
                                         
                 }                             
                 
-                $sql = "INSERT IGNORE INTO buy (idBuy, idUser, date, value, debt) VALUES {$text}";
+                $sql = "INSERT IGNORE INTO buy (idBuy, idUser, date, value, debt) VALUES {$text} ON DUPLICATE KEY UPDATE date = VALUES(date), value = VALUES(value), debt = VALUES(debt)";
                 $result = $this->db->execute($sql);
 
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
@@ -213,7 +213,7 @@ class ImportdataController extends ControllerBase
                                         
                 }
                 
-                $sql = "INSERT IGNORE INTO payment (idPayment, idBuy, receiptValue, date) VALUES {$text}";
+                $sql = "INSERT IGNORE INTO payment (idPayment, idBuy, receiptValue, date) VALUES {$text} ON DUPLICATE KEY UPDATE receiptValue = VALUES(receiptValue), date = VALUES(date)";
                 $result = $this->db->execute($sql);
 
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
@@ -280,8 +280,14 @@ class ImportdataController extends ControllerBase
                                         
                 }
                 
+                $sql1 = "SET FOREIGN_KEY_CHECKS = 0";
+                $result1 = $this->db->execute($sql1);
+                
                 $sql = "INSERT IGNORE INTO article (idArticle, idBuy, reference, name, quantity) VALUES {$text}";
                 $result = $this->db->execute($sql);
+                
+                $sql2 = "SET FOREIGN_KEY_CHECKS = 1";
+                $result2 = $this->db->execute($sql2);
 
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
             }
