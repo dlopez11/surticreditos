@@ -73,7 +73,8 @@ class ImportdataController extends ControllerBase
                         $sql = "INSERT IGNORE INTO user (idUser, idRole, created, updated, status, password, name, class, address, phone, email, city) VALUES {$text} ON DUPLICATE KEY UPDATE updated = VALUES(updated), name = VALUES(name), class = VALUES(class), address = VALUES(address), phone = VALUES(phone), email = VALUES(email), city = VALUES(city)";                   
                     } 
 
-                    $result = $this->db->execute($sql); 
+                    $result = $this->db->execute($sql);
+                    
                     return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
                 }
             }
@@ -139,10 +140,19 @@ class ImportdataController extends ControllerBase
                     $txt[] = "($cuenta,$cedula,'$fecha',$valor,$saldo)";
                     $text = implode(", ", $txt);
                                         
-                }                             
+                }
+                
+                $sql1 = "SET FOREIGN_KEY_CHECKS = 0";
+                $result1 = $this->db->execute($sql1);
+                
+                $sqlremove = "TRUNCATE TABLE buy";
+                $resultremove = $this->db->execute($sqlremove);
                 
                 $sql = "INSERT IGNORE INTO buy (idBuy, idUser, date, value, debt) VALUES {$text} ON DUPLICATE KEY UPDATE date = VALUES(date), value = VALUES(value), debt = VALUES(debt)";
                 $result = $this->db->execute($sql);
+                
+                $sql2 = "SET FOREIGN_KEY_CHECKS = 1";
+                $result1 = $this->db->execute($sql2);
 
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
             }
@@ -213,8 +223,17 @@ class ImportdataController extends ControllerBase
                                         
                 }
                 
+                $sql1 = "SET FOREIGN_KEY_CHECKS = 0";
+                $result1 = $this->db->execute($sql1);
+                
+                $sqlremove = "TRUNCATE TABLE payment";
+                $resultremove = $this->db->execute($sqlremove);
+                
                 $sql = "INSERT IGNORE INTO payment (idPayment, idBuy, receiptValue, date) VALUES {$text} ON DUPLICATE KEY UPDATE receiptValue = VALUES(receiptValue), date = VALUES(date)";
                 $result = $this->db->execute($sql);
+                
+                $sql2 = "SET FOREIGN_KEY_CHECKS = 1";
+                $result2 = $this->db->execute($sql2);
 
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
             }
@@ -278,10 +297,13 @@ class ImportdataController extends ControllerBase
                     $txt[] = "(null,$cuenta,'$reference','$name',$cantidad)";
                     $text = implode(", ", $txt);
                                         
-                }
+                }                                
                 
                 $sql1 = "SET FOREIGN_KEY_CHECKS = 0";
                 $result1 = $this->db->execute($sql1);
+                
+                $sqlremove = "TRUNCATE TABLE article";
+                $resultremove = $this->db->execute($sqlremove);
                 
                 $sql = "INSERT IGNORE INTO article (idArticle, idBuy, reference, name, quantity) VALUES {$text}";
                 $result = $this->db->execute($sql);
