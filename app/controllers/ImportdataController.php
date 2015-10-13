@@ -218,16 +218,17 @@ class ImportdataController extends ControllerBase
                     
                     $fecha = "$año-$mes-$dia";
                     
+                    if(empty($recibo)){
+                        $recibo = rand(9000000, 9999999);
+                    }
+                    
                     $txt[] = "($recibo,$cuenta,$valor,'$fecha')";
                     $text = implode(", ", $txt);
                                         
                 }
                 
                 $sql1 = "SET FOREIGN_KEY_CHECKS = 0";
-                $result1 = $this->db->execute($sql1);
-                
-                $sqlremove = "TRUNCATE TABLE payment";
-                $resultremove = $this->db->execute($sqlremove);
+                $result1 = $this->db->execute($sql1);                
                 
                 $sql = "INSERT IGNORE INTO payment (idPayment, idBuy, receiptValue, date) VALUES {$text} ON DUPLICATE KEY UPDATE receiptValue = VALUES(receiptValue), date = VALUES(date)";
                 $result = $this->db->execute($sql);
