@@ -154,16 +154,7 @@
                                 <div id="respuestatres"></div>
                             </form>
                         </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">            
-                            <form enctype="multipart/form-data" action="{{url('importdata/import')}}" method="POST">
-                                <input name="uploadedfile" type="file" />
-                                <input type="submit" value="Subir archivo" />
-                            </form>
-                        </div>
-                    </div>
+                    </div>                    
                 </div>
                     
                 <div class="tab-pane" id="tab4">
