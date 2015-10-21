@@ -166,8 +166,8 @@ class ImportdataController extends ControllerBase
     public function importfilethreeAction()
     {
          try {
-            if ($_FILES['csvthree']['size'] > 10485760){
-                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 10 MB de peso'), 403);
+            if ($_FILES['csvthree']['size'] > 20971520){
+                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 20 MB de peso'), 403);
             }
             
             if ($_FILES['csvthree']['size'] > 0) {
@@ -183,7 +183,6 @@ class ImportdataController extends ControllerBase
                 $handle = fopen($csv,'r');
                 
                 $values = array();
-//                $text = array();
                 
                 while($data = fgetcsv($handle,1000,";","'")){
                     if($data[0]){
@@ -219,12 +218,8 @@ class ImportdataController extends ControllerBase
                     $fecha = "$año-$mes-$dia";
                     
                     if(!empty($recibo)){
-                        //$recibo = rand(9000000, 9999999);
                         $txt[] = "$recibo,$cuenta,$valor,$fecha";   
-                    }          
-                    //$this->logger->log(print_r($txt, TRUE));
-                    
-                    //$text = implode(", ", $txt);                                       
+                    }
                 }
                 
                 $filename = $this->path->path . $this->path->tmpfolder . uniqid() . time() . ".csv";
@@ -238,7 +233,10 @@ class ImportdataController extends ControllerBase
                 fclose($fp);
                 
                 $sql1 = "SET FOREIGN_KEY_CHECKS = 0";
-                $result1 = $this->db->execute($sql1);   
+                $result1 = $this->db->execute($sql1);
+                
+                $sqlremove = "TRUNCATE TABLE payment";
+                $resultremove = $this->db->execute($sqlremove);
                 
                 $sql_db_mode = "SET session sql_mode=''";
                 
@@ -247,17 +245,12 @@ class ImportdataController extends ControllerBase
                 
                 $sql_db_mode_strict = "SET session sql_mode='strict_all_tables'";
                 
-                $this->logger->log($importfile);
-                
                 $this->db->execute($sql_db_mode);
                 $this->db->execute($importfile);
                 $this->db->execute($sql_db_mode_strict);
                 
                 $sql2 = "SET FOREIGN_KEY_CHECKS = 1";
                 $result2 = $this->db->execute($sql2);
-
-//                $sql = "INSERT IGNORE INTO payment (idPayment, idBuy, receiptValue, date) VALUES {$text} ON DUPLICATE KEY UPDATE receiptValue = VALUES(receiptValue), date = VALUES(date)";
-//                $result = $this->db->execute($sql);
 
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
             }
@@ -342,5 +335,5 @@ class ImportdataController extends ControllerBase
             $this->logger->log("Exception while inserting buys: {$e->getMessage()}");
             return $this->set_json_response(array("Ha ocurrido un error, por favor contacte al administrador"), 403);
         }
-    }
+    }        
 }
