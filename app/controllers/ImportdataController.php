@@ -149,10 +149,10 @@ class ImportdataController extends ControllerBase
                 $resultremove = $this->db->execute($sqlremove);
                 
                 $sql = "INSERT IGNORE INTO buy (idBuy, idUser, date, value, debt) VALUES {$text} ON DUPLICATE KEY UPDATE date = VALUES(date), value = VALUES(value), debt = VALUES(debt)";
-                $result = $this->db->execute($sql);
+                $result2 = $this->db->execute($sql);
                 
                 $sql2 = "SET FOREIGN_KEY_CHECKS = 1";
-                $result1 = $this->db->execute($sql2);
+                $result3 = $this->db->execute($sql2);
 
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
             }
