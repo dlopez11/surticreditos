@@ -166,8 +166,8 @@ class ImportdataController extends ControllerBase
     public function importfilethreeAction()
     {
          try {
-            if ($_FILES['csvthree']['size'] > 3145728){
-                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 3 MB de peso'), 403);
+            if ($_FILES['csvthree']['size'] > 10485760){
+                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 10 MB de peso'), 403);
             }
             
             if ($_FILES['csvthree']['size'] > 0) {
@@ -183,7 +183,7 @@ class ImportdataController extends ControllerBase
                 $handle = fopen($csv,'r');
                 
                 $values = array();
-                $text = array();
+//                $text = array();
                 
                 while($data = fgetcsv($handle,1000,";","'")){
                     if($data[0]){
@@ -218,23 +218,46 @@ class ImportdataController extends ControllerBase
                     
                     $fecha = "$año-$mes-$dia";
                     
-                    if(empty($recibo)){
-                        $recibo = rand(9000000, 9999999);
-                    }
+                    if(!empty($recibo)){
+                        //$recibo = rand(9000000, 9999999);
+                        $txt[] = "$recibo,$cuenta,$valor,$fecha";   
+                    }          
+                    //$this->logger->log(print_r($txt, TRUE));
                     
-                    $txt[] = "($recibo,$cuenta,$valor,'$fecha')";
-                    $text = implode(", ", $txt);
-                                        
+                    //$text = implode(", ", $txt);                                       
                 }
                 
-                $sql1 = "SET FOREIGN_KEY_CHECKS = 0";
-                $result1 = $this->db->execute($sql1);                
+                $filename = $this->path->path . $this->path->tmpfolder . uniqid() . time() . ".csv";
+                $fp = fopen($filename , 'w');
+
+                foreach ($txt as $data) {
+                    $val = explode(",", $data);
+                    fputcsv($fp, $val);
+                }                    
+
+                fclose($fp);
                 
-                $sql = "INSERT IGNORE INTO payment (idPayment, idBuy, receiptValue, date) VALUES {$text} ON DUPLICATE KEY UPDATE receiptValue = VALUES(receiptValue), date = VALUES(date)";
-                $result = $this->db->execute($sql);
+                $sql1 = "SET FOREIGN_KEY_CHECKS = 0";
+                $result1 = $this->db->execute($sql1);   
+                
+                $sql_db_mode = "SET session sql_mode=''";
+                
+                $importfile = "LOAD DATA INFILE '{$filename}' IGNORE INTO TABLE payment CHARACTER SET UTF8 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'"
+                . " (idPayment, idBuy, receiptValue, date)";
+                
+                $sql_db_mode_strict = "SET session sql_mode='strict_all_tables'";
+                
+                $this->logger->log($importfile);
+                
+                $this->db->execute($sql_db_mode);
+                $this->db->execute($importfile);
+                $this->db->execute($sql_db_mode_strict);
                 
                 $sql2 = "SET FOREIGN_KEY_CHECKS = 1";
                 $result2 = $this->db->execute($sql2);
+
+//                $sql = "INSERT IGNORE INTO payment (idPayment, idBuy, receiptValue, date) VALUES {$text} ON DUPLICATE KEY UPDATE receiptValue = VALUES(receiptValue), date = VALUES(date)";
+//                $result = $this->db->execute($sql);
 
                 return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
             }
