@@ -165,116 +165,25 @@ class ImportdataController extends ControllerBase
     
     public function importfilethreeAction()
     {
-        $this->logger->log("A");
-        
-         try {
-            if ($_FILES['csvthree']['size'] > 20971520){
-                return $this->set_json_response(array('El archivo CSV no puede ser mayor a 20 MB de peso'), 403);
-                $this->logger->log("B");
-            }
+        try {
+            $file = $_FILES['csvthree'];
             
-            $this->logger->log("C"); 
-            
-            if ($_FILES['csvthree']['size'] > 0) {
-
-                $this->logger->log("D");
-                
-                $fileinfo = pathinfo($_FILES['csvthree']['name']);
-                
-                if(strtolower(trim($fileinfo["extension"])) != "csv")
-                {
-                    return $this->set_json_response(array('Por favor seleccione un archivo de tipo CSV'), 403);
-                }
-                   
-                $csv = $_FILES['csvthree']['tmp_name'];
-                $handle = fopen($csv,'r');
-                
-                $values = array();
-                $text = array();
-                
-                while($data = fgetcsv($handle,1000,";","'")){
-                    if($data[0]){
-                        $values[] = "$data[0]";
-                    }
-                }                
-                
-                foreach ($values as $key => $value) {
-                    $ce = substr($value, 0, 11);
-                    $cu = substr($value, 11, 7);
-                    $r = substr($value, 18, 7);
-                    $rm = substr($value, 25, 7);
-                    $aa = substr($value, 32, 4);
-                    $mm = substr($value, 36, 2);
-                    $dd = substr($value, 38, 2);
-                    $v = substr($value, 40, 11);
-                    
-                    $ced = ltrim($ce,'0');
-                    $cue = ltrim($cu,'0');
-                    $rec = ltrim($r,'0');
-                    $rem = ltrim($rm,'0');
-                    $va = ltrim($v,'0');
-                    
-                    $cedula = trim($ced);
-                    $cuenta = trim($cue);                    
-                    $recibo = trim($rec);
-                    $valor = trim($va);
-                    $año = trim($aa);
-                    $mes = trim($mm);
-                    $dia = trim($dd);
-                    $rmanual = trim($rem);
-                    
-                    $fecha = "$año-$mes-$dia";
-                    
-                    if(!empty($recibo)){
-                        $txt[] = "$recibo,$cuenta,$valor,$fecha";   
-                    }
-                }
-                
-                $this->logger->log("0");
-                
-                $filename = $this->path->path . $this->path->tmpfolder . uniqid() . time() . ".csv";
-                // Abre el fichero para obtener el contenido existente
-                $actual = file_get_contents($filename);
-                $this->logger->log("1");
-                // Añade una nueva persona al fichero
-                $actual .= implode(PHP_EOL, $txt);
-                $this->logger->log("2");
-                // Escribe el contenido al fichero
-                file_put_contents($filename, $actual);
-                
-                $this->logger->log("3");
-                
-                $this->logger->log("4");
-                
-                $sql1 = "SET FOREIGN_KEY_CHECKS = 0";
-                $result1 = $this->db->execute($sql1);
-                
-                $sqlremove = "TRUNCATE TABLE payment";
-                $resultremove = $this->db->execute($sqlremove);
-                
-                $sql_db_mode = "SET session sql_mode=''";
-                
-                $this->logger->log("5");
-                
-                $importfile = "LOAD DATA INFILE '{$filename}' IGNORE INTO TABLE payment CHARACTER SET UTF8 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'"
-                . " (idPayment, idBuy, receiptValue, date)";
-                
-                $sql_db_mode_strict = "SET session sql_mode='strict_all_tables'";
-                
-                $this->db->execute($sql_db_mode);
-                $this->db->execute($importfile);
-                $this->db->execute($sql_db_mode_strict);
-                
-                $this->logger->log("6");
-                $sql2 = "SET FOREIGN_KEY_CHECKS = 1";
-                $result2 = $this->db->execute($sql2);
-
-                return $this->set_json_response(array('El archivo se importo exitosamente'), 200);                                               
-            }
+            $validateFile = new \Surticreditos\Misc\ValidateFile();
+            $validateFile->setFile($file); 
+            $validateFile->validate(); 
+            $validateFile->formatFileForPayment(); 
+            $validateFile->generateFinalFile();
+            $validateFile->loadDataOnDb("payment");
+             
+            return $this->set_json_response(array('El archivo se importo exitosamente'), 200);
+        }
+        catch(InvalidArgumentException $e) {
+            $this->logger->log("Exception while inserting buys: {$e->getMessage()}");
+            return $this->set_json_response(array($e->getMessage()), 404);
         }
         catch(Exception $e) {
             $this->logger->log("Exception while inserting buys: {$e->getMessage()}");
-            return $this->set_json_response(array("Ha ocurrido un error, por favor contacte al administrador"), 403);
+            return $this->set_json_response(array("Ha ocurrido un error, por favor contacte al administrador"), 500);
         }
     }
     
