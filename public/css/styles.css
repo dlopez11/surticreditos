@@ -10,6 +10,10 @@ and open the template in the editor.
 /*   fuentes   */
 /* latin */
 /* Space out content a bit */
+html {
+    height: 100%;
+}
+
 body {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -36,7 +40,7 @@ body {
 
 /* Custom page footer */
 .footer {
-    position: relative;
+    position: absolute;
     padding-top: 19px;
     color: #777;
     border-top: 1px solid #e5e5e5;
