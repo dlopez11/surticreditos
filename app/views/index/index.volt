@@ -42,6 +42,17 @@
         </div>
     </div>
     
+    {% if buys|length == 0 %}        
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wrap">
+                <div class="alert alert-info" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    No hay datos de creditos registrados
+                </div>
+            </div>    
+        </div>    
+    {% else %}
+    
     {% for b in buys %}
     <div class="row">
         <div class="col-md-12"> 
@@ -60,6 +71,7 @@
         </div>
     </div>
     {% endfor %}
+    {% endif %}
     
     <div class="row">
         <div class="col-md-12" align="right">

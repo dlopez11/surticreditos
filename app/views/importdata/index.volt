@@ -37,7 +37,7 @@
                     <div class="container">
                         <ul>
                             <li><a href="#tab1" data-toggle="tab">Actualizar Usuarios</a></li>
-                            <li><a href="#tab2" data-toggle="tab">Actualizar Compras</a></li>
+                            <li><a href="#tab2" data-toggle="tab">Actualizar Ventas</a></li>
                             <li><a href="#tab3" data-toggle="tab">Actualizar Recibos</a></li>
                             <li><a href="#tab4" data-toggle="tab">Actualizar Articulos</a></li>
                          </ul>
@@ -94,7 +94,7 @@
                 <div class="tab-pane" id="tab2">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <h1>Actualizar compras desde archivo .csv</h1>
+                            <h1>Actualizar ventas desde archivo .csv</h1>
                             <hr />            
                         </div>                            
                     </div>

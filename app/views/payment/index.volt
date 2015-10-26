@@ -67,6 +67,17 @@
     
     <hr />
     
+    {% if payments|length == 0 %}        
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wrap">
+                <div class="alert alert-info" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    No hay datos de recibos registrados
+                </div>
+            </div>    
+        </div>    
+    {% else %}
+    
     <div class="col-md-12" align="right">
 	<a href="{{url('payment/downloadpdf')}}/{{idBuy}}" id="download" class="btn btn-info btn-sm">Descargar pagos</a>
         <p></p>
@@ -109,4 +120,5 @@
             </p>
         </div>
     </div>
+    {% endif %}
 {% endblock %}
