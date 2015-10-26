@@ -19,6 +19,10 @@ body {
   padding-bottom: 20px;
 }
 
+a {
+    text-decoration: underline;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .marketing,
 .footer {
