@@ -32,6 +32,14 @@ class PaymentController extends ControllerBase
                 'conditions' => 'idBuy = ?1',
                 'bind' => array(1 => $id)
             ));
+            
+            $user = User::findFirst(array(
+                'conditions' => 'idUser = ?1',
+                'bind' => array(1 => $this->user->idUser)
+            ));
+            
+            $this->logger->log('Nombre: ' . $user->name);
+            $this->logger->log('Cédula: ' . $user->idUser);
 
             require_once "{$this->path->path}app/library/pdf/dompdf_config.inc.php";
 
@@ -111,6 +119,14 @@ class PaymentController extends ControllerBase
                             <h2>Historial de pagos</h2>
                         </div>
                         <table style="width:100%">
+                            <tr>
+                                <td><strong>Nombre del cliente:</strong></td>
+                                <td>'. $user->name .'</td>
+                            </tr>
+                            <tr>
+                                <td><strong>N&uacute;mero de c&eacute;dula:</strong></td>
+                                <td>'. $user->idUser .'</td>
+                            </tr>
                             <tr>
                                 <td><strong>No. de factura:</strong></td>
                                 <td>'. $d->data[0]['code'] .'</td>
