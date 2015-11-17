@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=1">
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" type="image/x-icon" href="{{url('')}}img/favicons/favicon48x48.ico">
-        <title>Surticreditos</title>
+        <title>Surticréditos | Consulta estado de cuenta</title>
         
         <!-- Always force latest IE rendering engine or request Chrome Frame -->
         <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
