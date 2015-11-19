@@ -91,7 +91,7 @@
                         <strong>Número de Recibo:</strong>
                     </td>
                     <td>
-                        <strong>Fecha de pago:</strong>
+                        <strong>Fecha último pago:</strong>
                     </td>
                     <td>
                         <strong>Valor:</strong>
